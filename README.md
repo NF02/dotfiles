@@ -1,7 +1,7 @@
 # dotfiles
 my config file
 <img src="https://raw.githubusercontent.com/NF02/dotfiles/master/img.png">
-## Programmi utilizzati
+## Default program
 - **<a href="https://github.com/NF02/dwm">dwm</a>** - window manager
 - **Firefox** - browser web;
 - **<a href="https://github.com/NF02/st">st (simple terminal)</a>** - system terminale;
