@@ -7,4 +7,7 @@ my config file
 - **flaflameshot** - per gli screenshot;
 - **thunderbird** - gestione della porsta elettronica;
 - **networkd** - per gestire le connessioni del pc;
-- **bootctl** - come bootloader.
+- **bootctl** - come bootloader;
+- **neovim** - text editor;
+- **ranger** - file manager;
+- **alsamixer** - per l'audio;
