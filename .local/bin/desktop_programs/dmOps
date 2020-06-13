@@ -1,0 +1,11 @@
+#!/bin/env bash
+
+launch=$(echo -e "Stampante\nFirewall\nTaskManager\nPowerManager\nAspettoGTK\n" | dmenu -i -p "Impostazioni: ") 
+case $launch in
+	"Stampante") lxqt-sudo system-config-printer;;
+	"Firewall") lxqt-sudo gufw;;
+	"TaskManager") st -e bashtop;;
+	"PowerManager") lxqt-sudo st -e powertop;;
+	"AspettoGTK") lxappearance;;
+
+esac ;
