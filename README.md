@@ -12,4 +12,5 @@ my config file
 - **neovim** - text editor;
 - **ranger** - file manager;
 - **alsamixer** - audio;
-- **<a href="https://tools.suckless.org/slock/">slock (simple lock)</a>** - lockscreen.
+- **<a href="https://tools.suckless.org/slock/">slock (simple lock)</a>** - lockscreen;
+- **<a href="https://github.com/cdown/clipmenu">clipmenu</a>** - clipboard.
