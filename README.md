@@ -4,12 +4,12 @@ my config file
 ## Programmi utilizzati
 - **<a href="https://github.com/NF02/dwm">dwm</a>** - window manager
 - **Firefox** - browser web;
-- **<a href="https://github.com/NF02/st">st (simple terminal)</a>** - terminale di sistema;
-- **flaflameshot** - per gli screenshot;
-- **thunderbird** - gestione della porsta elettronica;
-- **networkd** - per gestire le connessioni del pc;
-- **bootctl** - come bootloader;
+- **<a href="https://github.com/NF02/st">st (simple terminal)</a>** - system terminale;
+- **flaflameshot** - screenshot app;
+- **thunderbird** - mail client;
+- **networkd** - connection manager;
+- **bootctl** - bootloader;
 - **neovim** - text editor;
 - **ranger** - file manager;
-- **alsamixer** - per l'audio;
-- **slock (simple lock)** - come lockscreen.
+- **alsamixer** - audio;
+- **<a href="https://tools.suckless.org/slock/">slock (simple lock)</a>** - lockscreen.
