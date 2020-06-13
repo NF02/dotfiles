@@ -11,3 +11,4 @@ my config file
 - **neovim** - text editor;
 - **ranger** - file manager;
 - **alsamixer** - per l'audio;
+- **slock (simple lock)** - come lockscreen.
