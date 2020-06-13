@@ -1,0 +1,102 @@
+#!/bin/env bash
+function get_bytes {
+interface=$(ip route get 1.1.1.1 2>/dev/null| awk '{print $5}')
+line=$(grep $interface /proc/net/dev | cut -d ':' -f 2 | awk '{print "received_bytes="$1, "transmitted_bytes="$9}')
+eval $line
+now=$(date +%s%N)
+}
+
+function get_velocity {
+value=$1
+old_value=$2
+now=$3
+
+timediff=$(($now - $old_time))
+velKB=$(echo "1000000000*($value-$old_value)/1024/$timediff" | bc)
+if test "$velKB" -gt 1024
+then
+	echo $(echo "scale=2; $velKB/1024" | bc)MB/s
+else
+	echo ${velKB}KB/s
+fi
+}
+
+get_bytes
+old_received_bytes=$received_bytes
+old_transmitted_bytes=$transmitted_bytes
+old_time=$now
+
+# indicatore del volume
+print_volume() {
+	volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+	
+	if [ "$volume" -gt "50" ]; then
+			echo -e "🔊"
+		elif [ "$volume" -gt "30" ]; then
+			echo -e "🔉"
+		else echo -e "🔈"
+ 	fi
+}
+# indicadore della conesione wifi
+
+print_wifi() {
+	ip=$(ip route get 1.1.1.1 2>/dev/null|grep -Eo 'src [0-9.]+'|grep -Eo '[0-9.]+')
+
+	if=wlp3s0
+		while IFS=$': \t' read -r label value
+		do
+			case $label in SSID) SSID=$value
+				;;
+			signal) SIGNAL=$value
+				;;
+		esac
+	done < <(iw "$if" link)
+
+	echo -e "$SSID $SIGNAL"
+}
+
+# ram monitor
+print_mem(){
+	memfree=$(free -h | awk '/^Mem:/ {print $3 "/" $2}')
+	echo -e " $memfree"
+}
+# indicatore della temperatura interna
+print_temp(){
+	test -f /sys/class/thermal/thermal_zone0/temp || return 0
+	echo $(head -c 2 /sys/class/thermal/thermal_zone0/temp)C
+}
+
+# data
+print_date(){
+	date "+%m-%d %H:%M"
+}
+print_bat(){
+    hash acpi || return 0
+    onl="$(grep "on-line" <(acpi -V))"
+    charge="$(awk '{ sum += $1 } END { print sum }' /sys/class/power_supply/BAT*/capacity)"
+    if test -z "$onl"
+    then
+        echo -e "🔋 ${charge}%"
+    else
+        echo -e "🔌 ${charge}%"
+fi
+}
+
+while true
+do
+
+get_bytes
+# Calculates speeds
+	vel_recv=$(get_velocity $received_bytes $old_received_bytes $now)
+	vel_trans=$(get_velocity $transmitted_bytes $old_transmitted_bytes $now)
+
+	xsetroot -name "$(print_mem) |  $(print_temp) | 📡 $(print_wifi) | $(print_volume) | $(print_bat) | 📆 $(print_date) 🕔"
+
+	# Update old values to perform new calculations
+	old_received_bytes=$received_bytes
+	old_transmitted_bytes=$transmitted_bytes
+	old_time=$now
+
+	sleep 0.5 
+
+done
