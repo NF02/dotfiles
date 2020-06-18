@@ -5,7 +5,7 @@ my config file
 - **<a href="https://github.com/NF02/dwm">dwm</a>** - window manager
 - **Firefox** - browser web;
 - **<a href="https://github.com/NF02/st">st (simple terminal)</a>** - system terminale;
-- **<a href="https://flameshot.js.org/#/">flaflameshot</a>** - screenshot app;
+- **<a href="https://flameshot.js.org/#/">flameshot</a>** - screenshot app;
 - **thunderbird** - mail client;
 - **networkd** - connection manager;
 - **bootctl** - bootloader;
