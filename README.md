@@ -13,4 +13,5 @@ my config file
 - **<a href="https://github.com/ranger/ranger">ranger</a>** - file manager;
 - **<a href="https://github.com/GeorgeFilipkin/pulsemixer">pulsemixer</a>** - mixer audio;
 - **<a href="https://tools.suckless.org/slock/">slock (simple lock)</a>** - lockscreen;
-- **<a href="https://github.com/cdown/clipmenu">clipmenu</a>** - clipboard.
+- **<a href="https://github.com/cdown/clipmenu">clipmenu</a>** - clipboard;
+- **<a href="https://www.zsh.org/">zsh</a>** - system shell;
