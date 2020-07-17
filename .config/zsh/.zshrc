@@ -72,6 +72,11 @@ bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 
 bindkey '^[[P' delete-char
 
+# history setting
+HISTFILE=~/.zhistory
+SAVEHIST=10000
+HISTSIZE=10000
+
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
