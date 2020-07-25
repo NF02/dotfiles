@@ -17,3 +17,5 @@ my config file
 - **<a href="https://tools.suckless.org/slock/">slock (simple lock)</a>** - lockscreen;
 - **<a href="https://github.com/cdown/clipmenu">clipmenu</a>** - clipboard;
 - **<a href="https://www.zsh.org/">zsh</a>** - system shell;
+## Wallpapers
+For the <a href="https://github.com/NF02/wallpapers">wallpapers</a> they are all present within the repo of the same name.
