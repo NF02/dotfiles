@@ -13,7 +13,7 @@
 "   ████    ▄▄▄██▄▄▄  ██ ██ ██   ██       ▀██▄▄▄▄█
 "    ▀▀     ▀▀▀▀▀▀▀▀  ▀▀ ▀▀ ▀▀   ▀▀         ▀▀▀▀▀
 
-		call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+	call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 		Plug 'tpope/vim-surround'
 		Plug 'preservim/nerdtree'
 		Plug 'junegunn/goyo.vim'
