@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+launch=$(echo -e "Eclipse\nArduino\nGnome-boxes\nPacket-tracer\nSkype\nJoplin\nWinblows\n" | dmenu -i -p "Lancia: ") 
+case $launch in
+	"Eclipse") eclipse;;
+	"Arduino") arduino;;
+	"Gnome-boxes") gnome-boxes;;
+	"Packet-tracer") packettracer;;
+	"Skype") skypeforlinux;;
+	"Joplin") joplin-desktop;;
+	"Winblows") winblows;;
+esac ;
