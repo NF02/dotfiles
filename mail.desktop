@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Mail
-Exec=/home/nico/.local/bin/tutanota-desktop-linux.AppImage %u
+Exec=/home/nico/.local/share/applications/tutanota-desktop-linux.AppImage %u
