@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#numlockx on & # if your keyboard has a numeric keypad
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 xrandr --auto &
 xmodmap ~/.Xmodmap &
