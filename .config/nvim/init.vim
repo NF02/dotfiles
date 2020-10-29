@@ -12,14 +12,9 @@
 "  ▀█▄▄█▀      ██     ██ ██ ██   ██       ██
 "   ████    ▄▄▄██▄▄▄  ██ ██ ██   ██       ▀██▄▄▄▄█
 "    ▀▀     ▀▀▀▀▀▀▀▀  ▀▀ ▀▀ ▀▀   ▀▀         ▀▀▀▀▀
-if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
-	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
-	autocmd VimEnter * PlugInstall
-endif
 
-	call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+		call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+		Plug 'dylanaraps/wal'
 		Plug 'tpope/vim-surround'
 		Plug 'preservim/nerdtree'
 		Plug 'junegunn/goyo.vim'
@@ -43,7 +38,7 @@ endif
 	set encoding=utf-8
 	set number
 	set mouse=a
-	colorscheme slate
+	colorscheme wal
 	set relativenumber
 	set title
 	set go=a
@@ -64,6 +59,7 @@ endif
 	set colorcolumn=+1
 	set cursorline
 	set textwidth=79
+	set clipboard+=unnamedplus
 
 	nnoremap <silent> <F11> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
