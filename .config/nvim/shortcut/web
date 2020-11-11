@@ -1,3 +1,4 @@
+" LANG=vim
 " PHP/HTML
 	let html_use_css = 1
 	autocmd FileType php,html inoremap ,b <b></b><Space><++><Esc>FbT>i
@@ -22,5 +23,15 @@
 	autocmd FileType php,html inoremap ,dt <dt></dt><Enter><dd><++></dd><Enter><++><esc>2kcit
 	autocmd FileType php,html inoremap ,dl <dl><Enter><Enter></dl><enter><enter><++><esc>3kcc
 	autocmd FileType php,html inoremap &<space> &amp;<space>
+	" bootstrap
+	" alerts
+	autocmd FileType php,html inoremap ,su <div class="alert alert-success"><++></div><++><Esc>Fdcit
+	autocmd FileType php,html inoremap ,da <div class="alert alert-danger"><++></div><++><Esc>Fdcit
+	autocmd FileType php,html inoremap ,wa <div class="alert alert-warnig"><++></div><++><Esc>Fdcit
+	autocmd FileType php,html inoremap ,lt <div class="alert alert-light"><++></div><++><Esc>Fdcit
+	autocmd FileType php,html inoremap ,da <div class="alert alert-dark"><++></div><++><Esc>Fdcit
+	autocmd FileType php,html inoremap ,lk <div class="alert alert-link"><++></div><++><Esc>Fdcit
+	
 
-
+	" previw
+	autocmd FileType php,html map \v :!qutebrowser $(echo % \| sed 's/html$/html/') & disown<CR><CR>
