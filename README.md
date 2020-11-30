@@ -22,3 +22,8 @@ my config file
 For the <a href="https://github.com/NF02/wallpaper">wallpapers</a> they are all present within the repo of the same name.
 ## Install WPGtk
 WPGtk is distributed by its developer on his <a href="https://github.com/deviantfero/wpgtk">github repository</a>, in the case of Arch Linux it is available on the AUR. <a href="https://aur.archlinux.org/packages/wpgtk-git/">wpgtk-git</a>
+``` bash
+wpg-install.sh -Iig
+
+```
+to download the template.
