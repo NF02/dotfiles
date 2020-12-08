@@ -13,7 +13,8 @@
 "   ████    ▄▄▄██▄▄▄  ██ ██ ██   ██       ▀██▄▄▄▄█
 "    ▀▀     ▀▀▀▀▀▀▀▀  ▀▀ ▀▀ ▀▀   ▀▀         ▀▀▀▀▀
 
-		call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+	call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+		Plug 'deviantfero/wpgtk.vim'
 		Plug 'dylanaraps/wal'
 		Plug 'tpope/vim-surround'
 		Plug 'preservim/nerdtree'
@@ -38,7 +39,7 @@
 	set encoding=utf-8
 	set number
 	set mouse=a
-	colorscheme wal
+	colorscheme wpgtkAlt
 	set relativenumber
 	set title
 	set go=a
@@ -147,6 +148,6 @@ vnoremap K xkP`[V`]
 vnoremap J xp`[V`]
 vnoremap L >gv
 vnoremap H <gv
-
+inoremap <C-H> <C-W>
 map <enter><enter> yi[:e <c-r>"<cr>
 
