@@ -21,7 +21,7 @@ _comp_options+=(globdots)		# Include hidden files.
 BROWSER="firefox"
 EDITOR="vim"
 FileManager="st -e ranger"
-
+TERMINAL="alacritty"
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -32,6 +32,7 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+bindkey '^H' backward-kill-word 
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -82,3 +83,14 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 # Load syntax highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
+
