@@ -6,7 +6,7 @@ my config file
 - **<a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>** - browser web;
 - **<a href="https://filezilla-project.org/download.php?type=client">Filezilla</a>** - FTP client;
 - **<a href="https://github.com/NF02/st">st (simple terminal)</a>** - system terminale;
-- **<a href="https://flameshot.js.org/#/">flameshot</a>** - screenshot app;
+- **<a href="https://flameshot.org/#/">flameshot</a>** - screenshot app;
 - **<a href="https://www.thunderbird.net/">thunderbird</a>** - mail client;
 - **<a href="https://wiki.archlinux.org/index.php/Systemd-networkd">networkd</a>** - connection manager;
 - **<a href="https://wiki.archlinux.org/index.php/Systemd-boot">bootctl</a>** - bootloader;
