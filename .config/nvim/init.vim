@@ -28,7 +28,9 @@
 		Plug 'kovetskiy/sxhkd-vim'
 		Plug 'ap/vim-css-color'
 		Plug 'terryma/vim-multiple-cursors'
+		Plug 'bfrg/vim-cpp-modern'
 		Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+		Plug 'dracula/vim'
 	call plug#end()
 
 	"Base
@@ -39,8 +41,8 @@
 	set encoding=utf-8
 	set number
 	set mouse=a
-	colorscheme wpgtkAlt
-	set relativenumber
+	colorscheme slate
+	"set relativenumber
 	set title
 	set go=a
 
@@ -54,13 +56,15 @@
 	set softtabstop=4
 	set tabstop=4
 	set noswapfile
-
+	
 	set synmaxcol=1000
 	set viminfo='20,<1000,s1000
 	set colorcolumn=+1
 	set cursorline
 	set textwidth=79
 	set clipboard+=unnamedplus
+	let g:airline#extensions#tabline#enabled = 1
+	inoremap <S-Tab> <C-d>
 
 	nnoremap <silent> <F11> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
@@ -126,13 +130,14 @@ for directory in ["backup", "swap", "undo"]
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " LATEX
-so ~/.config/nvim/shortcut/LaTeX
+so ~/.config/nvim/shortcut/LaTeX.vim
 " PHP/HTML
-so ~/.config/nvim/shortcut/web
+so ~/.config/nvim/shortcut/web.vim
 """C & C++
+so ~/.config/nvim/shortcut/clike.vim
 
 "MARKDOWN
-so ~/.config/nvim/shortcut/markdown
+so ~/.config/nvim/shortcut/markdown.vim
 
 " JavaScript
 	autocmd Filetype javascript setlocal sw=2 sts=2 expandtab
@@ -148,6 +153,6 @@ vnoremap K xkP`[V`]
 vnoremap J xp`[V`]
 vnoremap L >gv
 vnoremap H <gv
-inoremap <C-H> <C-W>
+"inoremap <C-H> <C-W>
 map <enter><enter> yi[:e <c-r>"<cr>
 
