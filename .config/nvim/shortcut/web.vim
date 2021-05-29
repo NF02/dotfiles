@@ -1,4 +1,3 @@
-" LANG=vim
 " PHP/HTML
 	let html_use_css = 1
 	autocmd FileType php,html inoremap ,b <b></b><Space><++><Esc>FbT>i
