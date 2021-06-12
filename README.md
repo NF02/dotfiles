@@ -9,7 +9,7 @@ my config file
 - **<a href="https://flameshot.org/#/">flameshot</a>** - screenshot app;
 - **<a href="https://www.thunderbird.net/">thunderbird</a>** - mail client;
 - **<a href="https://wiki.gnome.org/Projects/NetworkManager">Network Manager</a>** - connection manager;
-- **<a href="https://wiki.archlinux.org/index.php/Systemd-boot">bootctl</a>** - bootloader;
+- **<a href="https://www.gnu.org/software/grub/">Grub</a>** - bootloader;
 - **<a href="https://neovim.io/">neovim</a>** - text editor & LaTeX editor;
 - **<a href="https://joplinapp.org/">joplin</a>** - Markdown editor;
 - **<a href="https://github.com/ranger/ranger">ranger</a>** - file manager;
