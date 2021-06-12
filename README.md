@@ -2,12 +2,10 @@
 my config file
 <img src="https://raw.githubusercontent.com/NF02/dotfiles/master/img.png">
 ## Default program
-<?- **<a href="https://github.com/NF02/dwm">dwm</a>** - window manager-?>
 - <a href="https://awesomewm.org/">awesome</a>** - window manager
 - **<a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>** - browser web;
 - **<a href="https://filezilla-project.org/download.php?type=client">Filezilla</a>** - FTP client;
 - **<a href="https://github.com/alacritty/alacritty">Alacritty</a>** - system terminale;
-<?- **<a href="https://github.com/NF02/st">st (simple terminal)</a>** - system terminale;?>
 - **<a href="https://flameshot.org/#/">flameshot</a>** - screenshot app;
 - **<a href="https://www.thunderbird.net/">thunderbird</a>** - mail client;
 - **<a href="https://wiki.archlinux.org/index.php/Systemd-networkd">networkd</a>** - connection manager;
