@@ -8,7 +8,7 @@ my config file
 - **<a href="https://github.com/alacritty/alacritty">Alacritty</a>** - system terminale;
 - **<a href="https://flameshot.org/#/">flameshot</a>** - screenshot app;
 - **<a href="https://www.thunderbird.net/">thunderbird</a>** - mail client;
-- **<a href="https://wiki.archlinux.org/index.php/Systemd-networkd">networkd</a>** - connection manager;
+- **<a href="https://wiki.gnome.org/Projects/NetworkManager">Network Manager</a>** - connection manager;
 - **<a href="https://wiki.archlinux.org/index.php/Systemd-boot">bootctl</a>** - bootloader;
 - **<a href="https://neovim.io/">neovim</a>** - text editor & LaTeX editor;
 - **<a href="https://joplinapp.org/">joplin</a>** - Markdown editor;
