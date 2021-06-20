@@ -14,6 +14,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+require("collision")()
 
 xdg_menu = require("archmenu")
 
@@ -48,9 +49,9 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "gtk/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 -- 
-beautiful.useless_gap = 5
+beautiful.useless_gap = 3
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -75,8 +76,6 @@ awful.layout.layouts = {
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
     awful.layout.suit.corner.nw,
 }
@@ -237,10 +236,6 @@ root.buttons(gears.table.join(
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
-              {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
-              {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
@@ -323,8 +318,9 @@ globalkeys = gears.table.join(
 	awful.key({}, "XF86AudioPrev", function()
 		awful.util.spawn("playerctl previous", false)
 	end),
-	awful.key({ modkey, "Control" }, "t", function (c) awful.titlebar.toggle(c)         end,
-             {description = "Show/Hide Titlebars", group="client"}),
+	awful.key({}, "XF86ScreenSaver", function()
+		awful.util.spawn("slock", false)
+	end),
 	awful.key({ modkey }, "b",
 		function ()
 			myscreen = awful.screen.focused()
@@ -358,6 +354,10 @@ globalkeys = gears.table.join(
 
 	awful.key({modkey, "Shift"}, "F4", function()
 		awful.util.spawn("filezilla", false)
+	end),
+
+	awful.key({modkey}, "F5", function()
+		awful.util.spawn("dmenuunicode", false)
 	end),
 
 	awful.key({ }, "Print", function () awful.util.spawn("flameshot gui -p /home/nico/Immagini", false) end),
@@ -410,6 +410,9 @@ clientkeys = gears.table.join(
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
+	awful.key({ modkey, 'Control' }, 't', function (c) awful.titlebar.toggle(c) end,
+        {description = 'toggle title bar', group = 'client'}),
+
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
@@ -554,12 +557,12 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
-    },
+  }, properties = { titlebars_enabled = true }
+},
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+-- Set Firefox to always map on the tag named "2" on screen 1.
+-- { rule = { class = "Firefox" },
+--   properties = { screen = 1, tag = "2" } },
 }
 -- }}}
 
@@ -575,7 +578,10 @@ client.connect_signal("manage", function (c)
       and not c.size_hints.program_position then
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
-    end
+	end
+	awful.titlebar(c,{size=15})
+    awful.titlebar.hide(c)
+
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
