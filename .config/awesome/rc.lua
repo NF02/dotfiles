@@ -174,9 +174,11 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, s, awful.layout.layouts[1])
-
-    -- Create a promptbox for each screen
+    -- awful.tag({ "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, s, awful.layout.layouts[1])
+	awful.tag({ "web", "dev", "vm", "fm", "mail", "office", "var", "video", "audio" }, s, awful.layout.layouts[1])
+	-- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    
+	-- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
@@ -332,6 +334,10 @@ globalkeys = gears.table.join(
 		awful.util.spawn(terminal .. " -e ranger", false)
 	end),
 
+	awful.key({modkey, "Shift"}, "F1", function()
+		awful.util.spawn("pcmanfm", false)
+	end),
+
 	awful.key({modkey}, "F2", function()
 		awful.util.spawn("telegram-desktop", false)
 	end),
@@ -345,7 +351,7 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({modkey, "Shift"}, "w", function()
-		awful.util.spawn("firefox", false)
+		awful.util.spawn("brave", false)
 	end),
 
 	awful.key({modkey}, "F4", function()
@@ -359,6 +365,15 @@ globalkeys = gears.table.join(
 	awful.key({modkey}, "F5", function()
 		awful.util.spawn("dmenuunicode", false)
 	end),
+
+	awful.key({modkey}, "F9", function()
+		awful.util.spawn("dmenumount", false)
+	end),
+
+	awful.key({modkey, "Shift"}, "F9", function()
+		awful.util.spawn("dmenuumount", false)
+	end),
+
 
 	awful.key({ }, "Print", function () awful.util.spawn("flameshot gui -p /home/nico/Immagini", false) end),
 
