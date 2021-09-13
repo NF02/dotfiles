@@ -21,4 +21,3 @@ xset r rate 300 50 &
 xss-lock slock &
 xfce4-power-manager --daemon &
 nm-applet &
-#wpg-run &
