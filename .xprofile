@@ -10,7 +10,6 @@ export PATH=$PATH:$HOME/.local/bin/desktop_programs/
 export PATH=$PATH:$HOME/.local/bin/shell/
 clipmenud &
 dunst &
-#xcompmgr &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 picom --config ~/.config/picom.conf &
 #dwm_status &
