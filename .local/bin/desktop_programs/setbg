@@ -1,10 +1,17 @@
 #!/bin/sh
 
+# Warning!
+# this is a fork of https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/setbg 
+# which has taken a different path than that of the original project and therefore with the
+# passage of the will share less and less aspects in common with the same, long-term compatibility
+# with Luke Smith's version is not lacking.
+
 # This script does the following:
 #	Run by itself, set the wallpaper (at X start).
 #	If given a file, set that as the new wallpaper.
 #	If given a directory, choose random file in it.
 #	If wal is installed, also generates a colorscheme.
+
 
 # Location of link to wallpaper link.
 bgloc="${XDG_CACHE_HOME:-$HOME/.cache/}/bg"
