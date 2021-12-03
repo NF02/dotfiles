@@ -24,6 +24,7 @@
 		Plug 'lukesmithxyz/vimling'
 		Plug 'vimwiki/vimwiki'
 		Plug 'bling/vim-airline'
+		Plug 'vim-airline/vim-airline-themes'
 		Plug 'tpope/vim-commentary'
 		Plug 'kovetskiy/sxhkd-vim'
 		Plug 'ap/vim-css-color'
@@ -31,6 +32,7 @@
 		Plug 'bfrg/vim-cpp-modern'
 		Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 		Plug 'dracula/vim'
+		Plug 'skanehira/preview-markdown.vim'
 	call plug#end()
 
 	"Base
@@ -64,6 +66,8 @@
 	set textwidth=79
 	set clipboard+=unnamedplus
 	let g:airline#extensions#tabline#enabled = 1
+	let g:airline_theme='wpgtk'
+
 	inoremap <S-Tab> <C-d>
 
 	nnoremap <silent> <F11> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
