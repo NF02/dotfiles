@@ -9,7 +9,6 @@ local dpi = xresources.apply_dpi
 local xrdb = xresources.get_current_theme()
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
-
 -- inherit default theme
 local theme = dofile(themes_path.."default/theme.lua")
 -- load vector assets' generators for this theme
@@ -32,6 +31,8 @@ theme.border_width  = dpi(2)
 theme.border_normal = xrdb.color0
 theme.border_focus  = theme.bg_focus
 theme.border_marked = xrdb.color10
+theme.border_radius = dpi(4)
+theme.client_radius = dpi(12)
 
 -- There are other variable sets
 -- overriding the default one when

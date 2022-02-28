@@ -14,6 +14,13 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+-- Widget di sistema
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
+
+-- layout manager
 require("collision")()
 
 xdg_menu = require("archmenu")
@@ -51,10 +58,10 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 -- 
-beautiful.useless_gap = 3
+beautiful.useless_gap = 5
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -93,9 +100,13 @@ myawesomemenu = {
    { "Poweroff", "systemctl poweroff" },
    { "quit", function() awesome.quit() end },
 }
-
+obs_option ={
+    {"OBS Studio", "obs", "/usr/share/icons/hicolor/256x256/apps/com.obsproject.Studio.png" },
+	{"OBS Studio for AMD AMF", "obs_amd", ".local/share/applications/OBS for AMD/OBS for AMD.png" },
+}
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
 									{ "Applications", xdgmenu },
+									{ "Recording menu", obs_option },
                                     { "open terminal", terminal }
                                   }
                         })
@@ -174,10 +185,10 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    -- awful.tag({ "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, s, awful.layout.layouts[1])
-	awful.tag({ "web", "dev", "vm", "fm", "mail", "office", "var", "video", "audio" }, s, awful.layout.layouts[1])
-	-- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    
+     awful.tag({ "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, s, awful.layout.layouts[1])
+	--awful.tag({ "web", "dev", "vm", "fm", "mail", "office", "var", "video", "audio" }, s, awful.layout.layouts[1])
+	--awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    --awful.tag({ "","", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
 	-- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
@@ -218,6 +229,12 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
+			cpu_widget(),
+			ram_widget(),
+			docker_widget{
+				number_of_containers = 5
+			},
+			volume_widget(),
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -320,8 +337,27 @@ globalkeys = gears.table.join(
 	awful.key({}, "XF86AudioPrev", function()
 		awful.util.spawn("playerctl previous", false)
 	end),
+	awful.key({"Shift"}, "XF86AudioPlay", function()
+		awful.util.spawn("mpc toggle", false)
+	end),
+	awful.key({"Shift"}, "XF86AudioNext", function()
+		awful.util.spawn("mpc next", false)
+	end),
+	awful.key({"Shift"}, "XF86AudioPrev", function()
+		awful.util.spawn("mpc prev", false)
+	end),
+	awful.key({"Shift"}, "XF86AudioLowerVolume", function()
+		awful.util.spawn("mpc volume -5", false)
+	end),
+	awful.key({"Shift"}, "XF86AudioRaiseVolume", function()
+		awful.util.spawn("mpc volume +5", false)
+	end),
+	awful.key({"Shift"}, "XF86AudioMute", function()
+		awful.util.spawn("mpc volume 0", false)
+	end),
+
 	awful.key({}, "XF86ScreenSaver", function()
-		awful.util.spawn("slock", false)
+		awful.util.spawn("i3lock-fancy", false)
 	end),
 	awful.key({ modkey }, "b",
 		function ()
@@ -335,7 +371,7 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({modkey, "Shift"}, "F1", function()
-		awful.util.spawn("pcmanfm", false)
+		awful.util.spawn("thunar", false)
 	end),
 
 	awful.key({modkey}, "F2", function()
@@ -351,7 +387,7 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({modkey, "Shift"}, "w", function()
-		awful.util.spawn("brave", false)
+		awful.util.spawn("firefox", false)
 	end),
 
 	awful.key({modkey}, "F4", function()
@@ -365,6 +401,10 @@ globalkeys = gears.table.join(
 	awful.key({modkey}, "F5", function()
 		awful.util.spawn("dmenuunicode", false)
 	end),
+	awful.key({modkey}, "F6", function()
+		awful.util.spawn(terminal .. " -e ncmpcpp", false)
+	end),
+
 
 	awful.key({modkey}, "F9", function()
 		awful.util.spawn("dmenumount", false)
@@ -596,7 +636,9 @@ client.connect_signal("manage", function (c)
 	end
 	awful.titlebar(c,{size=15})
     awful.titlebar.hide(c)
-
+	    c.shape = function(cr,w,h)
+        gears.shape.rounded_rect(cr,w,h,10)
+    end
 end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
