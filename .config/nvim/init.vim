@@ -28,7 +28,7 @@
 		Plug 'tpope/vim-commentary'
 		Plug 'kovetskiy/sxhkd-vim'
 		Plug 'ap/vim-css-color'
-		Plug 'terryma/vim-multiple-cursors'
+"		Plug 'terryma/vim-multiple-cursors'
 		Plug 'bfrg/vim-cpp-modern'
 		Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 		Plug 'dracula/vim'

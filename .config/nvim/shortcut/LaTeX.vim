@@ -1,6 +1,6 @@
 " Compile
-	autocmd FileType tex,plaintex map \c <Esc>:w<Enter>:!compiler<space><c-r>%<Enter>a
-	autocmd FileType tex,plaintex map \v :!zathura $(echo % \| sed 's/tex$/pdf/') & disown<CR><CR>
+	autocmd FileType tex map \c <Esc>:w<Enter>:!compiler<space><c-r>%<Enter>a
+	autocmd FileType tex map \v :!zathura $(echo % \| sed 's/tex$/pdf/') & disown<CR><CR>
 " Word count:
 	autocmd FileType tex,plaintex map <F3> :w !detex \| wc -w<CR>
 	autocmd FileType tex,plaintex inoremap <F3> <Esc>:w !detex \| wc -w<CR>
@@ -42,6 +42,15 @@
 	autocmd FileType tex,plaintex inoremap ,col \begin{columns}[T]<Enter>\begin{column}{.5\textwidth}<Enter><Enter>\end{column}<Enter>\begin{column}{.5\textwidth}<Enter><++><Enter>\end{column}<Enter>\end{columns}<Esc>5kA
 	autocmd FileType tex,plaintex inoremap ,rn (\ref{})<++><Esc>F}i
 	autocmd FileType tex,plaintex inoremap ,cr \begin{center}<Enter><++><Enter>\end{center}<Enter><Enter><++><Esc>4kA<Esc>i
+	autocmd FileType tex,plaintex inoremap ,eq \begin{equation}<Enter><Enter>\end{equation}<Enter><Enter><++><Esc>4kA<Esc>i<tab>
+	autocmd FileType tex,plaintex inoremap ,eq* \begin{equation*}<Enter><Enter>\end{equation*}<Enter><Enter><++><Esc>4kA<Esc>i<tab>
+	autocmd FileType tex,plaintex inoremap ,mcol \begin{multicols}{<++>}<Enter><Enter>\end{multicols}<Enter><Enter><++><Esc>4kA<Esc>i<tab>
+	autocmd FileType tex,plaintex inoremap ,tks \begin{tasks}<Enter><Enter>\end{\tasks}<Enter><Enter><++><Esc>4kA<Esc>i<tab>\task
+	autocmd FileType tex,plaintex inoremap ,tk  <Enter>\task 
+	autocmd FileType tex,plaintex inoremap ,far \frac{<++>}{<++>}
+
+
+
 
 """.bib
 	autocmd FileType bib inoremap ,a @article{<Enter><tab>author<Space>=<Space>"<++>",<Enter><tab>year<Space>=<Space>"<++>",<Enter><tab>title<Space>=<Space>"<++>",<Enter><tab>journal<Space>=<Space>"<++>",<Enter><tab>volume<Space>=<Space>"<++>",<Enter><tab>pages<Space>=<Space>"<++>",<Enter><tab>}<Enter><++><Esc>8kA,<Esc>i
