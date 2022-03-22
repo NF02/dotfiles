@@ -1,17 +1,7 @@
-" ▄▄▄   ▄▄  ▄▄▄▄▄▄▄▄                                             ▄▄
-" ███   ██  ██▀▀▀▀▀▀                                             ██
-" ██▀█  ██  ██         ▄████▄    ██▄████   ██▄████  ██    ██     ▀▀     ▄▄█████▄
-" ██ ██ ██  ███████   ██▄▄▄▄██   ██▀       ██▀      ██    ██            ██▄▄▄▄ ▀
-" ██  █▄██  ██        ██▀▀▀▀▀▀   ██        ██       ██    ██             ▀▀▀▀██▄
-" ██   ███  ██        ▀██▄▄▄▄█   ██        ██       ██▄▄▄███            █▄▄▄▄▄██
-" ▀▀   ▀▀▀  ▀▀          ▀▀▀▀▀    ▀▀        ▀▀        ▀▀▀▀ ▀▀             ▀▀▀▀▀▀
-"              ██
-"              ▀▀
-" ██▄  ▄██   ████     ████▄██▄   ██▄████   ▄█████▄
-"  ██  ██      ██     ██ ██ ██   ██▀      ██▀    ▀
-"  ▀█▄▄█▀      ██     ██ ██ ██   ██       ██
-"   ████    ▄▄▄██▄▄▄  ██ ██ ██   ██       ▀██▄▄▄▄█
-"    ▀▀     ▀▀▀▀▀▀▀▀  ▀▀ ▀▀ ▀▀   ▀▀         ▀▀▀▀▀
+"┏┓╻┏━╸╻ ╻┏┓ ╻  ┏━┓┏━╸╻┏━┓   ╻ ╻╻┏┳┓┏━┓┏━╸
+"┃┗┫┣╸ ┃┏┛┣┻┓┃  ┃ ┃┃╺┓ ┗━┓   ┃┏┛┃┃┃┃┣┳┛┃  
+"╹ ╹╹  ┗┛ ┗━┛┗━╸┗━┛┗━┛ ┗━┛   ┗┛ ╹╹ ╹╹┗╸┗━╸
+" Author: NFVblog aka Nicola Ferru
 
 	call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 		Plug 'deviantfero/wpgtk.vim'
@@ -28,13 +18,17 @@
 		Plug 'tpope/vim-commentary'
 		Plug 'kovetskiy/sxhkd-vim'
 		Plug 'ap/vim-css-color'
-"		Plug 'terryma/vim-multiple-cursors'
+		Plug 'terryma/vim-multiple-cursors'
 		Plug 'bfrg/vim-cpp-modern'
 		Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 		Plug 'dracula/vim'
 		Plug 'skanehira/preview-markdown.vim'
+		Plug 'fidian/hexmode'
+		Plug 'Winseven4lyf/vim-bbcode'
+		Plug 'nekonako/xresources-nvim'
 	call plug#end()
-
+	let mapleader =","
+	
 	"Base
 	set nocompatible
 	filetype plugin indent on
@@ -44,9 +38,11 @@
 	set number
 	set mouse=a
 	colorscheme slate
+	"colorscheme xresources
 	"set relativenumber
 	set title
 	set go=a
+	"set background=dark
 
 	set splitbelow
 	set splitright
@@ -67,7 +63,6 @@
 	set clipboard+=unnamedplus
 	let g:airline#extensions#tabline#enabled = 1
 	let g:airline_theme='wpgtk'
-
 	inoremap <S-Tab> <C-d>
 
 	nnoremap <silent> <F11> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
@@ -122,6 +117,8 @@ for directory in ["backup", "swap", "undo"]
 	vnoremap <C-c> "*Y :let @+=@*<CR>
 	map <C-p> "+P
 
+" Toggle NerdTree with F7:
+	nm <F7> :NERDTreeToggle<CR>
 " Toggle Prose Mode with F8:
 	nm <F8> :call ToggleProse()<CR>
 
@@ -135,17 +132,23 @@ for directory in ["backup", "swap", "undo"]
 
 " LATEX
 so ~/.config/nvim/shortcut/LaTeX.vim
+
 " PHP/HTML
 so ~/.config/nvim/shortcut/web.vim
-"""C & C++
+
+" C & C++
 so ~/.config/nvim/shortcut/clike.vim
 
-"MARKDOWN
+" MARKDOWN
 so ~/.config/nvim/shortcut/markdown.vim
+
+" BBcode
+so ~/.config/nvim/shortcut/bbcode.vim
 
 " JavaScript
 	autocmd Filetype javascript setlocal sw=2 sts=2 expandtab
 	autocmd Filetype vue setlocal sw=2 sts=2 expandtab
+
 """.xml
 	autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
 	autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
