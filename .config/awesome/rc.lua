@@ -19,7 +19,7 @@ local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
-
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 -- layout manager
 require("collision")()
 
@@ -62,8 +62,10 @@ beautiful.useless_gap = 5
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
-editor = os.getenv("EDITOR") or "vim"
-editor_cmd = terminal .. " -e " .. editor
+-- editor = os.getenv("EDITOR") or "emacs -nw"
+-- editor_cmd = terminal .. " -e " .. editor
+editor = os.getenv("EDITOR") or "emacs"
+editor_cmd = editor
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -72,6 +74,7 @@ editor_cmd = terminal .. " -e " .. editor
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 altkey = "Mod1"
+
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
@@ -100,16 +103,10 @@ myawesomemenu = {
    { "Poweroff", "systemctl poweroff" },
    { "quit", function() awesome.quit() end },
 }
-obs_option ={
-    {"OBS Studio", "obs", "/usr/share/icons/hicolor/256x256/apps/com.obsproject.Studio.png" },
-	{"OBS Studio for AMD AMF", "obs_amd", ".local/share/applications/OBS for AMD/OBS for AMD.png" },
-}
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-									{ "Applications", xdgmenu },
-									{ "Recording menu", obs_option },
-                                    { "open terminal", terminal }
-                                  }
-                        })
+   { "Applications", xdgmenu },
+   { "open terminal", terminal }}
+})
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -185,10 +182,10 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-     awful.tag({ "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, s, awful.layout.layouts[1])
+     --awful.tag({ "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, s, awful.layout.layouts[1])
 	--awful.tag({ "web", "dev", "vm", "fm", "mail", "office", "var", "video", "audio" }, s, awful.layout.layouts[1])
 	--awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    --awful.tag({ "","", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
+    awful.tag({ "","", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
 	-- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
@@ -234,7 +231,10 @@ awful.screen.connect_for_each_screen(function(s)
 			docker_widget{
 				number_of_containers = 5
 			},
-			volume_widget(),
+			volume_widget{
+				device = 'default'
+			},
+			battery_widget(),
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -319,13 +319,16 @@ globalkeys = gears.table.join(
               {description = "select previous", group = "layout"}),
 	-- Volume Keys
 	awful.key({}, "XF86AudioLowerVolume", function ()
-		awful.util.spawn("amixer -q -D pulse sset Master 5%-", false)
+		awful.util.spawn("amixer -q -D pipewire sset Master 5%-", false)
 	end),
 	awful.key({}, "XF86AudioRaiseVolume", function ()
-		awful.util.spawn("amixer -q -D pulse sset Master 5%+", false)
+		awful.util.spawn("amixer -q -D pipewire sset Master 5%+", false)
 	end),
 	awful.key({}, "XF86AudioMute", function ()
-		awful.util.spawn("amixer -D pulse set Master 1+ toggle", false)
+		awful.util.spawn("amixer -D pipewire set Master 1+ toggle", false)
+	end),
+	awful.key({}, "XF86AudioMicMute", function ()
+		awful.util.spawn("pulsemixer --id source-47 --toggle-mute", false)
 	end),
 	-- Media Keys
 	awful.key({}, "XF86AudioPlay", function()
@@ -357,7 +360,7 @@ globalkeys = gears.table.join(
 	end),
 
 	awful.key({}, "XF86ScreenSaver", function()
-		awful.util.spawn("i3lock-fancy", false)
+		awful.util.spawn("xscreensaver-command -lock", false)
 	end),
 	awful.key({ modkey }, "b",
 		function ()
