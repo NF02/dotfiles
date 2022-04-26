@@ -75,9 +75,5 @@ bindkey '^[[P' delete-char
 HISTFILE=~/.zhistory
 SAVEHIST=10000
 HISTSIZE=10000
-
-# color screen script
-colorscript -r
-
 # zsh syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

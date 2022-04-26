@@ -1,0 +1,34 @@
+#!/bin/sh
+
+#- Emacs terminale -#
+alias em="emacs -nw"
+alias ls="ls --color"
+alias ll="ls --color -l"
+alias la="ls -al --color"
+
+#- dev -#
+alias grep="grep --color"
+
+#- youtube-dl -#
+alias yta-aac="yt-dlp --extract-audio --audio-format aac "
+alias yta-best="yt-dlp --extract-audio --audio-format best "
+alias yta-flac="yt-dlp --extract-audio --audio-format flac "
+alias yta-m4a="yt-dlp --extract-audio --audio-format m4a "
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
+alias yta-opus="yt-dlp --extract-audio --audio-format opus "
+alias yta-vorbis="yt-dlp --extract-audio --audio-format vorbis "
+alias yta-wav="yt-dlp --extract-audio --audio-format wav "
+alias ytv-best="yt-dlp -f bestvideo+bestaudio "
+
+#- package manager -#
+alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
+alias pacsyyu='sudo pacman -Syyu'                # Refresh pkglist & update standard pkgs
+alias yaysua='yay -Sua --noconfirm'              # update only AUR pkgs (yay)
+alias yaysyu='yay -Syu --noconfirm'              # update standard pkgs and AUR pkgs (yay)
+alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
+
+#- LaTeX profile -#
+alias Txa="/home/nico/Documenti/GitHub/LaTeX-model/article.tex"
+alias Txb="/home/nico/Documenti/GitHub/LaTeX-model/beamer.tex"
+alias Txbk="/home/nico/Documenti/GitHub/LaTeX-model/book.tex"
