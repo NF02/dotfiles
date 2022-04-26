@@ -8,6 +8,7 @@
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}
 $%b "
+XDG_CONFIG_HOME=$HOME/.config
 
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME}/zsh/alias.zsh" ] && source "${XDG_CONFIG_HOME}/zsh/alias.zsh"
