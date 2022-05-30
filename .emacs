@@ -1,4 +1,8 @@
 ;; Rimozione degli elementi grafici
+;; ┏━╸┏┓╻╻ ╻   ┏━╸┏┳┓┏━┓┏━╸┏━┓
+;; ┃╺┓┃┗┫┃ ┃   ┣╸ ┃┃┃┣━┫┃  ┗━┓
+;; ┗━┛╹ ╹┗━┛   ┗━╸╹ ╹╹ ╹┗━╸┗━┛
+;; author: NFVBlog aka Nicola Ferru
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -21,6 +25,29 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 (require 'use-package)
+
+
+;; popwin multitab manager
+(require 'popwin)
+(popwin-mode 1)
+
+;; | Key    | Command                               |
+;; |--------+---------------------------------------|
+;; | b      | popwin:popup-buffer                   |
+;; | l      | popwin:popup-last-buffer              |
+;; | o      | popwin:display-buffer                 |
+;; | C-b    | popwin:switch-to-last-buffer          |
+;; | C-p    | popwin:original-pop-to-last-buffer    |
+;; | C-o    | popwin:original-display-last-buffer   |
+;; | SPC    | popwin:select-popup-window            |
+;; | s      | popwin:stick-popup-window             |
+;; | 0      | popwin:close-popup-window             |
+;; | f, C-f | popwin:find-file                      |
+;; | e      | popwin:messages                       |
+;; | C-u    | popwin:universal-display              |
+;; | 1      | popwin:one-window                     |
+(global-set-key (kbd "C-z") popwin:keymap)
+
 
 ;; evil
 (use-package evil
@@ -59,6 +86,14 @@
 ;; org mode
 (use-package ox-reveal)
 (use-package org-contrib)
+(use-package org-roam
+  :custom
+  (org-roam-directory "<path to logseq root>")
+  (org-roam-dailies-directory "journals/")
+  (org-roam-capture-templates
+   '(("d" "default" plain
+      #'org-roam-capture--get-point "%?"
+      :file-name "pages/${slug}" :head "#+title: ${title}\n" :unnarrowed t))))
 
 ;; pdf view
 (setq TeX-PDF-mode t)
@@ -85,8 +120,8 @@
 (powerline-default-theme)
 
 ;; trasparenza
-(add-to-list 'default-frame-alist '(alpha . (90 . 90)))
-(set-frame-parameter (selected-frame) 'alpha '(90 . 90))
+(add-to-list 'default-frame-alist '(alpha . (95 . 95)))
+(set-frame-parameter (selected-frame) 'alpha '(95 . 95))
 
 (defun toggle-transparency ()
    (interactive)
@@ -98,7 +133,7 @@
                      ;; Also handle undocumented (<active> <inactive>) form.
                      ((numberp (cadr alpha)) (cadr alpha)))
                100)
-          '(90 . 90) '(100 . 100)))))
+          '(95 . 95) '(100 . 100)))))
 (global-set-key (kbd "C-c t") 'toggle-transparency)
 
 ;; latex
@@ -118,7 +153,24 @@
 (setq org-latex-listings 't)
 
 ;; themes
-(use-package solarized-theme
-:ensure t
-:config
-(load-theme 'solarized-dark-high-contrast t))
+;;(use-package solarized-theme
+;;:ensure t
+;;:config
+;;(load-theme 'solarized-dark-high-contrast t))
+(use-package exotica-theme
+  :ensure t
+  :config
+  (load-theme 'exotica t))
+(setq ispell-dictionary "italiano")
+(setq flyspell-use-meta-tab nil)
+
+;; direx direct's tree
+(require 'direx)
+(push '(direx:direx-mode :position left :width 25 :dedicated t)
+     popwin:special-display-config)
+(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
+
+
+(eval-after-load "python"
+  '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
+(add-hook 'jedi-mode-hook 'jedi-direx:setup)
