@@ -1,3 +1,4 @@
+#!/bin/zsh
 #
 # ~/.zshrc
 #
@@ -7,10 +8,12 @@
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
+XDG_CONFIG_HOME="$HOME/.config"
+
 # Load aliases and shortcuts if existent.
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
-[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/zshnameddirrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/zshnameddirrc"
+[ -f "${XDG_CONFIG_HOME}/zsh/alias.zsh" ] && source "${XDG_CONFIG_HOME}/zsh/alias.zsh"
+[ -f "${XDG_CONFIG_HOME}/zsh/env.zsh" ] && source "${XDG_CONFIG_HOME}/zsh/env.zsh"
+
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -18,10 +21,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-BROWSER="firefox"
-EDITOR="vim"
-FileManager="st -e ranger"
-TERMINAL="alacritty"
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -77,20 +76,8 @@ bindkey '^[[P' delete-char
 HISTFILE=~/.zhistory
 SAVEHIST=10000
 HISTSIZE=10000
+# color screen script
+colorscript -r
 
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-# Load syntax highlighting; should be last.
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
-
-# Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
-
-# To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
-
+# zsh syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
