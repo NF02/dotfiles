@@ -19,11 +19,13 @@ local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+-- local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 -- layout manager
 require("collision")()
 
-xdg_menu = require("archmenu")
+-- Load Debian menu entries
+local debian = require("debian.menu")
+local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -103,10 +105,23 @@ myawesomemenu = {
    { "Poweroff", "systemctl poweroff" },
    { "quit", function() awesome.quit() end },
 }
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-   { "Applications", xdgmenu },
-   { "open terminal", terminal }}
-})
+local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
+local menu_terminal = { "open terminal", terminal }
+
+if has_fdo then
+    mymainmenu = freedesktop.menu.build({
+        before = { menu_awesome },
+        after =  { menu_terminal }
+    })
+else
+    mymainmenu = awful.menu({
+        items = {
+                  menu_awesome,
+                  { "Debian", debian.menu.Debian_menu.Debian },
+                  menu_terminal,
+                }
+    })
+end
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -234,7 +249,7 @@ awful.screen.connect_for_each_screen(function(s)
 			volume_widget{
 				device = 'default'
 			},
-			battery_widget(),
+--			battery_widget(),
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
