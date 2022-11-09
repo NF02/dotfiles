@@ -17,6 +17,10 @@
 ;; numero per riga
 (global-linum-mode t)
 
+;; theme
+(load-theme 'manoj-dark t)
+
+; plugin
 ;; il repo esterno
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -68,6 +72,9 @@
 ;; org mode
 (use-package ox-reveal)
 (use-package org-contrib)
+(use-package org-modern)
+(add-hook 'org-mode-hook #'org-modern-mode)
+(add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 
 ;; pdf view
 (setq TeX-PDF-mode t)
@@ -126,8 +133,6 @@
 
 (setq org-latex-listings 't)
 
-(load-theme 'wheatgrass t)
-
 (setq ispell-dictionary "italiano")
 (setq flyspell-use-meta-tab nil)
 
@@ -164,3 +169,4 @@
 ;; define macros
 (global-set-key (kbd "C-c s") (kbd "C-x 2 M-X shell"))
 (global-set-key (kbd "C-c g") (kbd "M-x linum-mode"))
+(put 'set-goal-column 'disabled nil)

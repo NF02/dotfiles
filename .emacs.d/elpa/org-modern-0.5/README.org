@@ -1,0 +1,122 @@
+#+title: Modern Org Style
+#+author: Daniel Mendler
+#+language: en
+
+#+html: <a href="https://www.gnu.org/software/emacs/"><img alt="GNU Emacs" src="https://github.com/minad/corfu/blob/screenshots/emacs.svg?raw=true"/></a>
+#+html: <a href="https://elpa.gnu.org/packages/org-modern.html"><img alt="GNU ELPA" src="https://elpa.gnu.org/packages/org-modern.svg"/></a>
+#+html: <a href="https://elpa.gnu.org/devel/org-modern.html"><img alt="GNU-devel ELPA" src="https://elpa.gnu.org/devel/org-modern.svg"/></a>
+#+html: <a href="https://melpa.org/#/org-modern"><img alt="MELPA" src="https://melpa.org/packages/org-modern-badge.svg"/></a>
+#+html: <a href="https://stable.melpa.org/#/org-modern"><img alt="MELPA Stable" src="https://stable.melpa.org/packages/org-modern-badge.svg"/></a>
+
+* Introduction
+
+This package implements a "modern" style for your Org buffers using font locking
+and text properties. The package styles headlines, keywords, tables and source
+blocks. The styling is configurable, you can enable, disable or modify the style
+of each syntax element individually via the =org-modern= customization group.
+
+[[https://github.com/minad/org-modern/blob/screenshots/example.gif?raw=true]]
+
+The screenshots shows [[file:example.org][example.org]] with =org-modern-mode= turned on and off. The
+elegant theme featured in the screenshot is [[https://protesilaos.com/emacs/modus-themes][modus-operandi]].
+
+Since this package adjusts text styling, it depends on your font settings. You
+should ensure that your =variable-pitch= and =fixed-pitch= fonts combine
+harmonically and have approximately the same height. =org-modern-mode= tries to
+adjust the tag label display based on the value of =line-spacing=. This looks best
+if =line-spacing= has a value between 0.1 and 0.4 in the Org buffer. Note that
+=org-indent-mode= interferes with some of the style elements applied by
+=org-modern-mode=, e.g., the block brackets in the fringe.
+
+Bug reports, improvement or style proposals are welcome! Maybe some more Org
+elements deserve styling or alternative stylings should be offered?
+
+The tag style of =org-modern= is inspired by Nicholas Rougier's beautiful
+[[https://github.com/rougier/svg-tag-mode][svg-tag-mode]]. In contrast to =svg-tag-mode=, this package avoids images and uses
+cheap and fast Emacs box text properties. By only styling the text via text
+properties, the styled text, e.g., dates or tags stay editable and are easy to
+interact with.
+
+On the downside, this restricts our flexibility and may lead to font-dependent
+issues. We do our best, but for example there is no way we can get round
+corners. Combining =org-modern-mode= with =svg-tag-mode= is possible. You can use
+SVG tags and use the table and block styling from =org-modern=. If you are
+interested in further tweaks, Emacs comes with the builtin =prettify-symbols-mode=
+which can be used for individual styling of custom keywords.
+
+Another popular alternative is [[https://github.com/integral-dw/org-superstar-mode][org-superstar]], which has a more restricted
+feature set and mainly adjusts headlines and lists. =org-superstar= relies on
+character composition, while =org-modern= uses text properties, which are
+considered more future-proof.
+
+The package is available on GNU ELPA and MELPA. You can install the package with
+=package-install=. Then =org-modern= can be enabled manually in an Org buffer by
+invoking =M-x org-modern-mode=. In order to enable =org-modern= for all your Org
+buffers, add =org-modern-mode= to the Org mode hooks.
+
+#+begin_src emacs-lisp
+  ;; Option 1: Per buffer
+  (add-hook 'org-mode-hook #'org-modern-mode)
+  (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+
+  ;; Option 2: Globally
+  (global-org-modern-mode)
+#+end_src
+
+Try the following more extensive setup in =emacs -Q= to reproduce the looks of the
+screenshot above.
+
+#+begin_src emacs-lisp
+  ;; Minimal UI
+  (package-initialize)
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+  (modus-themes-load-operandi)
+
+  ;; Choose some fonts
+  ;; (set-face-attribute 'default nil :family "Iosevka")
+  ;; (set-face-attribute 'variable-pitch nil :family "Iosevka Aile")
+  ;; (set-face-attribute 'org-modern-symbol nil :family "Iosevka")
+
+  ;; Add frame borders and window dividers
+  (modify-all-frames-parameters
+   '((right-divider-width . 40)
+     (internal-border-width . 40)))
+  (dolist (face '(window-divider
+                  window-divider-first-pixel
+                  window-divider-last-pixel))
+    (face-spec-reset-face face)
+    (set-face-foreground face (face-attribute 'default :background)))
+  (set-face-background 'fringe (face-attribute 'default :background))
+
+  (setq
+   ;; Edit settings
+   org-auto-align-tags nil
+   org-tags-column 0
+   org-catch-invisible-edits 'show-and-error
+   org-special-ctrl-a/e t
+   org-insert-heading-respect-content t
+
+   ;; Org styling, hide markup etc.
+   org-hide-emphasis-markers t
+   org-pretty-entities t
+   org-ellipsis "…"
+
+   ;; Agenda styling
+   org-agenda-tags-column 0
+   org-agenda-block-separator ?─
+   org-agenda-time-grid
+   '((daily today require-timed)
+     (800 1000 1200 1400 1600 1800 2000)
+     " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+   org-agenda-current-time-string
+   "⭠ now ─────────────────────────────────────────────────")
+
+  (global-org-modern-mode)
+#+end_src
+
+* Contributions
+
+Since this package is part of [[https://elpa.gnu.org/packages/org-modern.html][GNU ELPA]] contributions require a copyright
+assignment to the FSF.
