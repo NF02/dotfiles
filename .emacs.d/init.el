@@ -12,13 +12,14 @@
 (global-set-key (kbd "TAB") 'self-insert-command)
 
 ;; evidenzia riga
-;;(global-hl-line-mode 1)
+(global-hl-line-mode 1)
 
 ;; numero per riga
 (global-linum-mode t)
 
 ;; theme
-(load-theme 'manoj-dark t)
+;;(load-theme 'manoj-dark t)
+(load-theme 'doom-tokyo-night t)
 
 ; plugin
 ;; il repo esterno
@@ -75,6 +76,14 @@
 (use-package org-modern)
 (add-hook 'org-mode-hook #'org-modern-mode)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
+
+
+;; multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; pdf view
 (setq TeX-PDF-mode t)
@@ -170,3 +179,22 @@
 (global-set-key (kbd "C-c s") (kbd "C-x 2 M-X shell"))
 (global-set-key (kbd "C-c g") (kbd "M-x linum-mode"))
 (put 'set-goal-column 'disabled nil)
+(global-set-key (kbd "M-c") 'kill-ring-save) ; ⌘-c = Copy
+(global-set-key (kbd "M-x") 'kill-region) ; ⌘-x = Cut
+(global-set-key (kbd "M-v") 'yank) ; ⌘-v = Paste
+(global-set-key (kbd "M-a") 'mark-whole-buffer) ; ⌘-a = Select all
+(global-set-key (kbd "M-z") 'undo) ; ⌘-z = Undo
+(global-set-key (kbd "≈") 'execute-extended-command) ; Replace ≈ with whatever your option-x produces
+
+;; docker 
+(use-package docker
+  :ensure t
+  :bind ("C-c d" . docker))
+
+;; presentation mode
+(with-eval-after-load "org-tree-slide"
+  (define-key org-tree-slide-mode-map (kbd "<f9>") 'org-tree-slide-move-previous-tree)
+  (define-key org-tree-slide-mode-map (kbd "<f10>") 'org-tree-slide-move-next-tree)
+  )
+(define-key org-mode-map (kbd "<f8>") 'org-tree-slide-mode)
+(define-key org-mode-map (kbd "S-<f8>") 'org-tree-slide-skip-done-toggle)

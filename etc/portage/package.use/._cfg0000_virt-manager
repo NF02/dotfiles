@@ -1,0 +1,9 @@
+app-emulation/qemu qemu_softmmu_targets_arm qemu_softmmu_targets_x86_64 qemu_softmmu_targets_sparc
+app-emulation/qemu qemu_user_targets_x86_64# required by app-emulation/virt-manager-4.0.0::gentoo[gtk,-test]
+# required by app-emulation/virt-manager (argument)
+>=net-misc/spice-gtk-0.41 usbredir
+# required by app-emulation/libvirt-8.7.0-r1::gentoo[virt-network]
+# required by app-emulation/libvirt-glib-4.0.0::gentoo
+# required by app-emulation/virt-manager-4.0.0::gentoo[-test]
+# required by app-emulation/virt-manager (argument)
+>=net-dns/dnsmasq-2.86-r1 script

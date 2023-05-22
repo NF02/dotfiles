@@ -1,0 +1,24 @@
+# These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+COMMON_FLAGS="-march=ivybridge -O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+MAKEOPTS="-j7"
+# NOTE: This stage was built with the bindist Use flag enabled
+USE="wifi pipewire networkmanager gtk vaapi"
+# This sets the language of build output to English.
+# Please keep this setting intact when reporting bugs.
+LC_MESSAGES=C
+
+GENTOO_MIRRORS="ftp://ftp.free.fr/mirrors/ftp.gentoo.org/ http://ftp.free.fr/mirrors/ftp.gentoo.org/ http://gentoo.mirrors.ovh.net/gentoo-distfiles/ https://mirror.eu.oneandone.net/linux/distributions/gentoo/gentoo/ http://mirror.eu.oneandone.net/linux/distributions/gentoo/gentoo/ https://gentoo.mirror.garr.it/ http://gentoo.mirror.garr.it/"
+GRUB_PLATFORMS="efi-64"
+VIDEO_CARDS="amdgpu radeonsi"
+# system localization
+L10N="it"
+LINGUAS="it fr en"
+PYTHON_TARGETS="python3_10 python3_9"
+LUA_SINGLE_TARGET="lua5-4"

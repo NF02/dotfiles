@@ -2,58 +2,266 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/nico/repos/appunti-alessandro/" . "operatori logici/")
+ ("/home/nico/repos/dwm/" . "lib/")
+ ("/home/nico/repos/dotfiles/.local/" . "share/")
+ ("/home/nico/repos/dotfiles/" . ".local/")
+ ("/home/nico/.emacs.d/" . "auto-save-list/")
+ ("/media/dati/usbnico/consegna desame/code/" . "php/")
+ ("/media/dati/usbnico/consegna desame/" . "code/")
+ ("/media/dati/usbnico/" . "consegna desame/")
+ ("/media/dati/" . "usbnico/")
+ ("/media/" . "dati/")
+ ("/home/nico/repos/LibroInformatica/slide/" . "array in PHP/")
+ ("/home/nico/repos/LibroInformatica/" . "manuale rapido/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/" . "pag/")
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/" . "scienceandtec/")
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/" . "js/")
+ ("/opt/lampp/htdocs/www/vapetoolsdev/" . "vapetools/")
+ ("/opt/lampp/htdocs/" . "www/")
+ ("/opt/lampp/" . "htdocs/")
+ ("/opt/" . "lampp/")
+ ("/" . "home/")
+ ("/opt/lampp/htdocs/www/" . "vapetoolsdev/")
+ ("/home/nico/repos/new builds/" . "st/")
+ ("/home/nico/Documenti/scrittura/come si prendeno degli appunti/" . "pag/")
+ ("/home/nico/Documenti/scrittura/" . "come si prendeno degli appunti/")
+ ("/home/nico/Documenti/canale/" . "openoffice/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/Fisica/" . "pag/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/" . "algebra e geometria/")
+ ("/home/nico/repos/dmenuwacom/" . "profiles/")
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/" . "pag/")
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/" . "Analisi Matematica 2/")
+ ("/home/nico/repos/Appunti-universita/" . "Primo anno/")
+ ("/home/nico/repos/" . "slstatus/")
  ("/home/" . "nico/")
  ("/home/nico/Documenti/Github/Appunti-Universita/" . "Calcolatori elettronici/")
  ("/home/nico/Documenti/Github/Appunti-universita/" . "Fisica/")
  ("/home/nico/Documenti/Github/" . "Appunti-Universita/")
- ("/home/nico/Documenti/" . "Github/")
+ ("/home/nico/Documenti/" . "canale/")
  ("/home/nico/.config/" . "i3/")
  ("/home/nico/Immagini/wallpapers/" . "Future/")
  ("/home/nico/Immagini/" . "wallpapers/")
- ("/home/nico/" . ".emacs.d/")
+ ("/home/nico/" . "repos/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/nico/repos/slstatus/"
+ "/home/nico/Documenti/canale/"
+ "/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/"
+ "/home/nico/repos/LibroInformatica/"
+ "/home/nico/Documenti/"
+ "/home/nico/Documenti/canale/openoffice/"
+ "/home/nico/repos/dwm/lib/"
+ "/home/nico/repos/dwm/"
+ "/home/nico/repos/dmenu/"
+ "/home/nico/repos/dotfiles/.local/share/"
+ "/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/pag/"
+ "/home/nico/Documenti/scrittura/come si prendeno degli appunti/"
+ "/home/nico/Documenti/scrittura/come si prendeno degli appunti/pag/"
+ "/home/nico/.emacs.d/"
+ "/home/nico/Documenti/scrittura/polinomi e prodotti notevoli/"
+ "/home/nico/repos/LibroInformatica/manuale rapido/"
+ "/home/nico/.screenlayout/"
+ "/home/nico/repos/screen-settings/"
+ "/home/nico/repos/LibroInformatica/pag/"
+ "/home/nico/.config/i3/"
+ "/home/nico/.config/sway/"
+ "/home/nico/repos/appunti-alessandro/"
+ "/media/dati/usbnico/consegna desame/code/php/"
+ "/home/nico/repos/LibroInformatica/slide/array in PHP/"
+ "/home/nico/repos/LibroInformatica/slide/introduzione al php/"
+ "/home/nico/repos/LibroInformatica/source/"
+ "/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/scienceandtec/"
+ "/home/nico/repos/vapetoolsdev/"
+ "/opt/lampp/htdocs/www/modal test/"
+ "/opt/lampp/htdocs/www/vapetoolsdev/vapetools/"
+ "/opt/lampp/htdocs/www/vapetoolsdev/"
+ "/home/nico/repos/dmenuwacom/"
+ "/opt/lampp/htdocs/www/cookiels/"
  "/home/nico/"
+ "/home/nico/Documenti/scrittura/"
+ "/home/nico/repos/new builds/st/"
+ "/home/nico/repos/Appunti-universita/Primo anno/Fisica/"
+ "/home/nico/repos/yt-quick-video/"
+ "/home/nico/Documenti/canale/mpd - music player/"
+ "/home/nico/repos/Appunti-universita/Primo anno/Fisica/pag/"
+ "/home/nico/.config/ncmpcpp/"
+ "/home/nico/repos/dmenuwacom/profiles/"
+ "/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/pag/"
+ "/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/"
  "/home/nico/Documenti/Github/Appunti-Universita/Calcolatori elettronici/"
  "/home/nico/Documenti/Github/pdfcomp/"
  "/home/nico/Documenti/Github/Appunti-Universita/algebra e geometria/"
  "/home/nico/Documenti/Github/Appunti-Universita/Fisica/"
  "/home/nico/Documenti/Github/smart-bash/"
  "/home/nico/Documenti/Github/Appunti-universita/Fisica/"
- "/home/nico/.config/i3/"
- "/home/nico/.config/zsh/"
- "/home/nico/Immagini/wallpapers/Future/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- ".emacs"
- "book.tex"
- "pdfcomp"
+ "README.org"
+ "epson-et.org"
+ "epson-et"
  "algebraegeometria.tex"
- "fisica.tex"
- "install.sh"
- ".bash_aliases"
- ".bash_profile"
- "config"
- "alias.zsh"
+ "book.tex"
+ "ristorante_esercizio_sql.org"
+ "sql_ristorante"
+ "openoffice.org"
+ "command.h"
+ "config.h"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/nico/.emacs.d/" (25235 41744 630531 489000) "ido.last" "auto-save-list/" "#ido.last#" "../" "ido.last~" "./" ".cask/" "custom.el" "elpa/" "custom.el~")
+ ("/home/nico/repos/slstatus/" (25705 64265 513346 40000) "README.org" "LICENSE" ".git/" "slstatus" "slstatus.o" "config.h" "config.h~" "util.o" "util.h" "util.c" "slstatus.h" "slstatus.c" "slstatus.1" "config.mk" "config.def.h" "components/" "arg.h" "Makefile" "../" "./")
 
- ("/home/nico/" (25235 43694 614198 851000) ".vimrc" ".kde4/" ".viminfo" "2022-05-29 18-55-10.mkv" ".bash_env" ".chrome-remote-desktop-session" ".zcompdump" "file.sh" ".fltk/" "2022-05-29 19-14-21.mkv" ".dmrc" ".lmmsrc.xml" "../" ".gnupg/" ".config/" ".pki/" ".bash_logout" ".emacs.d/" "Senza-titolo-2022-05-23-19-13-14/" ".Xauthority" ".themes/" ".mozilla/" ".zdirs" ".emacs~" ".zshrc~" ".npm/" ".gnome/" ".zshrc" ".python_history" "cop.png" "./" ".Xresources" ".gtkrc-2.0" ".openshot_qt/" "Scaricati/" ".bash_profile" "Sync/" ".gitconfig" ".mc.menu" "peer/" "box latex" ".fehbg" "Immagini/" ".bashrc.omb-uninstalled-20220513191008" ".wget-hsts" ".zsh_history" "Video/" ".zcompdump-archlinux-5.8.1" "Games/" ".gallery/" ".screenlayout/" "Documenti/" "Modelli/" ".emacs" ".bashrc" ".local/" ".rnd" ".icon.png" ".vim/" "VM/" ".zcompdump-Workstation-arch-5.8.1" "Musica/" "Scrivania/" ".icons/" ".sdirs" ".oh-my-zsh/" ".git-mode.sh" "2022-05-29 18-55-08.mp4" ".cache/" ".cargo/" ".bash_aliases" ".elinks/" ".drumgizmo/" ".bash_history" ".AMD/" ".osh-update" "2022-05-29 18-55-08.mkv" ".lesshst" "2022-05-29 18-55-10.mp4" "win tools.iso" ".xscreensaver" "Pubblici/")
+ ("/home/nico/repos/" (25701 60413 593344 127000) "slstatus/" "LibroInformatica/" "docker-dotfiles/" "dwm/" "screen-settings/" "appunti-alessandro/" "libasecnsp11-for-archlinux/" "vapetoolsdev/" "Appunti-universita/" "Materiale-desempio/" "new builds/" "LaTeX-model/" "yt-quick-video/" "st/" "dmenuwacom/" "dmenu/" "virt-manager-easy-installer/" "pdfcomp/" "dotfiles/" "../" "./")
+
+ ("/home/nico/" (25705 64267 873346 44000) ".Xauthority" ".zsh_history" ".xprofile" ".xprofile~" "2023-05-18 11-41-12.mkv" "2023-05-18 11-41-04.mkv" ".zcompdump-workstation-gentoo-5.9.zwc" ".zcompdump-workstation-gentoo-5.9" ".pulse-cookie" ".steampid" ".steampath" ".steam/" "Documents/" "BL_proxy/" "Sync/" "autosave.ipe" ".xinitrc" ".xinitrc~" ".i3blocks.conf" ".xsession-errors" ".nix-channels" ".nix-profile/" ".nix-defexpr/" ".python_history" ".zshrc" ".zshrc~" ".swt/" ".p2/" ".eclipse/" "eclipse-workspace/" ".docker/" ".gitconfig" ".#.Xmodmap" ".redhat/" ".podman-desktop/" "installazione di gentoo/" ".wget-hsts" ".logseq/" ".java/" ".lmmsrc.xml" ".ida/" ".xscreensaver" ".screenlayout/" ".var/" ".snes9x/" "Games/" ".mame/" ".audacity-data/" "soundKonverter/" ".lyrics/" ".w3m/" "Musica/" ".thunderbird/" ".mangrc" ".bash_history" "vm/" ".pki/" "repos/" ".bcast5/" ".ipe/" ".Xresources" ".zshrc.pre-oh-my-zsh" ".oh-my-zsh/" ".zcompdump" "Video/" "Immagini/" "Documenti/" "Pubblici/" "Modelli/" "Scaricati/" "Scrivania/" ".mozilla/" ".dbus/" ".cache/" ".local/" ".config/" ".emacs.d/" ".bash_profile" ".bashrc" ".ssh/" ".bash_logout" "../" "./")
+
+ ("/home/nico/repos/LibroInformatica/manuale rapido/" (25689 23378 776054 208000) "article.tex~" "article.tex" "article.pdf" "article.out" "article.log" "article.aux" ".DS_Store" "../" "./")
+
+ ("/home/nico/.emacs.d/" (25696 40311 979957 154000) "ido.last" "ido.last~" "url/" "transient/" "init.el" "init.el~" "custom.el" "tutorial/" ".mc-lists.el" "ede-projects.el" "elpa/" "eln-cache/" "custom.el~" "auto-save-list/" ".cask/" "#ido.last#" "../" "./")
+
+ ("/home/nico/Documenti/canale/openoffice/" (25684 53587 849850 769000) "openoffice.org" "openoffice.org~" "feature.jpg" "openoffice.png" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/" (25693 18545 52124 13000) "title/" "\\" "algebraegeometria.pdf" "algebraegeometria.toc" "algebraegeometria.tex" "algebraegeometria.out" "algebraegeometria.lot" "algebraegeometria.log" "algebraegeometria.lof" "algebraegeometria.aux" "#algebraegeometria 2.tex#" "pag/" "img/" "algebraegeometria.ind" "algebraegeometria.ilg" "algebraegeometria.idx" "algebraegeometria.blg" "algebraegeometria.bbl" "_region_.tex" "../" "./")
+
+ ("/home/nico/Documenti/canale/" (25692 1070 915548 853000) "#archinstall.org#" "#orgmode.org#" "openoffice/" "atlas.org" "atlas.org~" "#dwm.org#" "dwm.org" "dwm.org~" "tcg.org" "tcg.org~" "archinstall.org" "Come ho realizzato il banner legale per i cookie per il sito scienza e svapo/" "consigli per chi vuole fare il cambio a linux/" "XFCE 4.18 inizia il supporto allo stack grafico Wayland.png" "xfwayl.org" "xfwayl.org~" "epomaker.xml" "la-mia-decade-su-linux.org" "mpd p2.png" "mpd p2.xcf" "mpd p1.png" "mpd p1.xcf" "mpd - music player/" "Ecco come realizzo normalmente gli appunto/" "script del video sulla virtualizzazione.xopp" "nuova release dmwacom.png" "nuova release dmwacom.xcf" "../" "./")
+
+ ("/home/nico/repos/appunti-alessandro/operatori logici/" (25638 61185 163236 833000) "operatoriLogici.cpp" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/" (25687 55435 336397 121000) "Rudimenti/" "status.md~" "status.md" "README.md" ".DS_Store" "LICENSE" "Secondo Anno/" "Primo anno/" ".gitignore" ".github/" ".gitattributes" ".git/" "../" "./")
+
+ ("/home/nico/Documenti/" (25689 18865 329499 869000) "ristorante_esercizio_sql.pdf" "ristorante_esercizio_sql.tex" "ristorante_esercizio_sql.html" "ristorante_esercizio_sql.org" "sql_ristorante.txt" "sql_ristorante~" "ristorante_esercizio.ods" "gestione pila/" "calendario.ods" "prova.cpp" "prova.cpp~" "turni tirocinio.odt" "esercizio/" "annuncio.txt" "pwdvm.txt" "scuola di musica/" "appunti/" "generalitaogetto.pdf" "generalitaogetto ff.xopp" "scrittura/" "lmms/" "torment.txt" "man.png" "inforge/" "canale/" "../" "./")
+
+ ("/home/nico/Immagini/wallpapers/Future/" (25664 22834 119090 876000) "future_18.jpg" "1366233000541.jpg" "1409724139691.jpg" "ridges..jpg" "73931.jpg" "4ce9b63f7219d1616f4d1ff6a(...).gif" "future_13.jpg" "1456526965024.jpg" "future_32.jpg" "BLADE RUNNER x Saigon.png" "1261635391371.jpg" "1433468675807-0.jpg" "asian_cyberpunk-wide.jpg" "futuristic_city_5_full_by(...).jpg" "1366232886688.jpg" "1431066196663-1.jpg" "future_11.jpg" "1456519479439.jpg" "1474757467074.jpg" "1408883107088.jpg" "1365871447_03.jpg" "future_14.jpg" "02_dustwind_camaraderie.jpg" "1432599578099.png" "future_3.jpg" "1443834210062-2.jpg" "future_30.jpg" "future_1.png" "ricean-vlad-city.jpg" "room on fire.jpg" "future_34.jpg" "future_20.jpg" "future_26.jpg" "1479926321076.png" "future_12.jpg" "future_27.jpg" "1378870852724.jpg" "1456524521131.jpg" "1387697504188.jpg" "future_33.jpg" "1482892301416.jpg" "future_29.jpg" "1432945333574-2.jpg" "1424128559367-2.jpg" "1484801642862.jpg" "1440291539953-1.jpg" "1443834210061-0.png" "future_22.jpg" "1440288157337-1.jpg" "1474513622989.jpg" "1430600418538.jpg" "1433294860669-4.jpg" "future_28.jpg" "513ce197db005585eb7378839(...).jpg" "1408906277712.jpg" "cyber_aa7.jpg" "future_9.jpg" "future_23.jpg" "future_31.jpg" "future_25.jpg" "1440059773384.jpg" "future_7.jpg" "1430601766509-4.jpg" "1467788059932.jpg" "future_24.jpg" "future_19.jpg" "post apocalyptic wanderer.jpg" "future_17.jpg" "future_8.jpg" "future_4.jpg" "future_2.jpg" "1469925475360.jpg" "future_15.jpg" "future_6.jpg" "1412296358907.jpg" "1430601766508-2.jpg" "1430790602233.jpg" "1474629081092.jpg" "1492610895179.jpg" "1489536506664.jpg" "1487404645380.jpg" "1443596362217-3.jpg" "1433294607923-1.jpg" "1433294860669-3.jpg" "1462804204331.jpg" "future_5.jpg" "1479665698114.jpg" "future_16.jpg" "deus_ex.png" "1476191263053.jpg" "1433294607949-2.jpg" "a bar under the sea.jpg" "1430976796805.jpg" "moon SF.jpg" "1401938669273.jpg" "1474236866683.png" "1436546392749-2.png" "1347845115045.jpg" "1443596362216-2.jpg" "1457789206886.jpg" "future_21.jpg" "hexa_city.jpg" "1413407306773-0.jpg" "1282177669146.jpg" "future_10.jpg" "1408767491406.jpg" "1475616328034.jpg" "1477516316928.jpg" "plus.jpg" "1373994632491.jpg" "../" "./")
+
+ ("/home/nico/repos/LibroInformatica/source/" (25683 64265 365809 835000) "trycatch.java" "texput.log" "punto3d.java" "punto2d.java" "lista_base.java" "istanza.java" "halloworld.java" "esempio.java" "equals.java" "array.java" "NodoLista.java" "Nodo.java~" "Nodo.java" "Lista.java~" "Lista.java" "EsempioException.java" ".DS_Store" "../" "./")
+
+ ("/home/nico/repos/LibroInformatica/slide/introduzione al php/" (25683 64265 362476 502000) "introPHP.vrb" "introPHP.toc" "introPHP.tex~" "introPHP.tex" "introPHP.snm" "introPHP.pdf" "introPHP.out" "introPHP.nav" "introPHP.log" "introPHP.aux" "img/" "../" "./")
+
+ ("/home/nico/repos/LibroInformatica/slide/array in PHP/" (25683 64265 362476 502000) "arrayphp.vrb" "arrayphp.toc" "arrayphp.tex~" "arrayphp.tex" "arrayphp.snm" "arrayphp.pdf" "arrayphp.out" "arrayphp.nav" "arrayphp.log" "arrayphp.aux" "../" "./")
+
+ ("/home/nico/repos/LibroInformatica/pag/" (25683 64265 362476 502000) "x.log" "prefazione.tex" "php.tex~" "php.tex" "oop.tex" "oop.log" "linguaggi.tex" "linguaggi.log" "java.tex" "java.log" "intro.tex" "esercizi.tex" "cscarp.tex~" "cscarp.tex" "cscarp.log" "c.tex" "_region_.tex" "#php.tex#" "#intro.tex#" "../" "./")
+
+ ("/home/nico/repos/LibroInformatica/" (25683 64265 362476 502000) "source/" "slide/" "pag/" "manuale rapido/" "linguaggi.log" "java.log" "img/" "book.toc" "book.tex" "book.pdf" "book.out" "book.lol" "book.log" "book.blg" "book.bbl" "book.aux" "README.md" "LICENSE" ".DS_Store" ".git/" "../" "./")
+
+ ("/home/nico/repos/dmenu/" (25678 21544 186499 474000) "stest" "stest.o" "dmenu" "util.o" "drw.o" "dmenu.o" "util.h" "util.c" "stest.c" "stest.1" "drw.h" "drw.c" "dmenu_run" "dmenu_path" "dmenu.c" "dmenu.1" "config.mk" "config.h" "config.def.h" "arg.h" "README.md" "README" "Makefile" "LICENSE" ".git/" "../" "./")
+
+ ("/home/nico/repos/dwm/" (25678 21825 993159 121000) "dwm" "util.o" "dwm.o" "drw.o" "README.org" "README.org~" ".git/" "dwm.c" "drw.h" "config.h" "config.h~" "drw.c" "config.def.h" "lib/" "util.h" "util.c" "transient.c" "dwm.png" "dwm.1" "config.mk" "Makefile" "LICENSE" "../" "./")
+
+ ("/home/nico/repos/dwm/lib/" (25678 21815 593159 389000) "command.h" "command.h~" "layout.h" "layout.h~" "keyWorld.h" "../" "./")
+
+ ("/home/nico/repos/dotfiles/.local/share/" (25472 53150 843323 302000) "emoji" "applications/" "../" "./")
+
+ ("/home/nico/repos/dotfiles/.local/" (25472 53150 843323 302000) "share/" "bin/" "../" "./")
+
+ ("/home/nico/repos/dotfiles/" (25651 4292 913082 906000) ".i3status.conf" ".i3blocks.conf" "img.png" "etc/" "README.md" ".zshrc" ".xprofile" ".xinitrc" ".vimrc" ".vim/" ".local/" ".emacs.d/" ".config/" ".Xresources" ".DS_Store" ".git/" "../" "./")
+
+ ("/home/nico/.config/i3/" (25652 34735 702420 44000) "config" "config~" "../" "./")
+
+ ("/home/nico/Documenti/scrittura/come si prendeno degli appunti/pag/" (25672 25855 342897 456000) "impaginazione.log" "impaginazione.tex" "impaginazione.tex~" "\\" "gestione_del_contenuto.log" "gestione_del_contenuto.tex" "gestione_del_contenuto.tex~" "intro.tex" "intro.tex~" "../" "./")
+
+ ("/home/nico/Documenti/scrittura/come si prendeno degli appunti/" (25673 35634 648852 379000) "come-prendere-appunti.tex" "come-prendere-appunti.tex~" "source/" "img/" "pag/" "come-prendere-appunti.toc" "come-prendere-appunti.pdf" "come-prendere-appunti.out" "come-prendere-appunti.aux" "come-prendere-appunti.log" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/pag/" (25674 50090 316587 592000) "applin.tex" "vettori.tex" "simboli.tex" "premesse.tex" "numeri_complessi.tex" "determinante.tex" "../" "./")
+
+ ("/home/nico/Documenti/scrittura/polinomi e prodotti notevoli/" (25669 36006 175669 133000) "article.tex" "article.tex~" "img/" "\\" "article.pdf" "article.out" "article.aux" "article.log" "../" "./")
+
+ ("/home/nico/Documenti/scrittura/" (25667 54001 263185 59000) "polinomi e prodotti notevoli/" "programma_luigi.md" "programma_luigi.md~" "come si prendeno degli appunti/" "../" "./")
+
+ ("/home/nico/repos/screen-settings/" (25652 34100 742435 810000) "LICENSE" "screen.sh" "screen.sh~" "README.org" ".git/" "../" "./")
+
+ ("/home/nico/.config/sway/" (25645 27043 19960 628000) "config" "config~" "../" "./")
+
+ ("/home/nico/.emacs.d/auto-save-list/" (25651 6401 426398 607000) ".saves-20068-workstation-gentoo~" ".saves-5925-workstation-gentoo~" ".saves-29781-workstation-gentoo~" ".saves-18794-workstation-gentoo~" ".saves-24861-workstation-gentoo~" ".saves-6156-workstation-gentoo~" ".saves-21347-workstation-gentoo~" ".saves-13128-workstation-gentoo~" ".saves-8933-workstation-gentoo~" ".saves-30068-workstation-gentoo~" ".saves-23953-workstation-gentoo~" ".saves-13488-workstation-gentoo~" ".saves-5935-workstation-gentoo~" ".saves-16077-workstation-gentoo~" ".saves-22283-workstation-gentoo~" ".saves-4699-workstation-gentoo~" ".saves-3653-workstation-gentoo~" ".saves-11366-workstation-gentoo~" ".saves-1842-workstation-gentoo~" ".saves-29031-workstation-gentoo~" ".saves-28761-workstation-gentoo~" ".saves-7230-workstation-gentoo~" ".saves-14071-workstation-gentoo~" ".saves-56594-Workstation-arch~" ".saves-31747-workstation~" ".saves-29253-workstation~" ".saves-2764-Workstation-arch~" ".saves-24638-workstation~" ".saves-20801-workstation~" ".saves-17536-workstation~" ".saves-16685-workstation~" "../" "./")
+
+ ("/home/nico/.config/" (25651 5914 39735 987000) "alacritty/" "i3/" "sway/" "QtProject.conf" "mimeapps.list" "Meltytech/" "kritadisplayrc" "kritarc" "containers/" "cni/" "vlc/" "pcmanfm-qt/" "soundkonverterrc" "kdeglobals" "cef_user_data/" "guitarix/" "kdeconnect/" "screenkey.json" "lutris/" "ardour6/" "easytag/" "emaildefaults" "ncmpcpp/" "flameshot/" "xournalpp/" "MAngbandClient/" "gtk-2.0/" "enchant/" "discord/" "wal/" "pulse/" "mpv/" "obs-studio/" "gh/" "libreoffice/" "mpd/" "GIMP/" "ranger/" "user-dirs.locale" "user-dirs.dirs" "awesome/" "dconf/" "gtk-3.0/" "htop/" "kitty/" "neofetch/" "../" "./")
+
+ ("/home/nico/repos/appunti-alessandro/" (25638 61439 126563 848000) "operatoriLogici.cpp" "operatori logici/" "limiti di iostadard/" "README.md" ".git/" "../" "./")
+
+ ("/media/dati/usbnico/consegna desame/code/php/" (25038 54470 126460 659000) "logout.php" "reindirizza.php" "ricerca.php" "login.php" "visualizzazione.php" "home.php" "../" "./")
+
+ ("/media/dati/usbnico/consegna desame/code/" (25038 54470 121460 659000) "php/" "db/" "../" "./")
+
+ ("/media/dati/usbnico/consegna desame/" (25038 54470 151460 661000) "book.lof" "book.lot" "app/" "book.out" "book.toc" "book.ind" "book.lol" "book.ilg" "pag/" "book.log" "book.tex" "code/" "book.aux" "book.idx" "img/" "book.pdf" "x.log" "schema di rete/" "web site/" "../" "./")
+
+ ("/media/dati/usbnico/Elaborato Nicola Ferru/" (25038 54470 182460 662000) "app/" "book.pdf" "../" "./")
+
+ ("/media/dati/usbnico/" (25038 55336 414505 351000) "X10-cv-europass-it-odt.odt" "Windows_7_AIO_SP1.iso" "verifica di Italiano Nicola Ferru 5N.odt" "SQL.pdf" "sostanze dopanti nel 36.odp" "PCTO.odp" "malware inglese.pdf" "LaTeX.pdf" "inglese 06-05-2021.pdf" "CV Nicola Ferru.pdf" "cop.xcf" "cop.png" "consegna nicola ferru e vagiu francesco emilio.odp" "compito di gestione progetto nicola ferru.pdf" "compito di gestione progetto nicola ferru.odg" "2021-07-24 08-17-50.mkv" "2021-07-17 10-56-46.mkv" "2021-07-17 10-54-25.mkv" "verifiche/" "vbs/" "sql/" "scaletta esame/" "privata/" "mat/" "Lo scrivere è arte/" "LaTeX/" "Elaborato Nicola Ferru/" "consegna desame/" "UA740-Fairchild.pdf" "prova quattro.pdf" "Presentazione Madrid 2.pptx" "Presentazione Madrid.pptx" "npp.7.8.8.Installer.exe" "nicola e matteo quarta prova.psdata" "JS.md" "documento d'identità.pdf" "compareTo.txt" "Apache_OpenOffice_4.1.7_Win_x86_install_it.exe" "Amplificatore_invertente_multisim_30-01-2020.pdf" "verificaEspressioni/" "System Volume Information/" "Sito Erasmus_24feb/" "Relazione_telecomunicazioni/" "Nicola Ferru 4N/" "LOST.DIR/" "IdeaProjects/" "Gioco/" "dos/" "Documenti/" "consegna_mercoledì/" "bootstrap/" "Android/" "Albergobak/" "Albergo/" "../" "./")
+
+ ("/media/dati/" (25401 54628 755137 377000) "vecchi ricordi/" "Win10_21H2_Italian_x64(1).iso" "it_windows_7_ultimate_with_sp1_x64_dvd_u_677356.iso" "SteamLibrary/" "VM/" "windows11.iso" "usbnico/" "Versione compressa/" "lezioni unica/" "backup home/" "risorse/" "nextcloud/" "nextcloud-21.0.2.tar.bz2.asc" "nextcloud-21.0.2.tar.bz2" "nextcloud.asc" "makeresolvedeb_1.5.0_multi.sh" "DaVinci_Resolve_17.2.1_Linux.run" "Linux_Installation_Instructions.pdf" "niko/" "Steely Dan - Kid Charlemagne-jJ9Xk-VoGqo.ogg" "Element/" "back/" "consegna desame/" "C.odp" "mod/" "img/" "doc/" "giustificazione configurazione carpenteria/" "project charter/" "OracleLinux-R8-U3-x86_64-dvd.iso" "Relazione programma che svolge le espressioni/" "gestione progetto arch/" "test bootstrap/" "Relazione programma ms-dos/" "2020-11-01 20-05-35.mkv" "macOS-Simple-KVM/" "panda/" "musica/" "sync/" "The_book_of_Cisco/" "Wallpaper originali/" "LaTeX-model/" "NFVBlog/" "wallpapers/" "twitter" "VirtualBox/" "Documenti/" "games/" ".Trash-1000/" "../" "./")
+
+ ("/media/" (25469 23321 651020 227000) "../" "dati/" "./" ".keep")
+
+ ("/home/nico/repos/LibroInformatica/slide/" (25636 39485 789264 127000) "array in PHP/" "Sessioni php/" "introduzione al php/" "../" "./")
+
+ ("/home/nico/repos/LibroInformatica/slide/Sessioni php/" (25634 48959 529927 441000) ".#sessionephp.tex" "sessionephp.snm" "sessionephp.toc" "sessionephp.nav" "sessionephp.out" "sessionephp.aux" "sessionephp.pdf" "sessionephp.log" "sessionephp.tex" "sessionephp.tex~" "../" "./")
+
+ ("/home/nico/repos/libasecnsp11-for-archlinux/" (25594 27959 15818 880000) "README.md" "libasecnsp11/" "libACR38Driver/" "LICENSE" ".git/" "../" "./")
+
+ ("/opt/lampp/htdocs/www/modal test/" (25594 21451 389314 164000) "demo.zip" "index.html" "../" "OPERATORI RELAZIONALI_RIASSUNTO.docx" "Verifica Giuseppe del 16-01-23 CON CORREZIONE.docx" "teminiecondizioni.html~" "Verifica del 16-01-23 Soluzione.doc" ".git/" "img/" "./" ".~lock.OPERATORI RELAZIONALI_RIASSUNTO.docx#" "index.html~" "css/" "teminiecondizioni.html")
+
+ ("/home/nico/repos/vapetoolsdev/" (25589 4167 373325 357000) "vapetools/" "sitemap.xml" "materials_dyn_TCR.xlsx" "index.php" "git.ssh.pub" "git.ssh" "e8081826-39ec-461a-9e6b-605dffbd1272_en.html" "README.md" "BingSiteAuth.xml" ".git/" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/" (25587 58170 412408 808000) "x.log" "title/" "pag/" "mat.toc" "mat.tex" "mat.pdfpc" "mat.pdf" "mat.out" "mat.lot" "mat.log" "mat.lof" "mat.ind" "mat.ilg" "mat.idx" "mat.aux" "intro.log" "img/" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/pag/" (25587 58170 412408 808000) "simboli.tex" "serie.tex" "premesse.tex" "intro.tex~" "intro.tex.back" "intro.tex" "intro.log" "integrali.tex" "differenzialita.tex" "differenziali_ordinarie.tex~" "differenziali_ordinarie.tex" "derivate_parziali.tex" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/Fisica/pag/" (25587 58170 369075 476000) "unita di misura.tex" "simboli.tex" "programma 2.tex" "premesse.tex" "moti.tex" "moti.log" "modelli atomici.tex" "legge_di_gauss.tex" "legge di Couloumb.tex" "fisica2.tex" "energia.tex" "energe.tex" "campi_elettrici.tex" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/Fisica/" (25587 58170 369075 476000) "title/" "pag/" "img/" "fisica.toc" "fisica.tex" "fisica.pdf" "fisica.out" "fisica.lot" "fisica.log" "fisica.lof" "fisica.blg" "fisica.bbl" "fisica.aux" "../" "./")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/scienceandtec/" (25585 19142 825819 406000) "Old/" "st.utils.min.js" "st.utils.js" "../" "./" "#cookie.js#")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/" (25587 58170 382408 809000) "reti di telecomunicazione/" "algebra e geometria/" "Informatica/" "Fisica/" "Chimica/" "Calcolatori elettronici/" "Analisi Matematica/" "../" "./")
+
+ ("/home/nico/repos/dmenuwacom/" (25582 34087 79983 65000) "dmenuWacom" "README.md" "profiles/" "sys/" "installer.sh" "dmenuWacom.png" "dmenuWacom.1" "LICENSE" ".DS_Store" ".git/" "../" "./")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/bootstrap/" (25583 38167 699574 630000) "../" "bootstrap.bundle.min.js" "bootstrap.bundle.min.js.map" "./")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/" (25583 38167 699574 630000) "scienceandtec/" "../" "bootstrap/" "./")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/" (25583 39973 412863 0) "demo.zip" "packages/" "coil-calc - Copia.html" "info.html" "urllist.txt" "sitemap.html" "batteries.html" "ror.xml" "../" "coil-calc.html" "sitemap.xml.gz" "Reattivita_conversione_indicatore_velocita.xlsm" "js/" "demo.html" "eliquid-calc.html" "data/" "googled783ca22fa050933.html" "img/" "./" "default.html" "sitemap.xml" "css/" ".vscode/" "teminiecondizioni.html")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/" (25583 38514 536232 622000) "e8081826-39ec-461a-9e6b-605dffbd1272_en.html" "git.ssh.pub" "materials_dyn_TCR.xlsx" "vapetools/" "../" "README.md" "git.ssh" ".git/" "./" "sitemap.xml" "index.php")
+
+ ("/opt/lampp/htdocs/www/" (25583 38167 676241 298000) "vapetoolsdev/" "modal test/" "esercizio/" "../" "cookiels/" "./")
+
+ ("/opt/lampp/htdocs/www/cookiels/" (25581 22394 363051 939000) "verifica.js~" "index.html" "../" "verifica.js" "index.php~" ".git/" "./" "logo.jpg" "index.html~" "logo.png")
+
+ ("/opt/lampp/htdocs/" (25573 6414 709632 332000) "dashboard/" "../" "webalizer/" "www/" "img/" "./" "bitnami.css" "index.php" "applications.html" "favicon.ico")
+
+ ("/opt/lampp/" (25573 6345 142967 396000) "cgi-bin/" "RELEASENOTES" "lib/" "docs/" "uninstall" "htdocs/" "THIRDPARTY" "etc/" "properties.ini" "include/" "var/" "share/" "apache2/" "bin/" "README-wsrep" "error/" "lib64/" "temp/" "../" "manual/" "libexec/" "php/" "info/" "build/" "lampp" "phpmyadmin/" "README.md" "xampp" "modules/" "proftpd/" "mysql/" "uninstall.dat" "sbin/" "man/" "licenses/" "img/" "./" "logs/" "ctlscript.sh" "manager-linux-x64.run" "icons/")
+
+ ("/opt/" (25573 6016 39642 252000) "../" "cni/" "lampp/" "discord/" "./" ".keep")
+
+ ("/mnt/" (25469 23321 654353 589000) "../" "./" ".keep")
+
+ ("/home/" (25471 49743 420261 768000) "nico/" ".keep" "../" "./")
+
+ ("/home/nico/repos/dmenuwacom/profiles/" (25563 41173 473169 452000) "kitty.dmwa" "ipe.dmwa" "cinelerra.dmwa" "xournalpp.dmwa" "gimp.dmwa" "firefox.dmwa" "empty.sh" "../" "./")
+
+ ("/home/nico/repos/new builds/st/" (25539 60383 893179 292000) "x.o" "st.o" "config.h" "config.h~" "x.c" "win.h" "st.info" "st.h" "st.c" "st.1" "config.mk" "config.def.h" "arg.h" "TODO" "README" "Makefile" "LICENSE" "LEGACY" "FAQ" ".git/" "../" "./")
+
+ ("/home/nico/repos/new builds/" (25539 57253 406590 430000) "st/" "../" "./")
+
+ ("/home/nico/repos/yt-quick-video/" (25505 47285 963157 301000) "yt-qv" "yt-qv~" "README.md" "../" "./")
+
+ ("/home/nico/.screenlayout/" (25509 40804 359811 519000) "layout.sh" "layout.sh~" "../" "./")
+
+ ("/home/nico/Documenti/canale/mpd - music player/" (25501 40471 559916 909000) "mpd.org" "#mpd.org#" "../" "./")
+
+ ("/home/nico/.config/ncmpcpp/" (25499 28042 146151 602000) "config" "config~" "error.log" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/" (25478 16520 882888 499000) "matematica applicata/" "fisica tecnica/" "Elettrotecnica/" "Analisi di sistemi/" "Analisi Matematica 2/" "../" "./")
 
  ("/home/nico/Documenti/Github/Appunti-Universita/Calcolatori elettronici/" (25219 33181 822195 209000) "../" "book.aux" "./" "book.log" "book.tex" "book.pdf" "book.out")
 
  ("/home/nico/Documenti/Github/pdfcomp/" (25227 32742 780820 111000) "../" "LICENSE" "test/" "./" "test.pdf" ".git/" "README.md" ".gitattributes" "pdfcomp")
-
- ("/home/nico/Documenti/" (25229 64941 119862 965000) "Quiver: un pratico commutatore grafico per la libreria tikz-cd del LaTeX.mp4" "lmms/" "../" "cazzate inforge/" "BespokeSynth/" "Cosa né penso del software prodotto dalla community KDE.mp4" "./" "BlackmagicDesign/" "Github/" "Manuali/" "Ho implementato la motalità anteprima in pdfcomp!.mp4")
-
- ("/home/" (25179 7315 179169 364000) "nico/" "../" "./" "lost+found/")
 
  ("/home/nico/Documenti/Github/Appunti-Universita/algebra e geometria/" (25223 62810 397103 4000) "algebraegeometria.tex" "algebraegeometria.idx" "algebra e geometria.synctex.gz" "algebraegeometria.lot" "../" "pag/" "algebraegeometria.out" "algebra e geometria.toc" "algebraegeometria.log" "algebraegeometria.ind" "algebra e geometria.lof" "algebraegeometria.lof" "./" "algebra e geometria.out" "algebraegeometria.ilg" "algebraegeometria.pdf" "#algebraegeometria.tex#" "algebra e geometria.aux" "algebra e geometria.log" "algebraegeometria.toc" "algebraegeometria.aux")
 
@@ -71,13 +279,7 @@
 
  ("/home/nico/Documenti/Github/Appunti-universita/" (25181 40367 826009 855000) "../" ".DS_Store" "LICENSE" "Informatica/" "Fisica/" "./" "reti di telecomunicazione/" "Calcolatori elettronici/" ".git/" "README.md" ".gitattributes" "Chimica/" "Analisi Matematica/" "algebra e geometria/")
 
- ("/home/nico/.config/" (25179 8920 307607 449000) ".viminfo" "dunst/" "zsh/" "chromium-flags.conf" "kitty/" "../" ".bash_logout" "pulse/" "syncthing/" "pcmanfm/" "gtk-3.0/" "gh/" "./" "libreoffice/" "procps/" "Scaricati/" ".bash_profile" "Immagini/" "user-dirs.locale" "Documenti/" "Modelli/" ".bashrc" "bpytop/" "i3/" "dconf/" "Musica/" "Scrivania/" "neofetch/" "libfm/" "yay/" "xarchiver/" "rofi/" "ranger/" "user-dirs.dirs" "qutebrowser/" "Pubblici/")
-
  ("/home/nico/.config/zsh/" (25179 12789 205792 19000) "../" "env.zsh" ".zshrc" "./" "zshrc" "alias.zsh")
-
- ("/home/nico/.config/i3/" (25179 14596 599080 366000) "../" "./" "config" "config~")
-
- ("/home/nico/Immagini/wallpapers/Future/" (25171 64489 733097 477000) "future_18.jpg" "1366233000541.jpg" "1409724139691.jpg" "ridges..jpg" "73931.jpg" "4ce9b63f7219d1616f4d1ff6a(...).gif" "future_13.jpg" "1456526965024.jpg" "future_32.jpg" "BLADE RUNNER x Saigon.png" "1261635391371.jpg" "1433468675807-0.jpg" "asian_cyberpunk-wide.jpg" "futuristic_city_5_full_by(...).jpg" "1366232886688.jpg" "1431066196663-1.jpg" "future_11.jpg" "1456519479439.jpg" "1474757467074.jpg" "1408883107088.jpg" "1365871447_03.jpg" "future_14.jpg" "02_dustwind_camaraderie.jpg" "1432599578099.png" "future_3.jpg" "1443834210062-2.jpg" "future_30.jpg" "future_1.png" "ricean-vlad-city.jpg" "room on fire.jpg" "future_34.jpg" "future_20.jpg" "future_26.jpg" "1479926321076.png" "future_12.jpg" "future_27.jpg" "1378870852724.jpg" "1456524521131.jpg" "1387697504188.jpg" "future_33.jpg" "1482892301416.jpg" "future_29.jpg" "1432945333574-2.jpg" "1424128559367-2.jpg" "1484801642862.jpg" "1440291539953-1.jpg" "1443834210061-0.png" "future_22.jpg" "1440288157337-1.jpg" "1474513622989.jpg" "1430600418538.jpg" "1433294860669-4.jpg" "future_28.jpg" "513ce197db005585eb7378839(...).jpg" "1408906277712.jpg" "cyber_aa7.jpg" "future_9.jpg" "future_23.jpg" "future_31.jpg" "future_25.jpg" "1440059773384.jpg" "future_7.jpg" "1430601766509-4.jpg" "1467788059932.jpg" "future_24.jpg" "future_19.jpg" "post apocalyptic wanderer.jpg" "future_17.jpg" "future_8.jpg" "future_4.jpg" "future_2.jpg" "1469925475360.jpg" "future_15.jpg" "future_6.jpg" "1412296358907.jpg" "1430601766508-2.jpg" "1430790602233.jpg" "1474629081092.jpg" "1492610895179.jpg" "1489536506664.jpg" "1487404645380.jpg" "1443596362217-3.jpg" "1433294607923-1.jpg" "1433294860669-3.jpg" "1462804204331.jpg" "future_5.jpg" "1479665698114.jpg" "future_16.jpg" "deus_ex.png" "1476191263053.jpg" "1433294607949-2.jpg" "a bar under the sea.jpg" "1430976796805.jpg" "moon SF.jpg" "1401938669273.jpg" "1474236866683.png" "1436546392749-2.png" "1347845115045.jpg" "1443596362216-2.jpg" "1457789206886.jpg" "future_21.jpg" "hexa_city.jpg" "1413407306773-0.jpg" "1282177669146.jpg" "future_10.jpg" "1408767491406.jpg" "1475616328034.jpg" "1477516316928.jpg" "plus.jpg" "1373994632491.jpg" "../" "./")
 
  ("/home/nico/Immagini/wallpapers/" (25171 64484 851097 160000) "Future/" "Cityscapes/" "Landscapes/" "Unsorted/" "Parrot Security OS/" "Vibrant/" "macos/" "Etc/" "Titans/" "Spacescapes/" "Tech/" "Art/" "README.md" "../" "./")
 

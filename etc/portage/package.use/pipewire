@@ -1,1 +1,1 @@
-media-video/pipewire echo-cancel extra gstreamer sound-server lv2 pipewire-alsa v4l dbus  
+media-video/pipewire echo-cancel extra gstreamer sound-server lv2 pipewire-alsa v4l dbus jack-client
