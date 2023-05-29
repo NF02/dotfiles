@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+flat=$(ls /var/lib/flatpak/app/ | dmenu -i -p "Flatpak launcher: ")
+
+if [[ $flat != "" ]];then
+   flatpak run $flat
+   else notify-send "exit!!"
+fi
+   

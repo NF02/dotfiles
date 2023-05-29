@@ -1,5 +1,5 @@
-#!/bin/env bash
-FLAT=$(flatpak list | awk '/org/' | grep "org" | awk -F  " " '{print $2}' | cut -d " " -f1-8  | sed -e 's/[[:space:]]*$//')
-echo $FLAT
-#launch=$(echo $FLAT | dmenu -i -p "Lancia: ")
 
+
+flat=$(ls /var/lib/flatpak/app/ | dmenu -i -p "Flatpak launcher: ")
+
+flatpak run $flat
