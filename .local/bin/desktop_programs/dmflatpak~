@@ -1,5 +1,0 @@
-
-
-flat=$(ls /var/lib/flatpak/app/ | dmenu -i -p "Flatpak launcher: ")
-
-flatpak run $flat
