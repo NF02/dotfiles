@@ -15,11 +15,11 @@
 (global-hl-line-mode 1)
 
 ;; numero per riga
-(global-linum-mode t)
-
+;(global-linum-mode t)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 ;; theme
-;;(load-theme 'manoj-dark t)
-(load-theme 'doom-tokyo-night t)
+;;(load-theme 'material t)
+(load-theme 'spacemacs-light t)
 
 ; plugin
 ;; il repo esterno
@@ -145,35 +145,18 @@
 (setq ispell-dictionary "italiano")
 (setq flyspell-use-meta-tab nil)
 
+(require 'go-mode)
 (use-package go-mode)
+
+(require 'markdown-mode)
 (use-package markdown-mode)
 
-;; popwin multitab manager
-(require 'popwin)
-(popwin-mode 1)
+;; Octave implementation
+(require 'octave)
+(add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
-;; | Key    | Command                               |
-;; |--------+---------------------------------------|
-;; | b      | popwin:popup-buffer                   |
-;; | l      | popwin:popup-last-buffer              |
-;; | o      | popwin:display-buffer                 |
-;; | C-b    | popwin:switch-to-last-buffer          |
-;; | C-p    | popwin:original-pop-to-last-buffer    |
-;; | C-o    | popwin:original-display-last-buffer   |
-;; | SPC    | popwin:select-popup-window            |
-;; | s      | popwin:stick-popup-window             |
-;; | 0      | popwin:close-popup-window             |
-;; | f, C-f | popwin:find-file                      |
-;; | e      | popwin:messages                       |
-;; | C-u    | popwin:universal-display              |
-;; | 1      | popwin:one-window                     |
-(global-set-key (kbd "C-z") popwin:keymap)
-
-;; direx direct's tree
-(require 'direx)
-(push '(direx:direx-mode :position left :width 25 :dedicated t)
-     popwin:special-display-config)
-(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
+(require 'neotree)
+(global-set-key [f5] 'neotree-toggle)
 
 ;; define macros
 (global-set-key (kbd "C-c s") (kbd "C-x 2 M-X shell"))
@@ -186,11 +169,27 @@
 (global-set-key (kbd "M-z") 'undo) ; ⌘-z = Undo
 (global-set-key (kbd "≈") 'execute-extended-command) ; Replace ≈ with whatever your option-x produces
 
-;; docker 
+;; CSS and Rainbow modes 
+(defun all-css-modes() (css-mode) (rainbow-mode)) 
+
+;; Load both major and minor modes in one call based on file type 
+(add-to-list 'auto-mode-alist '("\\.css$" . all-css-modes)) 
+
+
+;; docker
+(require 'docker)
 (use-package docker
   :ensure t
   :bind ("C-c d" . docker))
 
+;; company mode
+(require 'company)
+(use-package company
+  :ensure t
+  :config
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 3)
+  (global-company-mode t))
 ;; presentation mode
 (with-eval-after-load "org-tree-slide"
   (define-key org-tree-slide-mode-map (kbd "<f9>") 'org-tree-slide-move-previous-tree)
