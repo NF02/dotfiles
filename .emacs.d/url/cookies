@@ -4,7 +4,12 @@
 (setq url-cookie-storage
  'nil)
 (setq url-cookie-secure-storage
- 'nil)
+ '(("it.wikipedia.org"
+  [url-cookie "NetworkProbeLimit" "0.001" "sab lug 08 20:55:43 2023 GMT" "/" "it.wikipedia.org" t]
+  [url-cookie "WMF-Last-Access" "08-Jul-2023" "Wed, 09 Aug 2023 00:00:00 GMT" "/" "it.wikipedia.org" t])
+ (".wikipedia.org"
+  [url-cookie "WMF-Last-Access-Global" "08-Jul-2023" "Wed, 09 Aug 2023 00:00:00 GMT" "/" ".wikipedia.org" t]))
+)
 
 ;; Local Variables:
 ;; version-control: never

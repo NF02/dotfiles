@@ -1,0 +1,328 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/nico/Documenti/Note/" . "1-7-2023/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/" . "pag/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/" . "pag/")
+ ("/home/nico/Documenti/adattamento/" . "nuovo _ANTONIO/")
+ ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/" . "pag/")
+ ("/home/nico/Documenti/come si prendeno degli appunti/" . "pag/")
+ ("/home/nico/repos/Appunti-universita/Rudimenti/" . "sistemi linueari/")
+ ("/home/nico/repos/snotes/" . "libs/")
+ ("/home/nico/repos/appunti-alessandro/" . "operatori logici/")
+ ("/home/nico/repos/dwm/" . "lib/")
+ ("/home/nico/repos/dotfiles/.local/" . "share/")
+ ("/home/nico/repos/dotfiles/" . ".local/")
+ ("/home/nico/.emacs.d/" . "transient/")
+ ("/media/dati/usbnico/consegna desame/code/" . "php/")
+ ("/media/dati/usbnico/consegna desame/" . "code/")
+ ("/media/dati/usbnico/" . "consegna desame/")
+ ("/media/dati/" . "usbnico/")
+ ("/media/" . "dati/")
+ ("/home/nico/repos/LibroInformatica/slide/" . "array in PHP/")
+ ("/home/nico/repos/LibroInformatica/" . "manuale rapido/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/" . "formulario/")
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/" . "scienceandtec/")
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/" . "js/")
+ ("/opt/lampp/htdocs/www/vapetoolsdev/" . "vapetools/")
+ ("/opt/lampp/htdocs/" . "www/")
+ ("/opt/lampp/" . "htdocs/")
+ ("/opt/" . "lampp/")
+ ("/" . "home/")
+ ("/opt/lampp/htdocs/www/" . "vapetoolsdev/")
+ ("/home/nico/repos/new builds/" . "st/")
+ ("/home/nico/Documenti/scrittura/come si prendeno degli appunti/" . "pag/")
+ ("/home/nico/Documenti/scrittura/" . "come si prendeno degli appunti/")
+ ("/home/nico/Documenti/canale/" . "openoffice/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/Fisica/" . "pag/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/" . "reti di telecomunicazioni/")
+ ("/home/nico/repos/dmenuwacom/" . "profiles/")
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/" . "pag/")
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/" . "Analisi Matematica 2/")
+ ("/home/nico/repos/Appunti-universita/" . "Primo anno/")
+ ("/home/nico/repos/" . "snotes/")
+ ("/home/" . "nico/")
+ ("/home/nico/Documenti/Github/Appunti-Universita/" . "Calcolatori elettronici/")
+ ("/home/nico/Documenti/Github/Appunti-universita/" . "Fisica/")
+ ("/home/nico/Documenti/Github/" . "Appunti-Universita/")
+ ("/home/nico/Documenti/" . "Note/")
+ ("/home/nico/.config/" . "qutebrowser/")
+ ("/home/nico/Immagini/wallpapers/" . "Future/")
+ ("/home/nico/Immagini/" . "wallpapers/")
+ ("/home/nico/" . "repos/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/nico/repos/Arch-fixer/"
+ "/home/nico/repos/snotes/"
+ "/home/nico/.emacs.d/"
+ "/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/"
+ "/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/pag/"
+ "/home/nico/Documenti/"
+ "/home/nico/Documenti/Note/1-7-2023/"
+ "/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/pag/"
+ "/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/"
+ "/home/nico/Documenti/CompitodiGeometria/"
+ "/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/formulario/"
+ "/home/nico/"
+ "/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/"
+ "/home/nico/repos/Appunti-universita/Rudimenti/sistemi linueari/"
+ "/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/pag/"
+ "/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/"
+ "/home/nico/Documenti/adattamento/nuovo _ANTONIO/"
+ "/home/nico/repos/mail-merge-docx-dateless/"
+ "/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/source/"
+ "/home/nico/repos/Appunti-universita/Rudimenti/GNU\\Octave/"
+ "/home/nico/Documenti/come si prendeno degli appunti/pag/"
+ "/home/nico/.config/qutebrowser/"
+ "/home/nico/repos/snotes/libs/"
+ "/home/nico/repos/dwm/"
+ "/home/nico/repos/slstatus/"
+ "/home/nico/Documenti/canale/"
+ "/home/nico/repos/LibroInformatica/"
+ "/home/nico/Documenti/canale/openoffice/"
+ "/home/nico/repos/dwm/lib/"
+ "/home/nico/repos/dmenu/"
+ "/home/nico/repos/dotfiles/.local/share/"
+ "/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/pag/"
+ "/home/nico/Documenti/scrittura/come si prendeno degli appunti/"
+ "/home/nico/Documenti/scrittura/come si prendeno degli appunti/pag/"
+ "/home/nico/Documenti/scrittura/polinomi e prodotti notevoli/"
+ "/home/nico/repos/LibroInformatica/manuale rapido/"
+ "/home/nico/.screenlayout/"
+ "/home/nico/repos/screen-settings/"
+ "/home/nico/repos/LibroInformatica/pag/"
+ "/home/nico/.config/i3/"
+ "/home/nico/.config/sway/"
+ "/home/nico/repos/appunti-alessandro/"
+ "/media/dati/usbnico/consegna desame/code/php/"
+ "/home/nico/repos/LibroInformatica/slide/array in PHP/"
+ "/home/nico/repos/LibroInformatica/slide/introduzione al php/"
+ "/home/nico/repos/LibroInformatica/source/"
+ "/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/scienceandtec/"
+ "/home/nico/repos/vapetoolsdev/"
+ "/opt/lampp/htdocs/www/modal test/"
+ "/opt/lampp/htdocs/www/vapetoolsdev/vapetools/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "arc.c"
+ "arch-fixer.c"
+ "gitSync.h"
+ "arc.h"
+ "snotes.c"
+ "file.c"
+ "Makefile"
+ "init.el"
+ "reti.tex"
+ "intro.tex"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/nico/repos/Arch-fixer/" (25839 35232 328596 770000) "arc.h" "LICENSE" "arch-fixer.c" "./" ".git/" "usr/" ".#arch-fixer.c" "arc.c" "../" "arch-fixer" "README.org" "#arch-fixer.c#")
+
+ ("/home/nico/repos/LibroInformatica/pag/" (25839 34399 960047 630000) "prefazione.tex" "_region_.tex" "linguaggi.tex" "./" "esercizi.tex" "#php.tex#" "java.tex" "cscarp.tex~" "java.log" "oop.log" "cscarp.log" "oop.tex" "php.tex~" "../" "linguaggi.log" "cscarp.tex" "intro.tex" "php.tex" "c.tex" "x.log" "#intro.tex#")
+
+ ("/home/nico/Documenti/scrittura/come si prendeno degli appunti/pag/" (25732 7934 781292 470000) "gestione_del_contenuto.log" "Font_e_misure.tex~" "impaginazione.log" "./" "impaginazione.tex" "gestione_del_contenuto.tex" "Font_e_misure.tex" "../" "intro.tex")
+
+ ("/home/nico/Documenti/scrittura/come si prendeno degli appunti/" (25731 31904 471096 346000) "come-prendere-appunti.tex" "come-prendere-appunti.pdf" "./" "come-prendere-appunti.toc" "come-prendere-appunti.out" "pag/" "../" "img/" "source/" "come-prendere-appunti.aux" "come-prendere-appunti.log")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/pag/" (25838 63795 295864 982000) "vettori.tex" "esercizio.tex" "./" "premesse.tex" "determinante.tex" "numeri_complessi.tex" "applin.tex" "../" "simboli.tex" "esercizio.log" "esercizio.tex~")
+
+ ("/home/nico/repos/dwm/lib/" (25787 2903 297456 537000) "./" "layout.h~" "keyWorld.h" "../" "layout.h" "command.h" "layout.c")
+
+ ("/home/nico/repos/LibroInformatica/" (25839 163 896892 652000) "book.aux" "LICENSE" "book.out" "./" ".git/" "book.tex" "README.md" "java.log" "manuale rapido/" "book.pdf" ".DS_Store" "book.blg" "pag/" "../" "linguaggi.log" "img/" "book.toc" "book.lol" "dispense/" "book.log" "source/" "book.bbl" "slide/")
+
+ ("/home/nico/Documenti/canale/" (25778 62118 310230 25000) "./" "tikz/" "../" "rhat/")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/source/" (25838 63795 312531 824000) "./" "moltM2x2.m" "diagMtx.m" "autoveteautoval.m~" "detMtx2x2.m" "autoveteautoval.m" "../")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/" (25838 63795 312531 824000) "./" "octave.log" "octave.out" "pag/" "octave.toc" "../" "img/" "octave.tex" "source/" "octave.pdf" "octave.aux")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/pag/" (25838 63795 312531 824000) "./" "funzionibase.tex~" "../" "intro.tex" "funzionibase.tex" "funzionibase.log")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/" (25838 63795 295864 982000) "_region_.tex" "algebraegeometria.ilg" "algebraegeometria.toc" "./" "algebraegeometria.bbl" "algebraegeometria.ind" "algebraegeometria.pdf" "algebraegeometria.tex" "formulario/" "algebraegeometria.log" "pag/" "../" "title/" "algebraegeometria.idx" "algebraegeometria.out" "img/" "algebraegeometria.aux" "algebraegeometria.lot" "algebraegeometria.lof" "algebraegeometria.blg")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/formulario/" (25838 63795 282531 509000) "form_geo.out" "./" "form_geo.log" "form_geo.tex" "../" "form_geo.pdf" "form_geo.aux")
+
+ ("/home/nico/Documenti/Note/1-7-2023/" (25775 46863 82080 858000) "slock.org" "./" "slock.org~" "../")
+
+ ("/home/nico/Documenti/" (25820 10258 622355 236000) "testarray/" "./" "Font ad alta visibilità.pdf" "Tesi di laurea Ele/" "scrittura/" "adattamento/" "pdf/" "CompitodiGeometria/" "../" "arrayasm.asm~" "Font ad alta visibilità.odt" "arrayasm.asm" "meme politicamente scorretti/" "OpenDyslexic.odt" "autovettori-e-autovalori" "helloWorld" "helloWorld.o" "helloWorld.asm~" "Note/" "LaTeX/" "helloWorld.asm" "canale/" "OpenDyslexic.pdf")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/" (25838 64477 740431 693000) "_region_.tex" "./" "reti.out" "reti.pdf" "reti.toc" "reti.tex" "reti.log" "pag/" "../" "title/" "img/" "reti.tex~" "reti.aux")
+
+ ("/home/nico/.emacs.d/" (25839 34446 579596 211000) "#ido.last#" "custom.el" "auto-save-list/" "eln-cache/" "init.el" "./" "tutorial/" "init.el~" ".cask/" "elpa/" "ede-projects.el" "url/" ".mc-lists.el" "ido.last~" "../" "ido.last" "custom.el~" "transient/")
+
+ ("/home/nico/" (25839 34446 946258 945000) ".zprofile" "Downloads/" ".bashrc" ".zsh_history" ".zshrc.pre-oh-my-zsh" ".config/" ".ipe/" ".hydrogen/" ".xprofile" ".PKGINFO" ".bash_profile" "./" ".oh-my-zsh/" ".xinitrc" ".pyenv/" ".local/" ".xinitrc~" ".pki/" ".zcompdump-latitude-e5450-5.9.zwc" ".mozilla/" ".pwd" ".wget-hsts" ".emacs.d/" ".Xauthority" "repos/" ".xprofile~" ".bash_logout" "Documenti/" ".MTREE" "../" ".BUILDINFO" "Immagini/" ".gitconfig" ".cache/" ".gnupg/" ".fehbg" ".python-version" "Scaricati/" ".python_history" ".zshrc~" "Download/" ".merkaartor/" ".zshrc" ".zcompdump-latitude-e5450-5.9" ".thunderbird/" ".var/")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/pag/" (25838 63795 299198 350000) "./" "../" "intro.log" "intro.tex~" "intro.tex")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/" (25838 63795 295864 982000) "reti di telecomunicazioni/" "Informatica/" "./" "Chimica/" "Calcolatori elettronici/" "../" "Analisi Matematica/" "Fisica/" "algebra e geometria/")
+
+ ("/home/nico/repos/Appunti-universita/" (25838 63795 382532 561000) "LICENSE" "status.md" "./" ".git/" "README.md" "status.md~" ".DS_Store" ".github/" "../" ".gitignore" "Rudimenti/" "Secondo Anno/" "Primo anno/" ".gitattributes")
+
+ ("/home/nico/repos/" (25838 63757 292116 914000) "L-99Ninety-NineLispProblems/" "slock/" "dotfiles/" "./" "Appunti-universita/" "FROGGER/" "snotes/" "slstatus/" "dwm/" "../" "mail-merge-docx-dateless/" ".hugo_build.lock" "st/" "dmenuWacom/" "gulchnote/" "LibroInformatica/" "nerd-fonts/" "LaTeX-model/" "mail-merge-docx/" "dmenu/" "Arch-fixer/")
+
+ ("/home/nico/.emacs.d/transient/" (25787 1543 517423 185000) "./" "../" "history.el")
+
+ ("/home/nico/.emacs.d/auto-save-list/" (25787 1651 124092 505000) ".saves-4699-workstation-gentoo~" ".saves-32189-latitude-e5450~" ".saves-56594-Workstation-arch~" ".saves-17241-workstation-gentoo~" ".saves-6661-workstation-gentoo~" ".saves-7932-workstation-gentoo~" ".saves-16685-workstation~" ".saves-24861-workstation-gentoo~" ".saves-17536-workstation~" ".saves-29781-workstation-gentoo~" ".saves-13128-workstation-gentoo~" ".saves-6156-workstation-gentoo~" ".saves-29253-workstation~" ".saves-1842-workstation-gentoo~" "./" ".saves-69383-latitude-e5450~" ".saves-4841-workstation-gentoo~" ".saves-14071-workstation-gentoo~" ".saves-118367-latitude-e5450~" ".saves-14648-workstation-gentoo~" ".saves-11366-workstation-gentoo~" ".saves-8933-workstation-gentoo~" ".saves-23953-workstation-gentoo~" ".saves-7230-workstation-gentoo~" ".saves-3653-workstation-gentoo~" ".saves-20490-workstation-gentoo~" ".saves-2764-Workstation-arch~" ".saves-92291-latitude-e5450~" ".saves-5925-workstation-gentoo~" ".saves-21347-workstation-gentoo~" ".saves-11311-workstation-gentoo~" ".saves-16077-workstation-gentoo~" ".saves-3429-workstation-gentoo~" ".saves-28761-workstation-gentoo~" ".saves-31747-workstation~" ".saves-23943-workstation-gentoo~" ".saves-20801-workstation~" "../" ".saves-41549-latitude-e5450~" ".saves-22283-workstation-gentoo~" ".saves-11384-workstation-gentoo~" ".saves-27560-workstation-gentoo~" ".saves-29031-workstation-gentoo~" ".saves-4301-workstation-gentoo~" ".saves-17080-workstation-gentoo~" ".saves-18794-workstation-gentoo~" ".saves-1118-latitude-e5450~" ".saves-30068-workstation-gentoo~" ".saves-27201-workstation-gentoo~" ".saves-5867-workstation-gentoo~" ".saves-10698-workstation-gentoo~" ".saves-7983-workstation-gentoo~" ".saves-24638-workstation~" ".saves-13488-workstation-gentoo~" ".saves-5935-workstation-gentoo~")
+
+ ("/home/nico/Documenti/Note/15-6-2023/" (25739 22577 16670 920000) "note.org" "./" "../" "notes.org" "dd.org")
+
+ ("/home/nico/Documenti/Note/" (25760 4654 456151 564000) "15-6-2023/" "6-6-2023/" "./" "9-6-2023/" "../" "1-7-2023/")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/" (25773 47539 133410 729000) "./" "reti.out" "reti.pdf" "reti.ind" "reti.toc" "reti.tex" "reti.log" "reti.lot" "pag/" "../" "title/" "img/" "reti.idx" "reti.ilg" "reti.lof" "reti.aux")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/pag/" (25726 56312 248252 343000) "./" "../" "intro.tex" "Livelli architetturali bassi.tex")
+
+ ("/home/nico/Documenti/CompitodiGeometria/" (25771 57245 500293 574000) "Compito_Geometria_Nicola_Ferru.pdf" "./" "Compito_Geometria_Nicola_Ferru.aux" "Compito_Geometria_Nicola_Ferru.log" "Compito_Geometria_Nicola_Ferru.tex~" "../" "Compito_Geometria_Nicola_Ferru.tex" "Compito_Geometria_Nicola_Ferru.out")
+
+ ("/home/nico/.config/qutebrowser/" (25760 8695 976250 842000) "autoconfig.yml" "qsettings/" "./" "greasemonkey/" "config.py" "config.py~" "quickmarks" "../" "bookmarks/")
+
+ ("/home/nico/repos/snotes/" (25760 4632 396151 21000) "snotes.o" "LICENSE" "config.h" "snotes.1" "./" "gitSync.o" "timeGet.o" "file.c" "icon/" ".git/" "config.def.h" "snotes" "file.h" "consts.h" "timeGet.h" ".github/" "gitSync.h" "../" "README.org" "file.o" "config.mk" "timeGet.c" "snotes.c" "Makefile" "gitSync.c")
+
+ ("/home/" (25721 43654 106655 395000) "./" "../" "nico/" "lost+found/")
+
+ ("/home/nico/repos/dwm/" (25757 27497 899788 416000) "dwm.1" "dwm.o" "LICENSE" "config.h" "./" "README.org~" "drw.h" ".git/" "transient.c" "util.o" "config.def.h" "dwm.png" "lib/" "config.h~" "util.h" "dwm" "../" "util.c" "README.org" "config.mk" "drw.c" "Makefile" "dwm.c" "drw.o")
+
+ ("/home/nico/Documenti/adattamento/nuovo _ANTONIO/" (25756 36828 73334 853000) "Sales Order for VIRDIS SARA.docx" "Sales Order for VARGIU PATRIZIA.docx" "Sales Order for SATTA MARIA LISA.docx" "Sales Order for MELONI SIMONA.docx" "Sales Order for TARAS ANTONIO GIOVANNI.docx" "Sales Order for PICUS PATRIZIA.docx" "Sales Order for SENES MARINELLA.docx" "Sales Order for SECCHI TIZIANA.docx" "Sales Order for PORCU GIOVANNA MARIA.docx" "Sales Order for ABRIONI GIOVANNA 2.docx" "Sales Order for SPANO MARCO.docx" "Sales Order for CUBEDDU ANTONELLA.docx" "Sales Order for SOLINAS CRISTINA.docx" "Sales Order for CADONI PIER SALVATORE.docx" "Sales Order for ADDIS ELENA.docx" "Sales Order for CAPPELLI ROSINA.docx" "Sales Order for CASTAGNA MARIA LUIGIA.docx" "Sales Order for PAU ANTONELLA.docx" "Sales Order for MANCA ANTONELLA.docx" "Sales Order for DEROMA MILENA.docx" "Sales Order for FALQUI MARIA PAOLA.docx" "Sales Order for DELOGU ANDREINA.docx" "Sales Order for SCANU ALESSANDRA.docx" "Sales Order for BARUZZU MARIA RITA.docx" "Sales Order for ABRIONI ANDREINA.docx" "Sales Order for FALQUI GIUSEPPINA.docx" "Sales Order for CONGIU GIOVANNI GAVINO.docx" "Sales Order for ZANZA SABINA.docx" "Sales Order for ZICCHEDDU ENRICA.docx" "Sales Order for MANCONI LAURA.docx" "Sales Order for MAZZA PAOLA.docx" "Sales Order for MALDUCA BERNARDO.docx" "Sales Order for AMADU IMMACOLATA.docx" "Sales Order for MONGILI MARIA ELENA.docx" "Sales Order for PANI MANUELA.docx" "Sales Order for ARCADU LIDIA.docx" "Sales Order for ARCADU MARINA.docx" "Sales Order for PALITTA GIOVANNA.docx" "Sales Order for SECHI LAURA.docx" "Sales Order for SOLINAS ANTONIO.docx" "Sales Order for DEIANA PAOLA.docx" "Sales Order for CUGUTTU MILENA.docx" "Sales Order for SATTA LUISA.docx" "Sales Order for LUTZU ROBERTA.docx" "Sales Order for PIGA ROSANNA.docx" "docmailmerge.py" "Sales Order for CROSA LUISANGELA.docx" "Sales Order for ARGHITTU ALESSIA.docx" "Sales Order for CABIGLIERA PIERA FRANCESCA.docx" "Sales Order for MONGIU BARBARA.docx" "Sales Order for ZICCHEDDU PATRIZIA.docx" "Sales Order for ARCADU ANTONIA.docx" "Sales Order for ARCADU VINCENZO.docx" "Sales Order for CASELLA LETIZIA.docx" "Sales Order for SOLINAS MARIA TERESA.docx" "Sales Order for SERRA  LOREDANA.docx" "Sales Order for PIZZADILI LUISA.docx" "Sales Order for BECCIU LAURA.docx" "Sales Order for PICUS MADDALENA.docx" "Sales Order for SATTA MIRIAM.docx" "Sales Order for LIPERI BARBARA.docx" "Sales Order for LEDDA ELENA.docx" "Sales Order for SECHI DANIELA.docx" "Sales Order for ABRIONI GIOVANNA 1.docx" "Sales Order for FOGARIZZU CLAUDIA.docx" "Sales Order for GESSA RACHELE.docx" "Sales Order for SOLINAS SIMONA.docx" "Sales Order for DELIPERI ROBERTA.docx" "Sales Order for NURCHIS GIANFRANCA.docx" "Sales Order for CUGUTTU FRANCESCA.docx" "Sales Order for BIBICU IULIA MAGDALENA.docx" "Sales Order for CANU FRANCESCA.docx" "Sales Order for FALQUI CHIARA M.C.docx" "Sales Order for CAMBONI GIOVANNI A..docx" "Sales Order for MALDUCA ANGELA CARMELA.docx" "Sales Order for DEIOSSO GIULIA.docx" "Sales Order for DEMELA TOMASO.docx" "Sales Order for GESSA PAOLA.docx" "Sales Order for SINI PIETRO MARIA.docx" "Sales Order for SOTGIA PATRIZIA.docx" "Sales Order for TOLA FRANCESCA.docx" "Sales Order for DEIOSSO CHIARA.docx" "Sales Order for CAMPUS GIOVANNELLA.docx" "ReporTest.docx" "Sales Order for GIFAT BELLO.docx" "Sales Order for COCCO MARIA PAOLA.docx" "Sales Order for ABRIONI ANTONELLA.docx" "Sales Order for None.docx" "Sales Order for SATTA PIERANGELA.docx" "Sales Order for BELLU GIOVANNA.docx" "Sales Order for CAMPUS CATERINA.docx" "Sales Order for CANALIS LAURA.docx" "Sales Order for BUA SILVANA.docx" "Sales Order for PINNA ANNAROSA.docx" "Sales Order for PINTUS SERGIO.docx" "Sales Order for VIRDIS PIERA.docx" "docmailmerge.py~" "Sales Order for CUBEDDU MARIA GIOVANNA.docx" "Sales Order for MURA ALESSANDRA.docx" "Sales Order for ARMINU ROBERTA.docx" "Sales Order for SERRA CHIARA.docx" "Sales Order for SATTA ELENA.docx" "Sales Order for SEU TANIA.docx" "Sales Order for SANNAI PAOLA CRISTINA.docx" "Sales Order for VELO NEVILA.docx" "Sales Order for SOLINAS MADDALENA.docx" "Sales Order for CANU GIOVANNA.docx" "Sales Order for SCANU MARIA PIERA.docx" "Sales Order for DELIPERI SABINA.docx" "Sales Order for OGANA MARIA RITA.docx" "reportBM.xlsx" "Sales Order for GIAGU GIAMMARIO.docx" "Sales Order for BELLU STEFANO.docx" "Sales Order for MARRAS VALENTINA.docx" "Sales Order for ZICCHEDDU STEFANIA.docx" "Sales Order for CAPPAI ALICE.docx" "Sales Order for BARROCCU BATTISTINA.docx" "Sales Order for JIANG PEIHONG.docx" "Sales Order for FARCHE SILVIA.docx" "Sales Order for PANI VALERIA.docx" "Sales Order for NIEDDU MARIA CHIARA.docx" "Sales Order for DEIANA CLAUDIA.docx" "Sales Order for DEROMA MANUELA.docx" "Sales Order for COTTU MARIA PAOLA.docx" "Sales Order for SOLINAS ARMANDO.docx" "Sales Order for AMADU SEBASTIANA.docx" "Sales Order for CUBEDDU TORRISI GIADA.docx" "Sales Order for CHESSA PINA.docx" "Sales Order for BARRACCA GIUSEPPE.docx" "Sales Order for VIRDIS SALVATORE.docx" "Sales Order for CROSA MICHELA.docx" "Sales Order for GALLITTU CLAUDIA.docx" "Sales Order for DEIOSSO FRANCA.docx" "Sales Order for AMADU GIUSEPPA.docx" "Sales Order for DETTORI MARIA ANTONIETTA.docx" "Sales Order for PINTUS SILVIA.docx" "Sales Order for SATTA ALESSANDRA.docx" "Sales Order for SANNA MARIA PAOLA.docx" "Sales Order for SEU ALESSANDRA.docx" "Sales Order for RACHID SAID.docx" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/sistemi linueari/" (25758 46525 253478 128000) "sistemi lineari.log" "./" "sistemi lineari.aux" "sistemi lineari.out" "sistemi lineari.tex" "sistemi lineari.pdf" "../" "img/" "sistemi lineari.tex~")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/" (25757 26841 476450 801000) "GNUOctave/" "sistemi linueari/" "./" "polinomi e prodotti notevoli/" "../")
+
+ ("/home/nico/repos/mail-merge-docx-dateless/" (25755 19621 233341 781000) "Example Sales Order.docx" "__pycache__/" "Sales Order for Jones.docx" "Sales Order for Thompson.docx" "Sales Order for Sorvino.docx" "./" "OrderTemplate.docx" ".git/" ".ipynb_checkpoints/" "Sales Order for Howard.docx" "README.md" "Sales Order for Andrews.docx" "Sales Order for Jardine.docx" "#README.org#" "docmailmerge.py" "SampleData2.xlsx" "../" "Sales Order for Smith.docx" ".gitignore" "README.org" "Sales Order for Parent.docx" "Sales Order for Gill.docx" "SampleData.xlsx" "requirements.txt" "Sales Order for Morgan.docx" "Sales Order for Kivell.docx")
+
+ ("/home/nico/Documenti/adattamento/" (25741 55269 741342 513000) "./" "../" "nuovo _ANTONIO/")
+
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/" (25726 56312 294919 11000) "mat.tex" "mat.lof" "./" "mat.pdf" "mat.lot" "mat.toc" "pag/" "../" "title/" "mat.ilg" "mat.idx" "img/" "mat.out" "mat.pdfpc" "intro.log" "mat.ind" "mat.log" "mat.aux" "x.log")
+
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/pag/" (25726 56312 291585 678000) "./" "premesse.tex" "integrali.tex" "../" "differenzialita.tex" "intro.log" "derivate_parziali.tex" "intro.tex~" "intro.tex" "differenziali_ordinarie.tex" "differenziali_ordinarie.tex~" "simboli.tex" "intro.tex.back" "serie.tex")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/Fisica/pag/" (25726 56312 214919 9000) "legge di Couloumb.tex" "./" "premesse.tex" "campi_elettrici.tex" "moti.log" "energia.tex" "unita di misura.tex" "legge_di_gauss.tex" "../" "fisica2.tex" "modelli atomici.tex" "programma 2.tex" "simboli.tex" "moti.tex" "energe.tex")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/Fisica/" (25726 56312 214919 9000) "fisica.blg" "fisica.out" "./" "fisica.bbl" "fisica.log" "pag/" "../" "title/" "fisica.tex" "fisica.pdf" "img/" "fisica.aux" "fisica.toc" "fisica.lot" "fisica.lof")
+
+ ("/home/nico/repos/LibroInformatica/source/" (25732 21192 176207 630000) "halloworld.java" "Lista.java" "./" "equals.java" ".DS_Store" "esempio.java" "Lista.java~" "texput.log" "EsempioException.java" "../" "punto3d.java" "lista_base.java" "array.java" "punto2d.java" "trycatch.java" "NodoLista.java" "Nodo.java~" "Nodo.java" "istanza.java")
+
+ ("/home/nico/repos/LibroInformatica/slide/introduzione al php/" (25732 21192 176207 630000) "./" "introPHP.out" "introPHP.snm" "introPHP.log" "introPHP.vrb" "../" "introPHP.tex" "introPHP.aux" "introPHP.toc" "img/" "introPHP.nav" "introPHP.pdf" "introPHP.tex~")
+
+ ("/home/nico/repos/LibroInformatica/slide/array in PHP/" (25732 21192 172874 296000) "arrayphp.toc" "arrayphp.tex" "./" "arrayphp.pdf" "arrayphp.snm" "arrayphp.out" "../" "arrayphp.log" "arrayphp.vrb" "arrayphp.aux" "arrayphp.tex~" "arrayphp.nav")
+
+ ("/home/nico/repos/LibroInformatica/manuale rapido/" (25732 21192 166207 630000) "article.out" "article.tex" "article.pdf" "article.tex~" "./" ".DS_Store" "../" "article.log" "article.aux")
+
+ ("/home/nico/repos/dotfiles/.local/share/" (25721 45110 104153 540000) "./" "applications/" "../" "emoji")
+
+ ("/home/nico/repos/dmenu/" (25721 44690 974143 174000) "LICENSE" "config.h" "stest.1" "README" "./" "drw.h" ".git/" "stest.o" "README.md" "util.o" "dmenu.o" "config.def.h" "arg.h" "dmenu.c" "stest" "util.h" "../" "dmenu_run" "dmenu_path" "util.c" "dmenu.1" "stest.c" "config.mk" "drw.c" "Makefile" "dmenu" "drw.o")
+
+ ("/home/nico/repos/slstatus/" (25733 63357 539906 591000) "components/" "LICENSE" "config.h" "./" ".git/" "slstatus.c" "util.o" "config.def.h" "arg.h" "slstatus.1" "slstatus" "util.h" "../" "util.c" "README.org" "slreset" "slstatus.o" "config.mk" "Makefile" "slstatus.h")
+
+ ("/home/nico/Documenti/come si prendeno degli appunti/pag/" (25732 7934 781292 470000) "gestione_del_contenuto.log" "Font_e_misure.tex~" "impaginazione.log" "./" "impaginazione.tex" "gestione_del_contenuto.tex" "Font_e_misure.tex" "../" "intro.tex")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/GNU\\Octave/" (25732 20623 142860 394000) "./" "octave.log" "octave.out" "octave.tex~" "#octave.tex#" "../" "octave.tex" ".#octave.tex" "octave.pdf" "octave.aux")
+
+ ("/home/nico/Documenti/come si prendeno degli appunti/" (25712 29215 0 0) "come-prendere-appunti.tex" "come-prendere-appunti.pdf" "./" "come-prendere-appunti.toc" "come-prendere-appunti.out" "pag/" "../" "img/" "source/" "come-prendere-appunti.aux" "come-prendere-appunti.log")
+
+ ("/home/nico/.config/" (25726 59969 881675 420000) "gtk-3.0/" "octave/" "libfm/" "pulse/" "./" "kdeconnect/" "mimeapps.list" "wal/" "libreoffice/" "mpd/" "ranger/" "../" "dconf/" "yay/" "touchegg/" "GIMP/" "gh/" "systemd/" "pcmanfm/" "qutebrowser/")
+
+ ("/home/nico/repos/snotes/libs/" (25724 26228 573882 917000) "./" "gitSync.c~" "file.c" "file.h" "consts.h" "#error.c#" "gitSync.h~" "gitSync.h" "../" "file.c~" "error.h" "error.c" "error.c~" "gitSync.c")
+
+ ("/home/nico/Documenti/canale/openoffice/" (25684 53587 849850 769000) "openoffice.org" "openoffice.org~" "feature.jpg" "openoffice.png" "../" "./")
+
+ ("/home/nico/repos/appunti-alessandro/operatori logici/" (25638 61185 163236 833000) "operatoriLogici.cpp" "../" "./")
+
+ ("/home/nico/Immagini/wallpapers/Future/" (25664 22834 119090 876000) "future_18.jpg" "1366233000541.jpg" "1409724139691.jpg" "ridges..jpg" "73931.jpg" "4ce9b63f7219d1616f4d1ff6a(...).gif" "future_13.jpg" "1456526965024.jpg" "future_32.jpg" "BLADE RUNNER x Saigon.png" "1261635391371.jpg" "1433468675807-0.jpg" "asian_cyberpunk-wide.jpg" "futuristic_city_5_full_by(...).jpg" "1366232886688.jpg" "1431066196663-1.jpg" "future_11.jpg" "1456519479439.jpg" "1474757467074.jpg" "1408883107088.jpg" "1365871447_03.jpg" "future_14.jpg" "02_dustwind_camaraderie.jpg" "1432599578099.png" "future_3.jpg" "1443834210062-2.jpg" "future_30.jpg" "future_1.png" "ricean-vlad-city.jpg" "room on fire.jpg" "future_34.jpg" "future_20.jpg" "future_26.jpg" "1479926321076.png" "future_12.jpg" "future_27.jpg" "1378870852724.jpg" "1456524521131.jpg" "1387697504188.jpg" "future_33.jpg" "1482892301416.jpg" "future_29.jpg" "1432945333574-2.jpg" "1424128559367-2.jpg" "1484801642862.jpg" "1440291539953-1.jpg" "1443834210061-0.png" "future_22.jpg" "1440288157337-1.jpg" "1474513622989.jpg" "1430600418538.jpg" "1433294860669-4.jpg" "future_28.jpg" "513ce197db005585eb7378839(...).jpg" "1408906277712.jpg" "cyber_aa7.jpg" "future_9.jpg" "future_23.jpg" "future_31.jpg" "future_25.jpg" "1440059773384.jpg" "future_7.jpg" "1430601766509-4.jpg" "1467788059932.jpg" "future_24.jpg" "future_19.jpg" "post apocalyptic wanderer.jpg" "future_17.jpg" "future_8.jpg" "future_4.jpg" "future_2.jpg" "1469925475360.jpg" "future_15.jpg" "future_6.jpg" "1412296358907.jpg" "1430601766508-2.jpg" "1430790602233.jpg" "1474629081092.jpg" "1492610895179.jpg" "1489536506664.jpg" "1487404645380.jpg" "1443596362217-3.jpg" "1433294607923-1.jpg" "1433294860669-3.jpg" "1462804204331.jpg" "future_5.jpg" "1479665698114.jpg" "future_16.jpg" "deus_ex.png" "1476191263053.jpg" "1433294607949-2.jpg" "a bar under the sea.jpg" "1430976796805.jpg" "moon SF.jpg" "1401938669273.jpg" "1474236866683.png" "1436546392749-2.png" "1347845115045.jpg" "1443596362216-2.jpg" "1457789206886.jpg" "future_21.jpg" "hexa_city.jpg" "1413407306773-0.jpg" "1282177669146.jpg" "future_10.jpg" "1408767491406.jpg" "1475616328034.jpg" "1477516316928.jpg" "plus.jpg" "1373994632491.jpg" "../" "./")
+
+ ("/home/nico/repos/dotfiles/.local/" (25472 53150 843323 302000) "share/" "bin/" "../" "./")
+
+ ("/home/nico/repos/dotfiles/" (25651 4292 913082 906000) ".i3status.conf" ".i3blocks.conf" "img.png" "etc/" "README.md" ".zshrc" ".xprofile" ".xinitrc" ".vimrc" ".vim/" ".local/" ".emacs.d/" ".config/" ".Xresources" ".DS_Store" ".git/" "../" "./")
+
+ ("/home/nico/.config/i3/" (25652 34735 702420 44000) "config" "config~" "../" "./")
+
+ ("/home/nico/Documenti/scrittura/polinomi e prodotti notevoli/" (25669 36006 175669 133000) "article.tex" "article.tex~" "img/" "\\" "article.pdf" "article.out" "article.aux" "article.log" "../" "./")
+
+ ("/home/nico/Documenti/scrittura/" (25667 54001 263185 59000) "polinomi e prodotti notevoli/" "programma_luigi.md" "programma_luigi.md~" "come si prendeno degli appunti/" "../" "./")
+
+ ("/home/nico/repos/screen-settings/" (25652 34100 742435 810000) "LICENSE" "screen.sh" "screen.sh~" "README.org" ".git/" "../" "./")
+
+ ("/home/nico/.config/sway/" (25645 27043 19960 628000) "config" "config~" "../" "./")
+
+ ("/home/nico/repos/appunti-alessandro/" (25638 61439 126563 848000) "operatoriLogici.cpp" "operatori logici/" "limiti di iostadard/" "README.md" ".git/" "../" "./")
+
+ ("/media/dati/usbnico/consegna desame/code/php/" (25038 54470 126460 659000) "logout.php" "reindirizza.php" "ricerca.php" "login.php" "visualizzazione.php" "home.php" "../" "./")
+
+ ("/media/dati/usbnico/consegna desame/code/" (25038 54470 121460 659000) "php/" "db/" "../" "./")
+
+ ("/media/dati/usbnico/consegna desame/" (25038 54470 151460 661000) "book.lof" "book.lot" "app/" "book.out" "book.toc" "book.ind" "book.lol" "book.ilg" "pag/" "book.log" "book.tex" "code/" "book.aux" "book.idx" "img/" "book.pdf" "x.log" "schema di rete/" "web site/" "../" "./")
+
+ ("/media/dati/usbnico/Elaborato Nicola Ferru/" (25038 54470 182460 662000) "app/" "book.pdf" "../" "./")
+
+ ("/media/dati/usbnico/" (25038 55336 414505 351000) "X10-cv-europass-it-odt.odt" "Windows_7_AIO_SP1.iso" "verifica di Italiano Nicola Ferru 5N.odt" "SQL.pdf" "sostanze dopanti nel 36.odp" "PCTO.odp" "malware inglese.pdf" "LaTeX.pdf" "inglese 06-05-2021.pdf" "CV Nicola Ferru.pdf" "cop.xcf" "cop.png" "consegna nicola ferru e vagiu francesco emilio.odp" "compito di gestione progetto nicola ferru.pdf" "compito di gestione progetto nicola ferru.odg" "2021-07-24 08-17-50.mkv" "2021-07-17 10-56-46.mkv" "2021-07-17 10-54-25.mkv" "verifiche/" "vbs/" "sql/" "scaletta esame/" "privata/" "mat/" "Lo scrivere è arte/" "LaTeX/" "Elaborato Nicola Ferru/" "consegna desame/" "UA740-Fairchild.pdf" "prova quattro.pdf" "Presentazione Madrid 2.pptx" "Presentazione Madrid.pptx" "npp.7.8.8.Installer.exe" "nicola e matteo quarta prova.psdata" "JS.md" "documento d'identità.pdf" "compareTo.txt" "Apache_OpenOffice_4.1.7_Win_x86_install_it.exe" "Amplificatore_invertente_multisim_30-01-2020.pdf" "verificaEspressioni/" "System Volume Information/" "Sito Erasmus_24feb/" "Relazione_telecomunicazioni/" "Nicola Ferru 4N/" "LOST.DIR/" "IdeaProjects/" "Gioco/" "dos/" "Documenti/" "consegna_mercoledì/" "bootstrap/" "Android/" "Albergobak/" "Albergo/" "../" "./")
+
+ ("/media/dati/" (25401 54628 755137 377000) "vecchi ricordi/" "Win10_21H2_Italian_x64(1).iso" "it_windows_7_ultimate_with_sp1_x64_dvd_u_677356.iso" "SteamLibrary/" "VM/" "windows11.iso" "usbnico/" "Versione compressa/" "lezioni unica/" "backup home/" "risorse/" "nextcloud/" "nextcloud-21.0.2.tar.bz2.asc" "nextcloud-21.0.2.tar.bz2" "nextcloud.asc" "makeresolvedeb_1.5.0_multi.sh" "DaVinci_Resolve_17.2.1_Linux.run" "Linux_Installation_Instructions.pdf" "niko/" "Steely Dan - Kid Charlemagne-jJ9Xk-VoGqo.ogg" "Element/" "back/" "consegna desame/" "C.odp" "mod/" "img/" "doc/" "giustificazione configurazione carpenteria/" "project charter/" "OracleLinux-R8-U3-x86_64-dvd.iso" "Relazione programma che svolge le espressioni/" "gestione progetto arch/" "test bootstrap/" "Relazione programma ms-dos/" "2020-11-01 20-05-35.mkv" "macOS-Simple-KVM/" "panda/" "musica/" "sync/" "The_book_of_Cisco/" "Wallpaper originali/" "LaTeX-model/" "NFVBlog/" "wallpapers/" "twitter" "VirtualBox/" "Documenti/" "games/" ".Trash-1000/" "../" "./")
+
+ ("/media/" (25469 23321 651020 227000) "../" "dati/" "./" ".keep")
+
+ ("/home/nico/repos/LibroInformatica/slide/" (25636 39485 789264 127000) "array in PHP/" "Sessioni php/" "introduzione al php/" "../" "./")
+
+ ("/home/nico/repos/LibroInformatica/slide/Sessioni php/" (25634 48959 529927 441000) ".#sessionephp.tex" "sessionephp.snm" "sessionephp.toc" "sessionephp.nav" "sessionephp.out" "sessionephp.aux" "sessionephp.pdf" "sessionephp.log" "sessionephp.tex" "sessionephp.tex~" "../" "./")
+
+ ("/home/nico/repos/libasecnsp11-for-archlinux/" (25594 27959 15818 880000) "README.md" "libasecnsp11/" "libACR38Driver/" "LICENSE" ".git/" "../" "./")
+
+ ("/opt/lampp/htdocs/www/modal test/" (25594 21451 389314 164000) "demo.zip" "index.html" "../" "OPERATORI RELAZIONALI_RIASSUNTO.docx" "Verifica Giuseppe del 16-01-23 CON CORREZIONE.docx" "teminiecondizioni.html~" "Verifica del 16-01-23 Soluzione.doc" ".git/" "img/" "./" ".~lock.OPERATORI RELAZIONALI_RIASSUNTO.docx#" "index.html~" "css/" "teminiecondizioni.html")
+
+ ("/home/nico/repos/vapetoolsdev/" (25589 4167 373325 357000) "vapetools/" "sitemap.xml" "materials_dyn_TCR.xlsx" "index.php" "git.ssh.pub" "git.ssh" "e8081826-39ec-461a-9e6b-605dffbd1272_en.html" "README.md" "BingSiteAuth.xml" ".git/" "../" "./")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/scienceandtec/" (25585 19142 825819 406000) "Old/" "st.utils.min.js" "st.utils.js" "../" "./" "#cookie.js#")
+
+ ("/home/nico/repos/dmenuwacom/" (25582 34087 79983 65000) "dmenuWacom" "README.md" "profiles/" "sys/" "installer.sh" "dmenuWacom.png" "dmenuWacom.1" "LICENSE" ".DS_Store" ".git/" "../" "./")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/bootstrap/" (25583 38167 699574 630000) "../" "bootstrap.bundle.min.js" "bootstrap.bundle.min.js.map" "./")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/" (25583 38167 699574 630000) "scienceandtec/" "../" "bootstrap/" "./")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/" (25583 39973 412863 0) "demo.zip" "packages/" "coil-calc - Copia.html" "info.html" "urllist.txt" "sitemap.html" "batteries.html" "ror.xml" "../" "coil-calc.html" "sitemap.xml.gz" "Reattivita_conversione_indicatore_velocita.xlsm" "js/" "demo.html" "eliquid-calc.html" "data/" "googled783ca22fa050933.html" "img/" "./" "default.html" "sitemap.xml" "css/" ".vscode/" "teminiecondizioni.html")
+
+ ("/opt/lampp/htdocs/www/vapetoolsdev/" (25583 38514 536232 622000) "e8081826-39ec-461a-9e6b-605dffbd1272_en.html" "git.ssh.pub" "materials_dyn_TCR.xlsx" "vapetools/" "../" "README.md" "git.ssh" ".git/" "./" "sitemap.xml" "index.php")
+
+ ("/opt/lampp/htdocs/www/" (25583 38167 676241 298000) "vapetoolsdev/" "modal test/" "esercizio/" "../" "cookiels/" "./")
+
+ ("/opt/lampp/htdocs/www/cookiels/" (25581 22394 363051 939000) "verifica.js~" "index.html" "../" "verifica.js" "index.php~" ".git/" "./" "logo.jpg" "index.html~" "logo.png")
+
+ ("/opt/lampp/htdocs/" (25573 6414 709632 332000) "dashboard/" "../" "webalizer/" "www/" "img/" "./" "bitnami.css" "index.php" "applications.html" "favicon.ico")
+
+ ("/opt/lampp/" (25573 6345 142967 396000) "cgi-bin/" "RELEASENOTES" "lib/" "docs/" "uninstall" "htdocs/" "THIRDPARTY" "etc/" "properties.ini" "include/" "var/" "share/" "apache2/" "bin/" "README-wsrep" "error/" "lib64/" "temp/" "../" "manual/" "libexec/" "php/" "info/" "build/" "lampp" "phpmyadmin/" "README.md" "xampp" "modules/" "proftpd/" "mysql/" "uninstall.dat" "sbin/" "man/" "licenses/" "img/" "./" "logs/" "ctlscript.sh" "manager-linux-x64.run" "icons/")
+
+ ("/opt/" (25573 6016 39642 252000) "../" "cni/" "lampp/" "discord/" "./" ".keep")
+
+ ("/mnt/" (25469 23321 654353 589000) "../" "./" ".keep")
+
+ ("/home/nico/repos/dmenuwacom/profiles/" (25563 41173 473169 452000) "kitty.dmwa" "ipe.dmwa" "cinelerra.dmwa" "xournalpp.dmwa" "gimp.dmwa" "firefox.dmwa" "empty.sh" "../" "./")
+
+ ("/home/nico/repos/new builds/st/" (25539 60383 893179 292000) "x.o" "st.o" "config.h" "config.h~" "x.c" "win.h" "st.info" "st.h" "st.c" "st.1" "config.mk" "config.def.h" "arg.h" "TODO" "README" "Makefile" "LICENSE" "LEGACY" "FAQ" ".git/" "../" "./")
+
+ ("/home/nico/repos/new builds/" (25539 57253 406590 430000) "st/" "../" "./")
+
+ ("/home/nico/repos/yt-quick-video/" (25505 47285 963157 301000) "yt-qv" "yt-qv~" "README.md" "../" "./")
+
+ ("/home/nico/.screenlayout/" (25509 40804 359811 519000) "layout.sh" "layout.sh~" "../" "./")
+
+ ("/home/nico/Documenti/canale/mpd - music player/" (25501 40471 559916 909000) "mpd.org" "#mpd.org#" "../" "./")
+
+ ("/home/nico/.config/ncmpcpp/" (25499 28042 146151 602000) "config" "config~" "error.log" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Secondo Anno/" (25478 16520 882888 499000) "matematica applicata/" "fisica tecnica/" "Elettrotecnica/" "Analisi di sistemi/" "Analisi Matematica 2/" "../" "./")
+
+ ("/home/nico/Documenti/Github/Appunti-Universita/Calcolatori elettronici/" (25219 33181 822195 209000) "../" "book.aux" "./" "book.log" "book.tex" "book.pdf" "book.out")
+
+ ("/home/nico/Documenti/Github/pdfcomp/" (25227 32742 780820 111000) "../" "LICENSE" "test/" "./" "test.pdf" ".git/" "README.md" ".gitattributes" "pdfcomp")
+
+ ("/home/nico/Documenti/Github/Appunti-Universita/algebra e geometria/" (25223 62810 397103 4000) "algebraegeometria.tex" "algebraegeometria.idx" "algebra e geometria.synctex.gz" "algebraegeometria.lot" "../" "pag/" "algebraegeometria.out" "algebra e geometria.toc" "algebraegeometria.log" "algebraegeometria.ind" "algebra e geometria.lof" "algebraegeometria.lof" "./" "algebra e geometria.out" "algebraegeometria.ilg" "algebraegeometria.pdf" "#algebraegeometria.tex#" "algebra e geometria.aux" "algebra e geometria.log" "algebraegeometria.toc" "algebraegeometria.aux")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
