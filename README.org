@@ -1,5 +1,6 @@
 * dotfiles
-my config file
+This repository contains the configuration that I use to work, all the files are distributed with the limitations set by the license, which can be consulted from
+the file [[https://github.com/NF02/dotfiles/blob/master/LICENSE][LICENSE]].
 #+CAPTION: A screenshot of the desktop
 #+NAME:   fig:screenshot
 [[https://raw.githubusercontent.com/NF02/dotfiles/master/img.png]]
@@ -20,6 +21,8 @@ my config file
  * [[https://www.zsh.org/"][zsh]] - system shell;
  * [[https://www.newsboat.org"][newsboat]] - RSS reader;
 ** Installation
+These are the steps to be able to install my configuration, the comments indicate what you are applying, obviously if you need only a specific part you can copy the
+single file as the UNIX shell allows you to do.
 #+begin_src zsh
 git clone https://github.com/nf02/dotfiles
 # app config
