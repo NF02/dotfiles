@@ -4,21 +4,34 @@ my config file
 #+NAME:   fig:screenshot
 [[https://raw.githubusercontent.com/NF02/dotfiles/master/img.png]]
 ** Default program
- * **[[https://dwm.suckless.org/][dwm]]** - window manager;
-- **[[https://www.mozilla.org/en-US/firefox/new/][Firefox]]** - browser web;
-- **[[https://filezilla-project.org/download.php?type=client][Filezilla]]** - FTP client;
-- **[[st.suckless.org][st]]** - system terminale;
-- **[[https://flameshot.org/#/"][flameshot]]** - screenshot app;
-- **[[https://www.thunderbird.net/][thunderbird]]** - mail client;
-- **[[https://wiki.gnome.org/Projects/NetworkManager][Network Manager]]** - connection manager;
-- **[[https://www.gnu.org/software/grub/][Grub]]** - bootloader;
-- **[[https://www.gnu.org/software/emacs/][emacs]]** - text editor & LaTeX editor;
-- **[[https://joplinapp.org/][joplin]]** - Markdown editor;
-- **[[https://github.com/ranger/ranger][ranger]]** - file manager;
-- **[[https://github.com/GeorgeFilipkin/pulsemixer][pulsemixer]]** - mixer audio;
-- **[[https://tools.suckless.org/slock/][slock (simple lock)]]** - lockscreen;
-- **[[https://github.com/cdown/clipmenu][clipmenu]]** - clipboard;
-- **[[https://www.zsh.org/"][zsh]]** - system shell;
-- **[[https://www.newsboat.org"][newsboat]]** - RSS reader;
+ * [[https://dwm.suckless.org/][dwm]] - window manager;
+ * [[https://www.mozilla.org/en-US/firefox/new/][Firefox]] - browser web;
+ * [[https://filezilla-project.org/download.php?type=client][Filezilla]] - FTP client;
+ * [[st.suckless.org][st]] - system terminale;
+ * [[https://flameshot.org/#/"][flameshot]] - screenshot app;
+ * [[https://www.thunderbird.net/][thunderbird]] - mail client;
+ * [[https://wiki.gnome.org/Projects/NetworkManager][Network Manager]] - connection manager;
+ * [[https://www.gnu.org/software/grub/][Grub]] - bootloader;
+ * [[https://www.gnu.org/software/emacs/][emacs]] - text editor, markdown editor & LaTeX editor;
+ * [[https://github.com/ranger/ranger][ranger]] - file manager;
+ * [[https://github.com/GeorgeFilipkin/pulsemixer][pulsemixer]] - mixer audio;
+ * [[https://tools.suckless.org/slock/][slock (simple lock)]] - lockscreen;
+ * [[https://github.com/cdown/clipmenu][clipmenu]] - clipboard;
+ * [[https://www.zsh.org/"][zsh]] - system shell;
+ * [[https://www.newsboat.org"][newsboat]] - RSS reader;
+** Installation
+#+begin_src zsh
+git clone https://github.com/nf02/dotfiles
+# app config
+cp -r dotfiles/.config/* .config/
+# emacs config
+cp -r dotfiles/.emacs.d/ ~
+# X session file
+cp dotfiles/.xinitrc ~
+cp dotfiles/.xprofile ~
+# zsh themes "oh-my-zsh"
+curl https://raw.githubusercontent.com/NF02/dotfiles/master/.oh-my-zsh/themes/nfvblog.zsh-theme > .oh-my-zsh/themes/
+omz theme set nfvblog
+#+end_src
 ** Wallpapers
 For the [[https://github.com/NF02/wallpaper][wallpapers]] they are all present within the repo of the same name.
