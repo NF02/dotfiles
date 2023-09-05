@@ -33,7 +33,7 @@ cp -r dotfiles/.emacs.d/ ~
 cp dotfiles/.xinitrc ~
 cp dotfiles/.xprofile ~
 # zsh themes "oh-my-zsh"
-curl https://raw.githubusercontent.com/NF02/dotfiles/master/.oh-my-zsh/themes/nfvblog.zsh-theme > .oh-my-zsh/themes/
+curl https://raw.githubusercontent.com/NF02/dotfiles/master/.oh-my-zsh/themes/nfvblog.zsh-theme > .oh-my-zsh/themes/nfvblog.zsh-theme
 omz theme set nfvblog
 #+end_src
 ** Wallpapers
