@@ -237,5 +237,5 @@ label pager,  !mime ^text, !ext xml|json|csv|tex|py|pl|rb|js|sh|php|ms  = "$PAGE
 ext blend, has blender, X, flag f =  blender -- "$@"
 ext ms = nvim -- "$@"
 else = xdg-open "$1"
-label editor = "$EDITOR" -- "$@" &
+label editor = "$EDITOR -nw" -- "$@"
 label pager  = "$PAGER" -- "$@"

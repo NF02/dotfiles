@@ -2,16 +2,21 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/nico/repos/web/test/" . "content/")
+ ("/home/nico/repos/web/" . "test/")
+ ("/home/nico/Documenti/Note/" . "1-7-2023/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/" . "pag/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/" . "pag/")
  ("/home/nico/Documenti/adattamento/" . "nuovo _ANTONIO/")
  ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/" . "pag/")
  ("/home/nico/Documenti/come si prendeno degli appunti/" . "pag/")
- ("/home/nico/repos/Appunti-universita/Rudimenti/" . "GNUOctave/")
+ ("/home/nico/repos/Appunti-universita/Rudimenti/" . "sistemi linueari/")
  ("/home/nico/repos/snotes/" . "libs/")
  ("/home/nico/repos/appunti-alessandro/" . "operatori logici/")
  ("/home/nico/repos/dwm/" . "lib/")
  ("/home/nico/repos/dotfiles/.local/" . "share/")
  ("/home/nico/repos/dotfiles/" . ".local/")
- ("/home/nico/.emacs.d/" . "auto-save-list/")
+ ("/home/nico/.emacs.d/" . "transient/")
  ("/media/dati/usbnico/consegna desame/code/" . "php/")
  ("/media/dati/usbnico/consegna desame/" . "code/")
  ("/media/dati/usbnico/" . "consegna desame/")
@@ -19,7 +24,7 @@
  ("/media/" . "dati/")
  ("/home/nico/repos/LibroInformatica/slide/" . "array in PHP/")
  ("/home/nico/repos/LibroInformatica/" . "manuale rapido/")
- ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/" . "pag/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/" . "formulario/")
  ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/" . "scienceandtec/")
  ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/" . "js/")
  ("/opt/lampp/htdocs/www/vapetoolsdev/" . "vapetools/")
@@ -33,17 +38,17 @@
  ("/home/nico/Documenti/scrittura/" . "come si prendeno degli appunti/")
  ("/home/nico/Documenti/canale/" . "openoffice/")
  ("/home/nico/repos/Appunti-universita/Primo anno/Fisica/" . "pag/")
- ("/home/nico/repos/Appunti-universita/Primo anno/" . "algebra e geometria/")
+ ("/home/nico/repos/Appunti-universita/Primo anno/" . "reti di telecomunicazioni/")
  ("/home/nico/repos/dmenuwacom/" . "profiles/")
  ("/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/" . "pag/")
  ("/home/nico/repos/Appunti-universita/Secondo Anno/" . "Analisi Matematica 2/")
- ("/home/nico/repos/Appunti-universita/" . "Rudimenti/")
- ("/home/nico/repos/" . "Appunti-universita/")
+ ("/home/nico/repos/Appunti-universita/" . "Primo anno/")
+ ("/home/nico/repos/" . "web/")
  ("/home/" . "nico/")
  ("/home/nico/Documenti/Github/Appunti-Universita/" . "Calcolatori elettronici/")
  ("/home/nico/Documenti/Github/Appunti-universita/" . "Fisica/")
  ("/home/nico/Documenti/Github/" . "Appunti-Universita/")
- ("/home/nico/Documenti/" . "adattamento/")
+ ("/home/nico/Documenti/" . "Note/")
  ("/home/nico/.config/" . "qutebrowser/")
  ("/home/nico/Immagini/wallpapers/" . "Future/")
  ("/home/nico/Immagini/" . "wallpapers/")
@@ -52,12 +57,24 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/nico/repos/web/test/"
+ "/home/nico/Documenti/"
+ "/home/nico/.emacs.d/"
+ "/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/pag/"
+ "/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/"
+ "/home/nico/repos/snotes/"
+ "/home/nico/Documenti/Note/1-7-2023/"
+ "/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/pag/"
+ "/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/"
+ "/home/nico/Documenti/CompitodiGeometria/"
+ "/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/formulario/"
+ "/home/nico/"
+ "/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/"
+ "/home/nico/repos/Appunti-universita/Rudimenti/sistemi linueari/"
  "/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/pag/"
  "/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/"
  "/home/nico/Documenti/adattamento/nuovo _ANTONIO/"
  "/home/nico/repos/mail-merge-docx-dateless/"
- "/home/nico/.emacs.d/"
- "/home/nico/repos/snotes/"
  "/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/source/"
  "/home/nico/repos/Appunti-universita/Rudimenti/GNU\\Octave/"
  "/home/nico/Documenti/come si prendeno degli appunti/pag/"
@@ -66,9 +83,7 @@
  "/home/nico/repos/dwm/"
  "/home/nico/repos/slstatus/"
  "/home/nico/Documenti/canale/"
- "/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/"
  "/home/nico/repos/LibroInformatica/"
- "/home/nico/Documenti/"
  "/home/nico/Documenti/canale/openoffice/"
  "/home/nico/repos/dwm/lib/"
  "/home/nico/repos/dmenu/"
@@ -92,57 +107,89 @@
  "/home/nico/repos/vapetoolsdev/"
  "/opt/lampp/htdocs/www/modal test/"
  "/opt/lampp/htdocs/www/vapetoolsdev/vapetools/"
- "/opt/lampp/htdocs/www/vapetoolsdev/"
- "/home/nico/repos/dmenuwacom/"
- "/opt/lampp/htdocs/www/cookiels/"
- "/home/nico/"
- "/home/nico/Documenti/scrittura/"
- "/home/nico/repos/new builds/st/"
- "/home/nico/repos/Appunti-universita/Primo anno/Fisica/"
- "/home/nico/repos/yt-quick-video/"
- "/home/nico/Documenti/canale/mpd - music player/"
- "/home/nico/repos/Appunti-universita/Primo anno/Fisica/pag/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "funzionibase.tex"
- "octave.tex"
- "docmailmerge.py"
- "README.org"
+ "hugo.toml"
+ "helloWorld.asm"
  "init.el"
- "config.h"
- "snotes.c"
- "diagMtx.m"
- "Font_e_misure.tex"
- "config.py"
+ "intro.tex"
+ "intro.log"
+ "reti.tex"
+ "Makefile"
+ "slock.org"
+ "Livelli architetturali bassi.tex"
+ "Compito_Geometria_Nicola_Ferru.tex"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/pag/" (25750 49076 727500 341000) "./" "funzionibase.tex~" "funzionibase.pdf" "../" "intro.tex" "funzionibase.tex" "funzionibase.log")
+ ("/home/nico/repos/web/test/content/" (25896 11205 75831 14000) "./" "../")
 
- ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/" (25750 47794 277468 889000) "./" "octave.log" "octave.out" "pag/" "octave.toc" "../" "img/" "octave.tex" "source/" "octave.pdf" "octave.aux")
+ ("/home/nico/repos/web/test/" (25896 12013 263741 197000) "themes/" "hugo.toml~" "static/" "./" "hugo.toml" "resources/" "content/" ".git/" "i18n/" "../" ".hugo_build.lock" "data/" "assets/" "archetypes/" ".gitmodules" "layouts/")
 
- ("/home/nico/" (25750 49151 974168 851000) ".zprofile" "Downloads/" ".bashrc" ".zsh_history" ".zshrc.pre-oh-my-zsh" ".config/" ".ipe/" ".hydrogen/" ".xprofile" "2023-06-17 12-17-53.mkv" "2023-06-17 12-11-03.mkv" ".bash_profile" "./" ".oh-my-zsh/" ".xinitrc" ".pyenv/" ".local/" ".xinitrc~" ".pki/" ".zcompdump-latitude-e5450-5.9.zwc" ".mozilla/" ".pwd" ".wget-hsts" ".emacs.d/" ".Xauthority" "repos/" ".xprofile~" ".bash_logout" "Documenti/" "../" "Immagini/" ".gitconfig" "2023-06-17 12-21-22.mkv" ".cache/" ".gnupg/" ".fehbg" ".python-version" "2023-06-17 12-18-49.mkv" "Scaricati/" ".python_history" ".zshrc~" "Download/" ".zshrc" ".zcompdump-latitude-e5450-5.9" "autosave.ipe" ".thunderbird/" "octave-workspace")
+ ("/home/nico/repos/web/" (25896 11205 75831 14000) "./" "test/" "../")
+
+ ("/home/nico/repos/" (25896 54234 718567 383000) "L-99Ninety-NineLispProblems/" "slock/" "dotfiles/" "web/" "./" "Appunti-universita/" "FROGGER/" "snotes/" "slstatus/" "dwm/" "../" "mail-merge-docx-dateless/" ".hugo_build.lock" "st/" "dmenuWacom/" "presentazioni/" "gulchnote/" "LibroInformatica/" "nerd-fonts/" "sent/" "LaTeX-model/" "mail-merge-docx/" "dmenu/" "farbfeld/" "Arch-fixer/")
+
+ ("/home/nico/" (25896 11723 634494 252000) ".zprofile" ".docker/" "Downloads/" ".npm/" ".bashrc" ".zsh_history" ".zshrc.pre-oh-my-zsh" ".config/" ".ipe/" ".hydrogen/" ".xprofile" ".PKGINFO" ".~lock.saldo monete.ods#" ".bash_profile" "./" ".oh-my-zsh/" ".xinitrc" ".pyenv/" ".local/" ".xinitrc~" ".pki/" ".zcompdump-latitude-e5450-5.9.zwc" ".mozilla/" ".pwd" ".wget-hsts" ".emacs.d/" ".Xauthority" ".zshrc.bck" "repos/" ".xprofile~" ".bash_logout" "documenti finiti/" "Documenti/" ".MTREE" "../" ".BUILDINFO" "Immagini/" ".gitconfig" ".password-store/" ".cache/" ".gnupg/" ".fehbg" ".python-version" "Scaricati/" ".python_history" ".zshrc~" "Download/" ".merkaartor/" ".zshrc" ".zcompdump-latitude-e5450-5.9" ".thunderbird/" "octave-workspace" ".w3m/" ".var/")
+
+ ("/home/nico/Documenti/" (25815 57059 285278 823000) "testarray/" "come si prendeno degli appunti/" "./" "Font ad alta visibilità.pdf" "Tesi di laurea Ele/" "adattamento/" "pdf/" "CompitodiGeometria/" "../" "arrayasm.asm~" "Font ad alta visibilità.odt" "arrayasm.asm" "meme politicamente scorretti/" "OpenDyslexic.odt" "autovettori-e-autovalori" "helloWorld" "helloWorld.o" "helloWorld.asm~" "Note/" "LaTeX/" "helloWorld.asm" "canale/" "OpenDyslexic.pdf")
+
+ ("/home/nico/.emacs.d/" (25818 40652 522643 421000) "#ido.last#" "custom.el" "auto-save-list/" "eln-cache/" "init.el" "./" "tutorial/" "init.el~" ".cask/" "elpa/" "ede-projects.el" "url/" ".mc-lists.el" "ido.last~" "../" "ido.last" "custom.el~" "transient/")
+
+ ("/home/nico/.emacs.d/transient/" (25787 1543 517423 185000) "./" "../" "history.el")
+
+ ("/home/nico/.emacs.d/auto-save-list/" (25787 1651 124092 505000) ".saves-4699-workstation-gentoo~" ".saves-32189-latitude-e5450~" ".saves-56594-Workstation-arch~" ".saves-17241-workstation-gentoo~" ".saves-6661-workstation-gentoo~" ".saves-7932-workstation-gentoo~" ".saves-16685-workstation~" ".saves-24861-workstation-gentoo~" ".saves-17536-workstation~" ".saves-29781-workstation-gentoo~" ".saves-13128-workstation-gentoo~" ".saves-6156-workstation-gentoo~" ".saves-29253-workstation~" ".saves-1842-workstation-gentoo~" "./" ".saves-69383-latitude-e5450~" ".saves-4841-workstation-gentoo~" ".saves-14071-workstation-gentoo~" ".saves-118367-latitude-e5450~" ".saves-14648-workstation-gentoo~" ".saves-11366-workstation-gentoo~" ".saves-8933-workstation-gentoo~" ".saves-23953-workstation-gentoo~" ".saves-7230-workstation-gentoo~" ".saves-3653-workstation-gentoo~" ".saves-20490-workstation-gentoo~" ".saves-2764-Workstation-arch~" ".saves-92291-latitude-e5450~" ".saves-5925-workstation-gentoo~" ".saves-21347-workstation-gentoo~" ".saves-11311-workstation-gentoo~" ".saves-16077-workstation-gentoo~" ".saves-3429-workstation-gentoo~" ".saves-28761-workstation-gentoo~" ".saves-31747-workstation~" ".saves-23943-workstation-gentoo~" ".saves-20801-workstation~" "../" ".saves-41549-latitude-e5450~" ".saves-22283-workstation-gentoo~" ".saves-11384-workstation-gentoo~" ".saves-27560-workstation-gentoo~" ".saves-29031-workstation-gentoo~" ".saves-4301-workstation-gentoo~" ".saves-17080-workstation-gentoo~" ".saves-18794-workstation-gentoo~" ".saves-1118-latitude-e5450~" ".saves-30068-workstation-gentoo~" ".saves-27201-workstation-gentoo~" ".saves-5867-workstation-gentoo~" ".saves-10698-workstation-gentoo~" ".saves-7983-workstation-gentoo~" ".saves-24638-workstation~" ".saves-13488-workstation-gentoo~" ".saves-5935-workstation-gentoo~")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/pag/" (25778 34698 109794 368000) "./" "../" "intro.log" "intro.tex~" "intro.tex")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazioni/" (25778 57198 30108 722000) "_region_.tex" "./" "reti.out" "reti.pdf" "reti.toc" "reti.tex" "reti.log" "pag/" "../" "title/" "img/" "reti.tex~" "reti.aux")
+
+ ("/home/nico/Documenti/Note/1-7-2023/" (25760 6200 32856 262000) "slock.org" "./" "slock.org~" "../")
+
+ ("/home/nico/Documenti/Note/15-6-2023/" (25739 22577 16670 920000) "note.org" "./" "../" "notes.org" "dd.org")
+
+ ("/home/nico/Documenti/Note/" (25760 4654 456151 564000) "15-6-2023/" "6-6-2023/" "./" "9-6-2023/" "../" "1-7-2023/")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/" (25773 47539 133410 729000) "./" "reti.out" "reti.pdf" "reti.ind" "reti.toc" "reti.tex" "reti.log" "reti.lot" "pag/" "../" "title/" "img/" "reti.idx" "reti.ilg" "reti.lof" "reti.aux")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/" (25773 47881 253419 190000) "reti di telecomunicazioni/" "Informatica/" "./" "Chimica/" "Calcolatori elettronici/" "reti di telecomunicazione/" "../" "Analisi Matematica/" "Fisica/" "algebra e geometria/")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/reti di telecomunicazione/pag/" (25726 56312 248252 343000) "./" "../" "intro.tex" "Livelli architetturali bassi.tex")
+
+ ("/home/nico/Documenti/CompitodiGeometria/" (25771 57245 500293 574000) "Compito_Geometria_Nicola_Ferru.pdf" "./" "Compito_Geometria_Nicola_Ferru.aux" "Compito_Geometria_Nicola_Ferru.log" "Compito_Geometria_Nicola_Ferru.tex~" "../" "Compito_Geometria_Nicola_Ferru.tex" "Compito_Geometria_Nicola_Ferru.out")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/formulario/" (25771 51437 636816 363000) "form_geo.out" "./" "form_geo.log" "form_geo.tex" "../" "form_geo.pdf" "form_geo.aux")
+
+ ("/home/nico/.config/qutebrowser/" (25760 8695 976250 842000) "autoconfig.yml" "qsettings/" "./" "greasemonkey/" "config.py" "config.py~" "quickmarks" "../" "bookmarks/")
+
+ ("/home/nico/repos/snotes/" (25760 4632 396151 21000) "snotes.o" "LICENSE" "config.h" "snotes.1" "./" "gitSync.o" "timeGet.o" "file.c" "icon/" ".git/" "config.def.h" "snotes" "file.h" "consts.h" "timeGet.h" ".github/" "gitSync.h" "../" "README.org" "file.o" "config.mk" "timeGet.c" "snotes.c" "Makefile" "gitSync.c")
+
+ ("/home/" (25721 43654 106655 395000) "./" "../" "nico/" "lost+found/")
+
+ ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/" (25763 7762 906670 558000) "_region_.tex" "algebraegeometria.ilg" "algebraegeometria.toc" "./" "algebraegeometria.bbl" "algebraegeometria.ind" "algebraegeometria.pdf" "algebraegeometria.tex" "formulario/" "algebraegeometria.log" "pag/" "../" "title/" "algebraegeometria.idx" "algebraegeometria.out" "img/" "algebraegeometria.aux" "algebraegeometria.lot" "algebraegeometria.lof" "algebraegeometria.blg")
+
+ ("/home/nico/repos/dwm/" (25757 27497 899788 416000) "dwm.1" "dwm.o" "LICENSE" "config.h" "./" "README.org~" "drw.h" ".git/" "transient.c" "util.o" "config.def.h" "dwm.png" "lib/" "config.h~" "util.h" "dwm" "../" "util.c" "README.org" "config.mk" "drw.c" "Makefile" "dwm.c" "drw.o")
+
+ ("/home/nico/Documenti/adattamento/nuovo _ANTONIO/" (25756 36828 73334 853000) "Sales Order for VIRDIS SARA.docx" "Sales Order for VARGIU PATRIZIA.docx" "Sales Order for SATTA MARIA LISA.docx" "Sales Order for MELONI SIMONA.docx" "Sales Order for TARAS ANTONIO GIOVANNI.docx" "Sales Order for PICUS PATRIZIA.docx" "Sales Order for SENES MARINELLA.docx" "Sales Order for SECCHI TIZIANA.docx" "Sales Order for PORCU GIOVANNA MARIA.docx" "Sales Order for ABRIONI GIOVANNA 2.docx" "Sales Order for SPANO MARCO.docx" "Sales Order for CUBEDDU ANTONELLA.docx" "Sales Order for SOLINAS CRISTINA.docx" "Sales Order for CADONI PIER SALVATORE.docx" "Sales Order for ADDIS ELENA.docx" "Sales Order for CAPPELLI ROSINA.docx" "Sales Order for CASTAGNA MARIA LUIGIA.docx" "Sales Order for PAU ANTONELLA.docx" "Sales Order for MANCA ANTONELLA.docx" "Sales Order for DEROMA MILENA.docx" "Sales Order for FALQUI MARIA PAOLA.docx" "Sales Order for DELOGU ANDREINA.docx" "Sales Order for SCANU ALESSANDRA.docx" "Sales Order for BARUZZU MARIA RITA.docx" "Sales Order for ABRIONI ANDREINA.docx" "Sales Order for FALQUI GIUSEPPINA.docx" "Sales Order for CONGIU GIOVANNI GAVINO.docx" "Sales Order for ZANZA SABINA.docx" "Sales Order for ZICCHEDDU ENRICA.docx" "Sales Order for MANCONI LAURA.docx" "Sales Order for MAZZA PAOLA.docx" "Sales Order for MALDUCA BERNARDO.docx" "Sales Order for AMADU IMMACOLATA.docx" "Sales Order for MONGILI MARIA ELENA.docx" "Sales Order for PANI MANUELA.docx" "Sales Order for ARCADU LIDIA.docx" "Sales Order for ARCADU MARINA.docx" "Sales Order for PALITTA GIOVANNA.docx" "Sales Order for SECHI LAURA.docx" "Sales Order for SOLINAS ANTONIO.docx" "Sales Order for DEIANA PAOLA.docx" "Sales Order for CUGUTTU MILENA.docx" "Sales Order for SATTA LUISA.docx" "Sales Order for LUTZU ROBERTA.docx" "Sales Order for PIGA ROSANNA.docx" "docmailmerge.py" "Sales Order for CROSA LUISANGELA.docx" "Sales Order for ARGHITTU ALESSIA.docx" "Sales Order for CABIGLIERA PIERA FRANCESCA.docx" "Sales Order for MONGIU BARBARA.docx" "Sales Order for ZICCHEDDU PATRIZIA.docx" "Sales Order for ARCADU ANTONIA.docx" "Sales Order for ARCADU VINCENZO.docx" "Sales Order for CASELLA LETIZIA.docx" "Sales Order for SOLINAS MARIA TERESA.docx" "Sales Order for SERRA  LOREDANA.docx" "Sales Order for PIZZADILI LUISA.docx" "Sales Order for BECCIU LAURA.docx" "Sales Order for PICUS MADDALENA.docx" "Sales Order for SATTA MIRIAM.docx" "Sales Order for LIPERI BARBARA.docx" "Sales Order for LEDDA ELENA.docx" "Sales Order for SECHI DANIELA.docx" "Sales Order for ABRIONI GIOVANNA 1.docx" "Sales Order for FOGARIZZU CLAUDIA.docx" "Sales Order for GESSA RACHELE.docx" "Sales Order for SOLINAS SIMONA.docx" "Sales Order for DELIPERI ROBERTA.docx" "Sales Order for NURCHIS GIANFRANCA.docx" "Sales Order for CUGUTTU FRANCESCA.docx" "Sales Order for BIBICU IULIA MAGDALENA.docx" "Sales Order for CANU FRANCESCA.docx" "Sales Order for FALQUI CHIARA M.C.docx" "Sales Order for CAMBONI GIOVANNI A..docx" "Sales Order for MALDUCA ANGELA CARMELA.docx" "Sales Order for DEIOSSO GIULIA.docx" "Sales Order for DEMELA TOMASO.docx" "Sales Order for GESSA PAOLA.docx" "Sales Order for SINI PIETRO MARIA.docx" "Sales Order for SOTGIA PATRIZIA.docx" "Sales Order for TOLA FRANCESCA.docx" "Sales Order for DEIOSSO CHIARA.docx" "Sales Order for CAMPUS GIOVANNELLA.docx" "ReporTest.docx" "Sales Order for GIFAT BELLO.docx" "Sales Order for COCCO MARIA PAOLA.docx" "Sales Order for ABRIONI ANTONELLA.docx" "Sales Order for None.docx" "Sales Order for SATTA PIERANGELA.docx" "Sales Order for BELLU GIOVANNA.docx" "Sales Order for CAMPUS CATERINA.docx" "Sales Order for CANALIS LAURA.docx" "Sales Order for BUA SILVANA.docx" "Sales Order for PINNA ANNAROSA.docx" "Sales Order for PINTUS SERGIO.docx" "Sales Order for VIRDIS PIERA.docx" "docmailmerge.py~" "Sales Order for CUBEDDU MARIA GIOVANNA.docx" "Sales Order for MURA ALESSANDRA.docx" "Sales Order for ARMINU ROBERTA.docx" "Sales Order for SERRA CHIARA.docx" "Sales Order for SATTA ELENA.docx" "Sales Order for SEU TANIA.docx" "Sales Order for SANNAI PAOLA CRISTINA.docx" "Sales Order for VELO NEVILA.docx" "Sales Order for SOLINAS MADDALENA.docx" "Sales Order for CANU GIOVANNA.docx" "Sales Order for SCANU MARIA PIERA.docx" "Sales Order for DELIPERI SABINA.docx" "Sales Order for OGANA MARIA RITA.docx" "reportBM.xlsx" "Sales Order for GIAGU GIAMMARIO.docx" "Sales Order for BELLU STEFANO.docx" "Sales Order for MARRAS VALENTINA.docx" "Sales Order for ZICCHEDDU STEFANIA.docx" "Sales Order for CAPPAI ALICE.docx" "Sales Order for BARROCCU BATTISTINA.docx" "Sales Order for JIANG PEIHONG.docx" "Sales Order for FARCHE SILVIA.docx" "Sales Order for PANI VALERIA.docx" "Sales Order for NIEDDU MARIA CHIARA.docx" "Sales Order for DEIANA CLAUDIA.docx" "Sales Order for DEROMA MANUELA.docx" "Sales Order for COTTU MARIA PAOLA.docx" "Sales Order for SOLINAS ARMANDO.docx" "Sales Order for AMADU SEBASTIANA.docx" "Sales Order for CUBEDDU TORRISI GIADA.docx" "Sales Order for CHESSA PINA.docx" "Sales Order for BARRACCA GIUSEPPE.docx" "Sales Order for VIRDIS SALVATORE.docx" "Sales Order for CROSA MICHELA.docx" "Sales Order for GALLITTU CLAUDIA.docx" "Sales Order for DEIOSSO FRANCA.docx" "Sales Order for AMADU GIUSEPPA.docx" "Sales Order for DETTORI MARIA ANTONIETTA.docx" "Sales Order for PINTUS SILVIA.docx" "Sales Order for SATTA ALESSANDRA.docx" "Sales Order for SANNA MARIA PAOLA.docx" "Sales Order for SEU ALESSANDRA.docx" "Sales Order for RACHID SAID.docx" "../" "./")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/sistemi linueari/" (25758 46525 253478 128000) "sistemi lineari.log" "./" "sistemi lineari.aux" "sistemi lineari.out" "sistemi lineari.tex" "sistemi lineari.pdf" "../" "img/" "sistemi lineari.tex~")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/" (25757 26841 476450 801000) "GNUOctave/" "sistemi linueari/" "./" "polinomi e prodotti notevoli/" "../")
+
+ ("/home/nico/repos/Appunti-universita/" (25757 26849 129784 193000) "LICENSE" "status.md" "./" ".git/" "README.md" ".DS_Store" ".github/" "../" ".gitignore" "Rudimenti/" "Secondo Anno/" "Primo anno/" ".gitattributes")
+
+ ("/home/nico/repos/mail-merge-docx-dateless/" (25755 19621 233341 781000) "Example Sales Order.docx" "__pycache__/" "Sales Order for Jones.docx" "Sales Order for Thompson.docx" "Sales Order for Sorvino.docx" "./" "OrderTemplate.docx" ".git/" ".ipynb_checkpoints/" "Sales Order for Howard.docx" "README.md" "Sales Order for Andrews.docx" "Sales Order for Jardine.docx" "#README.org#" "docmailmerge.py" "SampleData2.xlsx" "../" "Sales Order for Smith.docx" ".gitignore" "README.org" "Sales Order for Parent.docx" "Sales Order for Gill.docx" "SampleData.xlsx" "requirements.txt" "Sales Order for Morgan.docx" "Sales Order for Kivell.docx")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/" (25754 57200 586682 69000) "./" "octave.log" "octave.out" "pag/" "octave.toc" "../" "img/" "octave.tex" "source/" "octave.pdf" "octave.aux")
+
+ ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/pag/" (25750 49798 164184 633000) "./" "funzionibase.tex~" "../" "intro.tex" "funzionibase.tex" "funzionibase.log")
 
  ("/home/nico/repos/Appunti-universita/Rudimenti/GNUOctave/source/" (25747 20884 373337 900000) "./" "moltM2x2.m" "diagMtx.m" "autoveteautoval.m~" "detMtx2x2.m" "autoveteautoval.m" "../")
 
- ("/home/nico/.emacs.d/" (25749 58881 563339 596000) "#ido.last#" "custom.el" "auto-save-list/" "eln-cache/" "init.el" "./" "tutorial/" "init.el~" ".cask/" "elpa/" "ede-projects.el" "url/" "ido.last~" "../" "ido.last" "custom.el~" "transient/")
-
- ("/home/nico/repos/mail-merge-docx-dateless/" (25741 53811 310058 499000) "Example Sales Order.docx" "__pycache__/" "Sales Order for Jones.docx" "Sales Order for Thompson.docx" "Sales Order for Sorvino.docx" "./" "OrderTemplate.docx" ".git/" ".ipynb_checkpoints/" "Sales Order for Howard.docx" "README.md" "Sales Order for Andrews.docx" "Sales Order for Jardine.docx" "#README.org#" "docmailmerge.py" "SampleData2.xlsx" "../" "Sales Order for Smith.docx" ".gitignore" "README.org" "Sales Order for Parent.docx" "Sales Order for Gill.docx" "SampleData.xlsx" "requirements.txt" "Sales Order for Morgan.docx" "Sales Order for Kivell.docx")
-
- ("/home/nico/Documenti/adattamento/nuovo _ANTONIO/" (25742 5771 6072 10000) "Sales Order for VIRDIS SARA.docx" "Sales Order for VARGIU PATRIZIA.docx" "Sales Order for SATTA MARIA LISA.docx" "Sales Order for MELONI SIMONA.docx" "Sales Order for TARAS ANTONIO GIOVANNI.docx" "Sales Order for PICUS PATRIZIA.docx" "Sales Order for SENES MARINELLA.docx" "Sales Order for SECCHI TIZIANA.docx" "Sales Order for PORCU GIOVANNA MARIA.docx" "Sales Order for ABRIONI GIOVANNA 2.docx" "Sales Order for SPANO MARCO.docx" "Sales Order for CUBEDDU ANTONELLA.docx" "Sales Order for SOLINAS CRISTINA.docx" "Sales Order for CADONI PIER SALVATORE.docx" "Sales Order for ADDIS ELENA.docx" "Sales Order for CAPPELLI ROSINA.docx" "Sales Order for CASTAGNA MARIA LUIGIA.docx" "Sales Order for PAU ANTONELLA.docx" "Sales Order for MANCA ANTONELLA.docx" "Sales Order for DEROMA MILENA.docx" "Sales Order for FALQUI MARIA PAOLA.docx" "Sales Order for DELOGU ANDREINA.docx" "Sales Order for SCANU ALESSANDRA.docx" "Sales Order for BARUZZU MARIA RITA.docx" "Sales Order for ABRIONI ANDREINA.docx" "Sales Order for FALQUI GIUSEPPINA.docx" "Sales Order for CONGIU GIOVANNI GAVINO.docx" "Sales Order for ZANZA SABINA.docx" "Sales Order for ZICCHEDDU ENRICA.docx" "Sales Order for MANCONI LAURA.docx" "Sales Order for MAZZA PAOLA.docx" "Sales Order for MALDUCA BERNARDO.docx" "Sales Order for AMADU IMMACOLATA.docx" "Sales Order for MONGILI MARIA ELENA.docx" "Sales Order for PANI MANUELA.docx" "Sales Order for ARCADU LIDIA.docx" "Sales Order for ARCADU MARINA.docx" "Sales Order for PALITTA GIOVANNA.docx" "Sales Order for SECHI LAURA.docx" "Sales Order for SOLINAS ANTONIO.docx" "Sales Order for DEIANA PAOLA.docx" "Sales Order for CUGUTTU MILENA.docx" "Sales Order for SATTA LUISA.docx" "Sales Order for LUTZU ROBERTA.docx" "Sales Order for PIGA ROSANNA.docx" "docmailmerge.py" "Sales Order for CROSA LUISANGELA.docx" "Sales Order for ARGHITTU ALESSIA.docx" "Sales Order for CABIGLIERA PIERA FRANCESCA.docx" "Sales Order for MONGIU BARBARA.docx" "Sales Order for ZICCHEDDU PATRIZIA.docx" "Sales Order for ARCADU ANTONIA.docx" "Sales Order for ARCADU VINCENZO.docx" "Sales Order for CASELLA LETIZIA.docx" "Sales Order for SOLINAS MARIA TERESA.docx" "Sales Order for SERRA  LOREDANA.docx" "Sales Order for PIZZADILI LUISA.docx" "Sales Order for BECCIU LAURA.docx" "Sales Order for PICUS MADDALENA.docx" "Sales Order for SATTA MIRIAM.docx" "Sales Order for LIPERI BARBARA.docx" "Sales Order for LEDDA ELENA.docx" "Sales Order for SECHI DANIELA.docx" "Sales Order for ABRIONI GIOVANNA 1.docx" "Sales Order for FOGARIZZU CLAUDIA.docx" "Sales Order for GESSA RACHELE.docx" "Sales Order for SOLINAS SIMONA.docx" "Sales Order for DELIPERI ROBERTA.docx" "Sales Order for NURCHIS GIANFRANCA.docx" "Sales Order for CUGUTTU FRANCESCA.docx" "Sales Order for BIBICU IULIA MAGDALENA.docx" "Sales Order for CANU FRANCESCA.docx" "Sales Order for FALQUI CHIARA M.C.docx" "Sales Order for CAMBONI GIOVANNI A..docx" "Sales Order for MALDUCA ANGELA CARMELA.docx" "Sales Order for DEIOSSO GIULIA.docx" "Sales Order for DEMELA TOMASO.docx" "Sales Order for GESSA PAOLA.docx" "Sales Order for SINI PIETRO MARIA.docx" "Sales Order for SOTGIA PATRIZIA.docx" "Sales Order for TOLA FRANCESCA.docx" "Sales Order for DEIOSSO CHIARA.docx" "Sales Order for CAMPUS GIOVANNELLA.docx" "ReporTest.docx" "Sales Order for GIFAT BELLO.docx" "Sales Order for COCCO MARIA PAOLA.docx" "Sales Order for ABRIONI ANTONELLA.docx" "Sales Order for None.docx" "Sales Order for SATTA PIERANGELA.docx" "Sales Order for BELLU GIOVANNA.docx" "Sales Order for CAMPUS CATERINA.docx" "Sales Order for CANALIS LAURA.docx" "Sales Order for BUA SILVANA.docx" "Sales Order for PINNA ANNAROSA.docx" "Sales Order for PINTUS SERGIO.docx" "Sales Order for VIRDIS PIERA.docx" "docmailmerge.py~" "Sales Order for CUBEDDU MARIA GIOVANNA.docx" "Sales Order for MURA ALESSANDRA.docx" "Sales Order for ARMINU ROBERTA.docx" "Sales Order for SERRA CHIARA.docx" "Sales Order for SATTA ELENA.docx" "Sales Order for SEU TANIA.docx" "Sales Order for SANNAI PAOLA CRISTINA.docx" "Sales Order for VELO NEVILA.docx" "Sales Order for SOLINAS MADDALENA.docx" "Sales Order for CANU GIOVANNA.docx" "Sales Order for SCANU MARIA PIERA.docx" "Sales Order for DELIPERI SABINA.docx" "Sales Order for OGANA MARIA RITA.docx" "reportBM.xlsx" "Sales Order for GIAGU GIAMMARIO.docx" "Sales Order for BELLU STEFANO.docx" "Sales Order for MARRAS VALENTINA.docx" "Sales Order for ZICCHEDDU STEFANIA.docx" "Sales Order for CAPPAI ALICE.docx" "Sales Order for BARROCCU BATTISTINA.docx" "Sales Order for JIANG PEIHONG.docx" "Sales Order for FARCHE SILVIA.docx" "Sales Order for PANI VALERIA.docx" "Sales Order for NIEDDU MARIA CHIARA.docx" "Sales Order for DEIANA CLAUDIA.docx" "Sales Order for DEROMA MANUELA.docx" "Sales Order for COTTU MARIA PAOLA.docx" "Sales Order for SOLINAS ARMANDO.docx" "Sales Order for AMADU SEBASTIANA.docx" "Sales Order for CUBEDDU TORRISI GIADA.docx" "Sales Order for CHESSA PINA.docx" "Sales Order for BARRACCA GIUSEPPE.docx" "Sales Order for VIRDIS SALVATORE.docx" "Sales Order for CROSA MICHELA.docx" "Sales Order for GALLITTU CLAUDIA.docx" "Sales Order for DEIOSSO FRANCA.docx" "Sales Order for AMADU GIUSEPPA.docx" "Sales Order for DETTORI MARIA ANTONIETTA.docx" "Sales Order for PINTUS SILVIA.docx" "Sales Order for SATTA ALESSANDRA.docx" "Sales Order for SANNA MARIA PAOLA.docx" "Sales Order for SEU ALESSANDRA.docx" "Sales Order for RACHID SAID.docx" "../" "./")
-
- ("/home/nico/repos/" (25741 45429 696669 314000) "dotfiles/" "./" "Appunti-universita/" "snotes/" "slstatus/" "dwm/" "../" "mail-merge-docx-dateless/" ".hugo_build.lock" "st/" "LibroInformatica/" "nerd-fonts/" "LaTeX-model/" "mail-merge-docx/" "dmenu/")
-
  ("/home/nico/Documenti/adattamento/" (25741 55269 741342 513000) "./" "../" "nuovo _ANTONIO/")
-
- ("/home/nico/Documenti/" (25741 55265 284675 818000) "come si prendeno degli appunti/" "./" "adattamento/" "pdf/" "../" "meme politicamente scorretti/" "Note/")
-
- ("/home/nico/.config/qutebrowser/" (25738 3630 79219 573000) "autoconfig.yml" "./" "greasemonkey/" "config.py" "config.py~" "quickmarks" "../" "bookmarks/")
-
- ("/home/nico/repos/snotes/" (25739 31608 643397 330000) "LICENSE" "config.h" "snotes.1" "./" "file.c" "icon/" ".git/" "config.def.h" "file.h" "consts.h" "timeGet.h" ".github/" "gitSync.h" "../" "README.org" "config.mk" "timeGet.c" "snotes.c" "Makefile" "gitSync.c")
 
  ("/home/nico/repos/Appunti-universita/Secondo Anno/Analisi Matematica 2/" (25726 56312 294919 11000) "mat.tex" "mat.lof" "./" "mat.pdf" "mat.lot" "mat.toc" "pag/" "../" "title/" "mat.ilg" "mat.idx" "img/" "mat.out" "mat.pdfpc" "intro.log" "mat.ind" "mat.log" "mat.aux" "x.log")
 
@@ -172,21 +219,13 @@
 
  ("/home/nico/repos/LibroInformatica/" (25732 21192 176207 630000) "book.aux" "LICENSE" "book.out" "./" ".git/" "book.tex" "README.md" "java.log" "manuale rapido/" "book.pdf" ".DS_Store" "book.blg" "pag/" "../" "linguaggi.log" "img/" "book.toc" "book.lol" "dispense/" "book.log" "source/" "book.bbl" "slide/")
 
- ("/home/nico/repos/Appunti-universita/Primo anno/algebra e geometria/" (25726 56312 244919 10000) "_region_.tex" "algebraegeometria.ilg" "algebraegeometria.toc" "./" "algebraegeometria.bbl" "algebraegeometria.ind" "algebraegeometria.pdf" "algebraegeometria.tex" "algebraegeometria.log" "pag/" "../" "title/" "algebraegeometria.idx" "algebraegeometria.out" "img/" "algebraegeometria.aux" "algebraegeometria.lot" "algebraegeometria.lof" "algebraegeometria.blg")
-
  ("/home/nico/repos/slstatus/" (25733 63357 539906 591000) "components/" "LICENSE" "config.h" "./" ".git/" "slstatus.c" "util.o" "config.def.h" "arg.h" "slstatus.1" "slstatus" "util.h" "../" "util.c" "README.org" "slreset" "slstatus.o" "config.mk" "Makefile" "slstatus.h")
 
- ("/home/nico/repos/dwm/" (25724 28251 730562 436000) "dwm.1" "LICENSE" "config.h" "./" "README.org~" "drw.h" ".git/" "transient.c" "config.def.h" "dwm.png" "lib/" "config.h~" "util.h" "../" "util.c" "README.org" "config.mk" "drw.c" "Makefile" "dwm.c")
-
  ("/home/nico/Documenti/come si prendeno degli appunti/pag/" (25732 7934 781292 470000) "gestione_del_contenuto.log" "Font_e_misure.tex~" "impaginazione.log" "./" "impaginazione.tex" "gestione_del_contenuto.tex" "Font_e_misure.tex" "../" "intro.tex")
-
- ("/home/nico/repos/Appunti-universita/Rudimenti/" (25732 21326 812877 571000) "GNUOctave/" "./" "polinomi e prodotti notevoli/" "../")
 
  ("/home/nico/repos/Appunti-universita/Rudimenti/GNU\\Octave/" (25732 20623 142860 394000) "./" "octave.log" "octave.out" "octave.tex~" "#octave.tex#" "../" "octave.tex" ".#octave.tex" "octave.pdf" "octave.aux")
 
  ("/home/nico/Documenti/come si prendeno degli appunti/" (25712 29215 0 0) "come-prendere-appunti.tex" "come-prendere-appunti.pdf" "./" "come-prendere-appunti.toc" "come-prendere-appunti.out" "pag/" "../" "img/" "source/" "come-prendere-appunti.aux" "come-prendere-appunti.log")
-
- ("/home/nico/repos/Appunti-universita/" (25726 56312 331585 679000) "LICENSE" "status.md" "./" ".git/" "README.md" "status.md~" ".DS_Store" ".github/" "../" ".gitignore" "Rudimenti/" "Secondo Anno/" "Primo anno/" ".gitattributes")
 
  ("/home/nico/.config/" (25726 59969 881675 420000) "gtk-3.0/" "octave/" "libfm/" "pulse/" "./" "kdeconnect/" "mimeapps.list" "wal/" "libreoffice/" "mpd/" "ranger/" "../" "dconf/" "yay/" "touchegg/" "GIMP/" "gh/" "systemd/" "pcmanfm/" "qutebrowser/")
 
@@ -218,8 +257,6 @@
 
  ("/home/nico/.config/sway/" (25645 27043 19960 628000) "config" "config~" "../" "./")
 
- ("/home/nico/.emacs.d/auto-save-list/" (25651 6401 426398 607000) ".saves-20068-workstation-gentoo~" ".saves-5925-workstation-gentoo~" ".saves-29781-workstation-gentoo~" ".saves-18794-workstation-gentoo~" ".saves-24861-workstation-gentoo~" ".saves-6156-workstation-gentoo~" ".saves-21347-workstation-gentoo~" ".saves-13128-workstation-gentoo~" ".saves-8933-workstation-gentoo~" ".saves-30068-workstation-gentoo~" ".saves-23953-workstation-gentoo~" ".saves-13488-workstation-gentoo~" ".saves-5935-workstation-gentoo~" ".saves-16077-workstation-gentoo~" ".saves-22283-workstation-gentoo~" ".saves-4699-workstation-gentoo~" ".saves-3653-workstation-gentoo~" ".saves-11366-workstation-gentoo~" ".saves-1842-workstation-gentoo~" ".saves-29031-workstation-gentoo~" ".saves-28761-workstation-gentoo~" ".saves-7230-workstation-gentoo~" ".saves-14071-workstation-gentoo~" ".saves-56594-Workstation-arch~" ".saves-31747-workstation~" ".saves-29253-workstation~" ".saves-2764-Workstation-arch~" ".saves-24638-workstation~" ".saves-20801-workstation~" ".saves-17536-workstation~" ".saves-16685-workstation~" "../" "./")
-
  ("/home/nico/repos/appunti-alessandro/" (25638 61439 126563 848000) "operatoriLogici.cpp" "operatori logici/" "limiti di iostadard/" "README.md" ".git/" "../" "./")
 
  ("/media/dati/usbnico/consegna desame/code/php/" (25038 54470 126460 659000) "logout.php" "reindirizza.php" "ricerca.php" "login.php" "visualizzazione.php" "home.php" "../" "./")
@@ -248,8 +285,6 @@
 
  ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/scienceandtec/" (25585 19142 825819 406000) "Old/" "st.utils.min.js" "st.utils.js" "../" "./" "#cookie.js#")
 
- ("/home/nico/repos/Appunti-universita/Primo anno/" (25587 58170 382408 809000) "reti di telecomunicazione/" "algebra e geometria/" "Informatica/" "Fisica/" "Chimica/" "Calcolatori elettronici/" "Analisi Matematica/" "../" "./")
-
  ("/home/nico/repos/dmenuwacom/" (25582 34087 79983 65000) "dmenuWacom" "README.md" "profiles/" "sys/" "installer.sh" "dmenuWacom.png" "dmenuWacom.1" "LICENSE" ".DS_Store" ".git/" "../" "./")
 
  ("/opt/lampp/htdocs/www/vapetoolsdev/vapetools/js/bootstrap/" (25583 38167 699574 630000) "../" "bootstrap.bundle.min.js" "bootstrap.bundle.min.js.map" "./")
@@ -272,8 +307,6 @@
 
  ("/mnt/" (25469 23321 654353 589000) "../" "./" ".keep")
 
- ("/home/" (25471 49743 420261 768000) "nico/" ".keep" "../" "./")
-
  ("/home/nico/repos/dmenuwacom/profiles/" (25563 41173 473169 452000) "kitty.dmwa" "ipe.dmwa" "cinelerra.dmwa" "xournalpp.dmwa" "gimp.dmwa" "firefox.dmwa" "empty.sh" "../" "./")
 
  ("/home/nico/repos/new builds/st/" (25539 60383 893179 292000) "x.o" "st.o" "config.h" "config.h~" "x.c" "win.h" "st.info" "st.h" "st.c" "st.1" "config.mk" "config.def.h" "arg.h" "TODO" "README" "Makefile" "LICENSE" "LEGACY" "FAQ" ".git/" "../" "./")
@@ -291,30 +324,6 @@
  ("/home/nico/repos/Appunti-universita/Secondo Anno/" (25478 16520 882888 499000) "matematica applicata/" "fisica tecnica/" "Elettrotecnica/" "Analisi di sistemi/" "Analisi Matematica 2/" "../" "./")
 
  ("/home/nico/Documenti/Github/Appunti-Universita/Calcolatori elettronici/" (25219 33181 822195 209000) "../" "book.aux" "./" "book.log" "book.tex" "book.pdf" "book.out")
-
- ("/home/nico/Documenti/Github/pdfcomp/" (25227 32742 780820 111000) "../" "LICENSE" "test/" "./" "test.pdf" ".git/" "README.md" ".gitattributes" "pdfcomp")
-
- ("/home/nico/Documenti/Github/Appunti-Universita/algebra e geometria/" (25223 62810 397103 4000) "algebraegeometria.tex" "algebraegeometria.idx" "algebra e geometria.synctex.gz" "algebraegeometria.lot" "../" "pag/" "algebraegeometria.out" "algebra e geometria.toc" "algebraegeometria.log" "algebraegeometria.ind" "algebra e geometria.lof" "algebraegeometria.lof" "./" "algebra e geometria.out" "algebraegeometria.ilg" "algebraegeometria.pdf" "#algebraegeometria.tex#" "algebra e geometria.aux" "algebra e geometria.log" "algebraegeometria.toc" "algebraegeometria.aux")
-
- ("/home/nico/Documenti/Github/Appunti-Universita/Fisica/" (25221 8197 464599 158000) "fisica.bbl" "fisica.lof" "../" "fisica.log" "pag/" "fisica.synctex.gz" "./" "fisica.blg" "fisica.toc" "fisica.lot" "fisica.tex" "fisica.out" "fisica.aux" "img/" "fisica.pdf")
-
- ("/home/nico/Documenti/Github/Appunti-Universita/" (25219 33181 812195 79000) "../" "LICENSE" "Informatica/" "Fisica/" "./" "reti di telecomunicazione/" "Calcolatori elettronici/" ".git/" "README.md" ".gitattributes" "Chimica/" "Analisi Matematica/" "algebra e geometria/")
-
- ("/home/nico/Documenti/Github/smart-bash/" (25212 59956 458873 488000) ".bash_env" "../" "LICENSE" "./" ".bash_profile" ".bashrc" ".local/" "install.sh" ".git-mode.sh" ".git/" "README.md" ".bash_aliases")
-
- ("/home/nico/Documenti/Github/" (25212 52999 381525 843000) "../" "./" "libasecnsp11-for-archlinux/" "Appunti-Universita/" "LaTeX-model/" "smart-bash/" "virt-manager-dotfiles/" "dotfiles/" "pdfcomp/")
-
- ("/home/nico/Documenti/Github/virt-manager-dotfiles/" (25182 32572 664254 915000) "../" "LICENSE" "./" "install-virtmenager.sh" ".git/" "README.md")
-
- ("/home/nico/Documenti/Github/Appunti-universita/Fisica/" (25181 40367 819343 12000) "fisica.bbl" "fisica.lof" "../" "fisica.log" ".DS_Store" "pag/" "fisica.synctex.gz" "./" "fisica.blg" "fisica.toc" "fisica.lot" "fisica.tex" "fisica.out" "fisica.aux" "img/" "fisica.pdf")
-
- ("/home/nico/Documenti/Github/Appunti-universita/" (25181 40367 826009 855000) "../" ".DS_Store" "LICENSE" "Informatica/" "Fisica/" "./" "reti di telecomunicazione/" "Calcolatori elettronici/" ".git/" "README.md" ".gitattributes" "Chimica/" "Analisi Matematica/" "algebra e geometria/")
-
- ("/home/nico/.config/zsh/" (25179 12789 205792 19000) "../" "env.zsh" ".zshrc" "./" "zshrc" "alias.zsh")
-
- ("/home/nico/Immagini/wallpapers/" (25171 64484 851097 160000) "Future/" "Cityscapes/" "Landscapes/" "Unsorted/" "Parrot Security OS/" "Vibrant/" "macos/" "Etc/" "Titans/" "Spacescapes/" "Tech/" "Art/" "README.md" "../" "./")
-
- ("/home/nico/Immagini/" (25171 64526 800099 887000) "wallpapers/" "../" "./")
 )
 
 ;; ----- ido-unc-hosts-cache -----
