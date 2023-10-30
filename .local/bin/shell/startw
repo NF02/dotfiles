@@ -1,0 +1,10 @@
+
+#!/bin/env sh
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+export PATH=$PATH:$HOME/.local/bin/desktop_programs/
+export PATH=$PATH:$HOME/.local/bin/shell/
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolkit
+
+env XDG_CURRENT_DESKTOP=dwl dbus-run-session dwl -s 'dwlb -font "monospace:size=16"'

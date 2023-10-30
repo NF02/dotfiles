@@ -1,0 +1,65 @@
+#!/bin/env sh
+
+
+if [[ $1 == -h ]] || [[ $1 == --help ]]; then
+     cat << 'EOF'
+kill-plumber is a script that is used to unblock wireplumber, the service that starts pipewire and which very often tends to have some problems, through it you can clear up the situation in a few seconds, just use the syntax:
+
+$ killplumber -r
+
+where -r stands for restart.
+EOF
+	exit 0
+fi
+
+if [[ $1 == --egg ]]; then
+	cat << 'EOF'
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░.',,;::::::;;,,'...░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░.,:llcc::::::;;;;;;;;;;;;;'.░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                     
+░░░░░░░░░░░░░░░░░░░░░░░░░░░.cddlc:::::::loddddooc:;;;;,,,;;;'.░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                                 
+░░░░░░░░░░░░░░░░░░░░░░░░.cxdlc:::::cdOKK0NWWWWWN0OKko;,,,,,,;;:,.░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                              
+░░░░░░░░░░░░░░░░░░░░░░;xxdlc:::::cONWWKolo0WMW0dlcxWNXk:,,,,,,,;::'░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                           
+░░░░░░░░░░░░░░░░░░░░;xxolc::::::dXWMMOlcclllkolc:ccoNNNXo,,,,',,,;:c,░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░;kxolc:::::::lNNMWkcc:O0lcccckK:cclXNNN:,'''''',,;:c'░░░░░░░░░░░░░░░░░░░░░░░░░                        
+░░░░░░░░░░░░░░░░.dxdlcc::::::;;xKMWdc::lWWNkcdNWWk:cccKNNo'''''''''',;:c.░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░ckdolc::;;;;;;;;cXNdc:::XWWWWNWWNNNo:::c0X;'''''''''''',;c:░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░.dkolc:;;;;;;;;;;,,oKOd:;kNNNNNNNNXXXKc:cx0:'''''''''''''',;:l.░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░,Oxlc:;;;;;;;;;,,,,,,:xKKkKKKKK00000000kOOo''''''''''....''',,;l,░░░░░░░░░░░░░░░░░░░                  
+░░░░░░░░░░░░:koc::;;;;;;;,,,,,,,,,;;clllllccccccccccll:;,,'''..'.........'',;c;░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░;klc:;;;;;;;,,,,;;;;;;,,,,'''''''''''''''''''',,,,,,''.........'',;c;░░░░░░░░░░░░░░░░
+░░░░░░░░░░'kl:;;;;;;,;;;;,,'''..................................'''''......'',;l,░░░░░░░░░░░░░░░
+░░░░░░░░░░xl:;;;;,;:;,'''.'..........................................'''.....',;o.░░░░░░░░░░░░░░
+░░░░░░░░░;o:;;;,;:,'.'..........  .',;;::::::::::::;;;,'.  ..............''...',cc░░░░░░░░░░░░░░
+░░░░░░░░░o:;;,;;''.'......          .;ccccccccccccccc:.          ..........'..',;o░░░░░░░░░░░░░░
+░░░░░░░░░l;,,,,''.....',.     ...    .:looooooolllllc.    ....    ','.......'..',l.░░░░░░░░░░░░░
+░░░░░░░░.:,,''......,;::  .,coodddl;. .oddddddddddoo'  .;clllcc;. .;;;,......,.',:'░░░░░░░░░░░░░
+░░░░░░░░.;,,,,'....:cllo.cdxxxxxkkkkko,ckkkkxxxxxxdo.,looooooolll;.::::;. ...'.'';.░░░░░░░░░░░░░
+░░░░░░░░;,'''... ldxxxkxkkkkxxxxxxxxkOOOOOOkkkkkxxdoollooolloooollllcllc  ...''';░░░░░░░░░░░░░░░
+░░░░░░░░.,''..''.OOOO00000Oxo;O0KKKlo000000OOOOkkxdo:cOOOOx'clddooollodx  ...'',,░░░░░░░░░░░░░░░
+░░░░░░░░░░;,'.,;;,0KKKKKKK0kk  .dN0.  dX0KK000OOOkxdc  .k0o   loddooooodk  .,'.';░░░░░░░░░░░░░░░
+░░░░░░░,x0KOd:,;;;0KKKKKKK00NK,  .  .OMWKKKKK000OkdOKo.  .  'kkdxdddooodk  .,.';ll,░░░░░░░░░░░░░
+░░░░░░lXXXXXXK;;;;KXXXXXXKONMMW;   .NMMMXXXXXK00Okd0K0O    ;00Oxxxxdddodk ..,;:llodo░░░░░░░░░░░░
+░░░░░░X0OkO0KX;;;;0XXXXXXX0WMX;  .  .0MMNXNNXXXKKOkKKd.  .  ,OOxxkxxddddo...;cllllloo░░░░░░░░░░░
+░░░░░░KOkO0000;;;,kXXXXXXXKXK  .xWK..cNNNNNNNNNXXXXK0, .kKl   dxkkxxxdddc...;lllcccld░░░░░░░░░░░
+░░░░░░K00KKK0k;''.0XXXNNNXXKW0cNWMWNNNWWWWWWNNNNXXXKKK00KKKO;dxkOkkkkxxxo...'cclllllo░░░░░░░░░░░
+░░░░░░xKKXXOxd;;'oNKc'dKXXXXKNNWWWNNNWWWWWWWNNNXXXKKKK0000K0OkO0000Oo';kOc ..:;:llll'░░░░░░░░░░░
+░░░░░░.KXXKO0O,,lXK,''.'cx0XXXXXNNNNNNWWNNNNNXXXXKKKK000OO000000Od:....,k0:..:::lllo░░░░░░░░░░░░
+░░░░░░░oXNXKKXd;KXl.''''...':codXXNNNNNNNNNXXXXKKKK0000Okkklc:;'........cO0,;::cloo.░░░░░░░░░░░░
+░░░░░░░░lXNNXXNNXX;..''''''''...kXXXXXXXXXXXXKKKK0000OOkxxo ............;kOk::cllo,░░░░░░░░░░░░░
+░░░░░░░░░;XNNNNNXXd....''''''''';0KKKKKKKKKKKK0000OOkkxxdx.  ...........cxO0llllo'░░░░░░░░░░░░░░
+░░░░░░░░░░░KXXXXXKKx,......'''''',k00000000000OOOkkxxxddo.   ..........coxk0oooo░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░l0KKKKKKkl;,.....''''':dOOOOOOOkkkkxxxxddl'        ...',:looxkOo'░░░░░░░░░░░░░░░░░ 
+░░░░░░░░░░░░░░░░KKKKKK00Ok;..........':coxxxxxxxxdl:,.          .clllloodxk░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░.KKKKKKKK00o,....................            ..;lloooooddx░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░;KKKKKKKKK00kc;;:c:........           ;c;,,;cooooooddddx.░░░░░░░░░░░░░░░░░░░░░░                      
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░█░█░▀█▀░█░░░█░░░░░█▀█░█░░░█░█░█▄█░█▀▄░█▀▀░█▀▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░█▀▄░░█░░█░░░█░░░░░█▀▀░█░░░█░█░█░█░█▀▄░█▀▀░█▀▄░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░░░▀░░░▀▀▀░▀▀▀░▀░▀░▀▀░░▀▀▀░▀░▀░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+EOF
+	exit 0
+fi
+
+
+systemctl --user stop wireplumber && [[ -d $HOME/.local/state/wireplumber ]] && rm -rf $HOME/.local/state/wireplumber && systemctl --user start wireplumber  
