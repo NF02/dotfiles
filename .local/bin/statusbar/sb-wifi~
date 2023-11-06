@@ -1,0 +1,15 @@
+#!/bin/sh
+ip=$(ip route get 1.1.1.1 2>/dev/null|grep -Eo 'src [0-9.]+'|grep -Eo '[0-9.]+')
+
+	if=wlp2s0
+		while IFS=$': \t' read -r label value
+		do
+			case $label in SSID) SSID=$value
+				;;
+			signal) SIGNAL=$value
+				;;
+		esac
+	done < <(iw "$if" link)
+
+echo -e "$SSID $SIGNAL $ip"
+
