@@ -1,0 +1,18 @@
+* Blogs                                                              :elfeed:
+** entry-title: \(linux\|linus\|ubuntu\|kde\|gnome\)                  :linux:
+** [[http://orgmode.org][Org Mode Links supported as well]]                                   :org:emacs:
+
+*** Emacs
+**** https://sachachua.com/blog/feed/                                   :emacs:linux:
+
+
+*** Web Development                                                     :web:
+**** http://planet.phpunit.de/atom.xml
+**** http://feeds.feedburner.com/symfony/blog
+**** http://feeds.feedburner.com/qooxdoo/blog/content
+
+* News                                                                :news:
+** [[https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml][ANSA home]]                                                           :news:ansa:
+** [[https://www.ansa.it/sardegna/notizie/sardegna_rss.xml][ANSA Sardegna]]                                                       :ansa:sardegna:news:
+** [[https://www.ansa.it/lazio/notizie/lazio_rss.xml][ANSA Lazio]]                                                          :ansa:lazio:news:
+** [[https://nu.camcom.it/it/camera/informazione/rss/rss_notizie.xml][Camera Di Commercio di Nuoro]]                                        :cciaa:sardegna:news:

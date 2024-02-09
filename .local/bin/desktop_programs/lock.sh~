@@ -1,0 +1,5 @@
+#!/bin/env zsh
+
+TMPBG=/tmp/screen.png
+LOCK=/tmp/lock.png
+RES=1366x
