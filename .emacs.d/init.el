@@ -2,7 +2,9 @@
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(load-theme 'gruvbox-light-soft t)
+;; theme
+(load-theme 'adwaita t)
+
 					; ido mode
 ;; prev list
 (setq completion-auto-help 'visible)
@@ -83,6 +85,7 @@ Use `mct-sort-sort-by-alpha-length' if no history is available."
 (use-package auctex
   :ensure t
   :defer t)
+
 ;;;; Use pdf-tools to open PDF files
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
       TeX-source-correlate-start-server t)
@@ -90,10 +93,6 @@ Use `mct-sort-sort-by-alpha-length' if no history is available."
 ;;;; Update PDF buffers after successful LaTeX runs
 (add-hook 'TeX-after-compilation-finished-functions
           #'TeX-revert-document-buffer)
-
-;; auto-complete
-(require 'auto-complete)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
 
 
 ;; org-mode
@@ -105,28 +104,37 @@ Use `mct-sort-sort-by-alpha-length' if no history is available."
 (add-hook 'org-mode-hook #'org-modern-mode)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 
-;; Load elfeed-org
-(require 'elfeed-org)
+;; Octave
+(setq auto-mode-alist
+      (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
-;; Initialize elfeed-org
-;; This hooks up elfeed-org to read the configuration when elfeed
-;; is started with =M-x elfeed=
-(elfeed-org)
+(add-hook 'octave-mode-hook
+          (lambda ()
+            (abbrev-mode 1)
+            (auto-fill-mode 1)
+            (if (eq window-system 'x)
+                (font-lock-mode 1)))
+	  'display-line-numbers-mode)
 
-;; Optionally specify a number of files containing elfeed
-;; configuration. If not set then the location below is used.
-;; Note: The customize interface is also supported.
-(setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
+;; powerline
+(require 'powerline)
+(powerline-default-theme)
 
-;; file manager
-(require 'dirvish)
-(dirvish-override-dired-mode)
+;; company
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 
-;; terminal
-(use-package vterm
-    :ensure t)
+;; vterm
+(require 'vterm)
+(require 'vterm-toggle)
+(global-set-key [C-f5] 'vterm-toggle-cd)
 
-; external repo by straightEL
+;; neotree
+(require 'neotree)
+(global-set-key [f5] 'neotree-toggle)
+(global-set-key (kbd "C-c r") 'neotree-refresh)
+
+					; external repo by straightEL
 
 (defvar bootstrap-version)
 (let ((bootstrap-file
