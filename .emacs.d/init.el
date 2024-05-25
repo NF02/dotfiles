@@ -134,6 +134,15 @@ Use `mct-sort-sort-by-alpha-length' if no history is available."
 (global-set-key [f5] 'neotree-toggle)
 (global-set-key (kbd "C-c r") 'neotree-refresh)
 
+;; gnu cobol
+(require 'cobol-mode)
+(setq auto-mode-alist
+      (append
+       '(("\\.cob\\'" . cobol-mode)
+         ("\\.cbl\\'" . cobol-mode)
+         ("\\.cpy\\'" . cobol-mode))
+       auto-mode-alist))
+
 					; external repo by straightEL
 
 (defvar bootstrap-version)
