@@ -1,0 +1,8 @@
+#!/bin/env sh
+
+
+pkill wireplumber && pkill pipewire-pulse && pkill pipweire &
+
+pipewire &
+pipewire-pulse &
+wireplumber &

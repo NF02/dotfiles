@@ -6,6 +6,8 @@
 
 ### Variables
 #
+# display config
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -14,18 +16,57 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-
-#set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -show run
+set $menu rofi -show drun
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+
+input type:touchpad {
+    left_handed enabled
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+    accel_profile "flat" # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
+    pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
+}
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
 #
@@ -174,35 +215,20 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-    #status_command i3blocks
-    status_command i3status
-    colors {
-        statusline #ffffff
-        background #000000
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command i3blocks
+
+  colors {
+    background #000000
+    statusline #FFFFFF
+    separator  #666666
+
+    focused_workspace  #C38CE7 #5D0C5A #FFFFFF
+    active_workspace   #333333 #222222 #FFFFFF
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace   #2F343A #900000 #FFFFFF
+    binding_mode       #2F343A #900000 #FFFFFF
+  }
 }
 
-# input device
-input * {
-    xkb_layout "it"
-    xkb_variant "colemak,,typewriter"
-}
-input * left_handed enabled
-
-# title bar
-default_border pixel 1
-default_floating_border pixel 1
-
-# media command
-bindsym XF86AudioRaiseVolume exec amixer -q -D pipewire sset Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -q -D pipewire sset Master 5%-
-bindsym XF86AudioMute exec amixer -D pipewire set Master 1+ toggle
-bindsym XF86AudioMicMute exec amixer set Capture toggle
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
-
-include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*
