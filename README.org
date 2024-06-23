@@ -7,9 +7,11 @@ the file [[https://github.com/NF02/dotfiles/blob/master/LICENSE][LICENSE]].
 [[https://raw.githubusercontent.com/NF02/dotfiles/master/img.png]]
 ** Default program
  * [[https://swaywm.org/][sway]] - tiling compositor manager;
+ * [[https://github.com/vivien/i3blocks][i3blocks]] - Status bar;
  * [[https://www.mozilla.org/en-US/firefox/new/][Firefox]] - browser web;
  * [[https://filezilla-project.org/download.php?type=client][Filezilla]] - FTP client;
  * [[https://alacritty.org/][alacritty]] - system terminale;
+ * [[https://github.com/ErikReider/SwayNotificationCenter][SwayNotificationCenter]] - notification center & notify deamon;
  * [[https://flameshot.org/#/"][flameshot]] - screenshot app;
  * [[https://www.thunderbird.net/][thunderbird]] - mail client;
  * [[https://git.kernel.org/pub/scm/network/wireless/iwd.git/][iwd]] - connection manager;
