@@ -1,0 +1,96 @@
+#!/bin/env zsh
+# mantainer: Nicola Ferru <NFVblog>
+#
+# DDDD  EEEEE V   V III  CCC  EEEEE       M   M EEEEE N   N U   U
+# D   D E     V   V  I  C   C E           MM MM E     NN  N U   U
+# D   D EEEE  V   V  I  C     EEEE        M M M EEEE  N N N U   U
+# D   D E      V V   I  C   C E           M   M E     N  NN U   U
+# DDDD  EEEEE   V   III  CCC  EEEEE       M   M EEEEE N   N  UUU
+#
+
+
+# mount function
+mountmtp() { 
+    chosen="$(echo "$mtpdrives" | rofi -dmenu -p "Which Android device?")" || exit 1
+    tspace=$(echo $chosen | sed -r 's/( )+//g')     
+    mp="/home/$USER/$tspace/"
+    chosen="$(echo "$chosen" | cut -d : -f 1)"
+    mkdir -p $mp
+    simple-mtpfs --device "$chosen" "$mp"
+    echo "OK" | rofi -dmenu -p "Tap Allow on your phone if it asks for permission and then press enter" || exit 1
+    simple-mtpfs --device "$chosen" "$mp"
+    notify-send "🤖 Android Mounting" "Android device mounted to $mp."
+}
+
+mountusb() { 
+    chosen="$(echo "$usbdrives" | rofi -dmenu -p "Mount which drive?")" || exit 1
+    chosen="$(echo "$chosen" | awk '{print $1}')"
+    udisksctl mount -b $chosen && notify-send "💻 USB mounting" "$chosen mounted." && exit 0
+}
+
+asktype() { 
+    case $(printf "USB\\nMTP" | rofi -dmenu -p "Mount a USB drive or Android device?") in
+	USB) mountusb ;;
+	MTP) mountmtp ;;
+    esac
+}
+
+# umount function
+unmountusb() {
+    [ -z "$drives" ] && exit
+    chosen=$(echo "$drives" | rofi -dmenu -p "Unmount which drive?" | awk '{print $1}')
+    [ -z "$chosen" ] && exit
+    chosen="$(echo "$chosen" | awk '{print $1}')"
+    udisksctl unmount -b $chosen && notify-send "💻 USB unmounting" "$chosen unmounted."
+}
+
+unmountmtp() { 
+    chosen=$(awk '/simple-mtpfs/ {print $2}' /etc/mtab | rofi -dmenu -p "Unmount which device?")
+    [ -z "$chosen" ] && exit
+    fusermount -u "$chosen" && rmdir "$chosen" && notify-send "🤖 Android unmounting" "$chosen unmounted."
+}
+
+unasktype() { 
+    case "$(printf "USB\\nMTP" | rofi -dmenu -p "Unmount a USB drive or Android device?")" in
+	USB) unmountusb ;;
+	MTP) unmountmtp ;;
+    esac
+}
+
+if [[ $1 == --help ]] || [[ $1 == -h ]] || [[ $1 == -HELP ]]; then
+    cat << 'EOF'
++-----------------------------------------------------------------+
+| DDDD  EEEEE V   V III  CCC  EEEEE       M   M EEEEE N   N U   U |
+| D   D E     V   V  I  C   C E           MM MM E     NN  N U   U |
+| D   D EEEE  V   V  I  C     EEEE        M M M EEEE  N N N U   U |
+| D   D E      V V   I  C   C E           M   M E     N  NN U   U |
+| DDDD  EEEEE   V   III  CCC  EEEEE       M   M EEEEE N   N  UUU  |
++-----------------------------------------------------------------+
+
+
+EOF
+	exit 0
+fi
+
+opt=$(echo "mount\numount\n" | rofi -dmenu "Device menu:")
+
+# Exit if none opt.
+[ -z "$opt" ] && exit
+
+# mtp protocol device
+mtpdrives=$(simple-mtpfs -l 2>/dev/null)
+
+# usb and sd device
+usbdrives=$(lsblk -rpo "name,type,size,mountpoint" | grep 'part\|rom' | awk '$4==""{printf "%s (%s)\n",$1,$3}')
+
+# mounted device
+drives=$(lsblk -nrpo "name,type,size,mountpoint" | awk '$4!~/\/boot|\/home$|SWAP/&&length($4)>1{printf "%s (%s)\n",$1,$3}')
+
+case $opt in
+    mount)
+	asktype
+	;;
+    umount)
+	unasktype
+	;;
+esac
