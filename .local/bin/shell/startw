@@ -16,11 +16,23 @@ export QT_QPA_PLATFORM=wayland
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_TYPE=wayland
 
+# acc. gpu
+export LIBVA_DRIVER_NAME=iHD
+
+# vaapi
+export VDPAU_DRIVER=va_gl
+
 # emacs server
 emacs --fg-deamon &
 
 # server audio
 killplumer &
+
+# music playar
+mpd &
+
+# syncthing
+syncthing --no-browser &
 
 # start desktop
 env XDG_CURRENT_DESKTOP=sway dbus-run-session sway
