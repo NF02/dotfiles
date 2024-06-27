@@ -17,7 +17,7 @@
      elfeed-org
      org-roam
      org-roam-ui
-     org-tree-slade
+     org-tree-slide
      octave
      neotree
      vterm
