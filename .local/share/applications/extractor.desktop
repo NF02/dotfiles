@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Archive extractor
+Exec=extract %f
