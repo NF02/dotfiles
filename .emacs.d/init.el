@@ -9,12 +9,6 @@
 (setq inhibit-startup-screen t)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
-;; theme
-(load-theme 'grandshell t)
-
-;; ido mode
-(ido-mode t)
-
 ;; ------------------------------------------------------------------
 ;; plugin
 ;; ------------------------------------------------------------------
@@ -33,6 +27,12 @@
 ;; as relative to the location of this file
 (defvar dotfiles-dir "~/.emacs.d/"
   "The root Emacs Lisp source folder")
+
+;; theme
+(load-theme 'grandshell t)
+
+;; ido mode
+(ido-mode t)
 
 ;; pdf tools
 (require 'pdf-tools)
