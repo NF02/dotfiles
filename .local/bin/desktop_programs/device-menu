@@ -17,7 +17,7 @@ mountmtp() {
     chosen="$(echo "$chosen" | cut -d : -f 1)"
     mkdir -p $mp
     simple-mtpfs --device "$chosen" "$mp"
-    echo "OK" | rofi -dmenu -p "Tap Allow on your phone if it asks for permission and then press enter" || exit 1
+    echo "OK" | fuzzel --dmenu -p "Tap Allow on your phone if it asks for permission and then press enter" || exit 1
     simple-mtpfs --device "$chosen" "$mp"
     notify-send "🤖 Android Mounting" "Android device mounted to $mp."
 }
@@ -29,7 +29,7 @@ mountusb() {
 }
 
 asktype() { 
-    case $(printf "USB\\nMTP" | rofi -dmenu -p "Mount a USB drive or Android device?") in
+    case $(printf "USB\\nMTP" | fuzzel --dmenu -p "Mount a USB drive or Android device?") in
 	USB) mountusb ;;
 	MTP) mountmtp ;;
     esac
@@ -38,7 +38,7 @@ asktype() {
 # umount function
 unmountusb() {
     [ -z "$drives" ] && exit
-    chosen=$(echo "$drives" | rofi -dmenu -p "Unmount which drive?" | awk '{print $1}')
+    chosen=$(echo "$drives" | fuzzel --dmenu -p "Unmount which drive?" | awk '{print $1}')
     [ -z "$chosen" ] && exit
     chosen="$(echo "$chosen" | awk '{print $1}')"
     udisksctl unmount -b $chosen && notify-send "💻 USB unmounting" "$chosen unmounted."
@@ -51,7 +51,7 @@ unmountmtp() {
 }
 
 unasktype() { 
-    case "$(printf "USB\\nMTP" | rofi -dmenu -p "Unmount a USB drive or Android device?")" in
+    case "$(printf "USB\\nMTP" | fuzzel --dmenu -p "Unmount a USB drive or Android device?")" in
 	USB) unmountusb ;;
 	MTP) unmountmtp ;;
     esac
