@@ -11,7 +11,7 @@
 
 # mount function
 mountmtp() { 
-    chosen="$(echo "$mtpdrives" | rofi -dmenu -p "Which Android device?")" || exit 1
+    chosen="$(echo "$mtpdrives" | fuzzel --dmenu -p "Which Android device?")" || exit 1
     tspace=$(echo $chosen | sed -r 's/( )+//g')     
     mp="/home/$USER/$tspace/"
     chosen="$(echo "$chosen" | cut -d : -f 1)"
@@ -23,7 +23,7 @@ mountmtp() {
 }
 
 mountusb() { 
-    chosen="$(echo "$usbdrives" | rofi -dmenu -p "Mount which drive?")" || exit 1
+    chosen="$(echo "$usbdrives" | fuzzel --dmenu -p "Mount which drive?")" || exit 1
     chosen="$(echo "$chosen" | awk '{print $1}')"
     udisksctl mount -b $chosen && notify-send "💻 USB mounting" "$chosen mounted." && exit 0
 }
@@ -72,7 +72,7 @@ EOF
 	exit 0
 fi
 
-opt=$(echo "mount\numount\n" | rofi -dmenu "Device menu:")
+opt=$(echo "mount\numount\n" | fuzzel --dmenu -p "Device menu:")
 
 # Exit if none opt.
 [ -z "$opt" ] && exit
