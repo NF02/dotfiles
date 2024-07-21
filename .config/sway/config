@@ -21,14 +21,14 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel
+set $menu rofi -show drun
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg ~/Immagini/progetti\ e\ sfondi/finiti/sfondo8.png fill
+output * bg ~/Immagini/progetti\ e\ sfondi/finiti/sfondo9.png fill
 #
-exec waypaper --restore
+#exec waypaper --restore
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0

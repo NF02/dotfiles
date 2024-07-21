@@ -1,0 +1,40 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[sensors]
+command=temperature
+label=Temp: 
+interval=10
+
+[memory]
+command=~/.local/statusbar/sb-memory
+interval=2
+
+[cpu_usage]
+command=~/.local/statusbar/sb-cpubars
+interval=2 
+
+[wifi]
+command=~/.local/statusbar/sb-wifi
+interval=2
+
+[battery]
+command=~/.local/statusbar/sb-battery
+interval=2
+
+[volume]
+command=~/.local/statusbar/sb-volume
+interval=2
+
+[ora]
+command=~/.local/statusbar/sb-clock
+interval=1
