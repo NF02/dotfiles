@@ -1,0 +1,33 @@
+#!/bin/env zsh
+
+# eza -> ls
+alias ls='eza --icons=auto $eza_params'
+alias l='eza --icons=auto --git-ignore $eza_params'
+alias ll='eza --icons=auto --all --header --long $eza_params'
+alias llm='eza --icons=auto --all --header --long --sort=modified $eza_params'
+alias la='eza --icons=auto -lbhHigUmuSa'
+alias lx='eza --icons=auto -lbhHigUmuSa@'
+alias lt='eza --icons=auto --tree $eza_params'
+alias tree='eza --icons=auto --tree $eza_params'
+
+# mkdir
+alias mkd="mkdir -p"
+
+# emacs
+alias edit="emacs -nw"
+
+# git
+alias gc="git clone"
+alias gcm="git commit -m"
+alias gpush="git push"
+alias gpull="git pull"
+
+# open (macos-like)
+alias open="xdg-open"
+
+#fastfetch
+alias ff="fastfetch"
+
+# clipboard
+alias clip_run="cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy"
+alias clip_delete="cliphist list | rofi -dmenu -p 'Clipboard delete' | cliphist delete"

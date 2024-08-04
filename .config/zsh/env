@@ -1,0 +1,2 @@
+#!/bin/env zsh
+export PATH=/home/nick/.zi/plugins/eza-community---eza:/home/nick/.zi/polaris/sbin:/home/nick/.zi/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/nick/.local/bin/:/home/nick/.local/bin/
