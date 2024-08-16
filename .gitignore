@@ -9,3 +9,5 @@
 .config/xdg-desktop-portal/portal.conf~
 .config/zsh/aliasrc~
 .config/zsh/env~
+.config/conky/conky.conf~
+.config/qtile/script/powermenu.sh~

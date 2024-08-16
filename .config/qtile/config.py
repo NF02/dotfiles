@@ -1,29 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 import json
 import os
 import re
@@ -45,7 +19,25 @@ from libqtile.utils import guess_terminal
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 
+# home patch
+home = str(Path.home())
+
+# zshell integration
+shell = "/bin/zsh "
+
+# file manager
+fm = "yazi"
+
+# Super key
 mod = "mod4"
+
+# alt key
+alt = "mod1"
+
+if qtile.core.name == "wayland":  
+    os.environ["XDG_SESSION_DESKTOP"] = "qtile:wlroots"
+    os.environ["XDG_CURRENT_DESKTOP"] = "qtile:wlroots"
+
 #terminal = guess_terminal()
 if qtile.core.name == "x11":
     term = "alacritty"
@@ -56,15 +48,31 @@ elif qtile.core.name == "wayland":
 keys = [
     # audio Command
     Key([], "XF86AudioMute", lazy.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-")),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+")),
+
     # player command
     Key([mod], "n", lazy.spawn("playerctl next"), desc="player command next track"),
     Key([mod], "b", lazy.spawn("playerctl previous"), desc="player command previous track"),
     Key([mod], "m", lazy.spawn("playerctl play-pause"), desc="player command play and stop current track"),
+
     # clipboard
-    Key([mod], "v", lazy.spawn("clip_run"), desc="clipboard selector"),
-    Key([mod], "x", lazy.spawn("clip_delete"), desc="clipboard delete"),
+    Key([mod], "f1", lazy.spawn(shell + home + "/.local/bin/clip_run"), desc="clipboard selector"),
+    Key([mod], "f2", lazy.spawn(shell + home + "/.local/bin/clip_delete"), desc="clipboard delete"),
+
+    # device menu
+    Key([mod], "f3", lazy.spawn(shell + home + "/.local/bin/device-menu"), desc="device menu (mount/umount devices)"),
+
+    # emoji menu
+    Key([mod], "f4", lazy.spawn(shell + home + "/.local/bin/emojimenu"), desc="emoji selector menu"),
+
+    # file manager
+    Key([mod], "f5", lazy.spawn(term + " " + fm)),
+
+    # lock screen
+    Key([alt], "l", lazy.spawn(shell + home + "/.config/qtile/script/lockscreen.sh"), desc="lockscreen"),
+    # Control + alt + delete keybinding
+    Key([alt, "control"], "delete", lazy.spawn(shell + home + "/.config/qtile/script/powermenu.sh"), desc="power menu"),
     # screen bachlight
     Key([], 'XF86MonBrightnessUp',   lazy.spawn("brightnessctl set +5%")),
     Key([], 'XF86MonBrightnessDown', lazy.spawn("brightnessctl set 5%-")),
@@ -195,6 +203,7 @@ screens = [
                 widget.CPUGraph(),
                 widget.Sep(),
                 widget.Volume(emoji = True),
+                #widget.ALSAWidget(),
                 widget.Sep(),
                 widget.Battery(),
                 widget.Sep(),
@@ -207,7 +216,8 @@ screens = [
                 #widget.TextBox("default config", name="default"),
                 #widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 #xs NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                widget.Wlan(format='{essid} {percent:2.0%}'),
+                #widget.Wlan(format='{essid} {percent:2.0%}'),
+                widget.WiFiIcon(),
                 widget.Sep(),
                 #widget.Systray(),
                 widget.StatusNotifier(),

@@ -31,3 +31,4 @@ alias ff="fastfetch"
 # clipboard
 alias clip_run="cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy"
 alias clip_delete="cliphist list | rofi -dmenu -p 'Clipboard delete' | cliphist delete"
+alias myIP='curl http://ipecho.net/plain; echo'
