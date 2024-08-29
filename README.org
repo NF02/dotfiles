@@ -6,7 +6,7 @@ the file [[https://github.com/NF02/dotfiles/blob/master/LICENSE][LICENSE]].
 #+NAME:   fig:screenshot
 [[https://raw.githubusercontent.com/NF02/dotfiles/master/img.png]]
 ** Default program
- * [[https://swaywm.org/][sway]] - tiling compositor manager;
+ * [[https://github.com/WillPower3309/swayfx][swayfx]] - tiling compositor manager;
  * [[https://wezfurlong.org/wezterm/][wezterm]] - terminal emulator;
  * [[https://github.com/vivien/i3blocks][i3blocks]] - Status bar;
  * [[https://www.mozilla.org/en-US/firefox/new/][Firefox]] - browser web;
