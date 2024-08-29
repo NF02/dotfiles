@@ -37,11 +37,8 @@ cp -r dotfiles/.emacs.d/ ~
 cp dotfiles/.xinitrc ~
 cp dotfiles/.xprofile ~
 
-# zsh themes "oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # install oh-my-zsh
-# download my zsh config
-curl https://raw.githubusercontent.com/NF02/dotfiles/master/.zshrc > ~/.zshrc
-# download my theme
-curl https://raw.githubusercontent.com/NF02/dotfiles/master/.oh-my-zsh/themes/nfvblog.zsh-theme > .oh-my-zsh/themes/nfvblog.zsh-theme
-omz theme set nfvblog
+# install zi package manager
+sh -c "$(curl -fsSL get.zshell.dev)" -- -i skip -b main
+cp -r .zshrc ~/
+cp -r .config/zsh ~/.config/
 #+end_src
