@@ -1,12 +1,12 @@
 exec-once = wl-paste --type text --watch cliphist store 
 exec-once = wl-paste --type image --watch cliphist store
 
-bind = $mainMod Shift, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
-bind = $mainMod Shift, X, exec, cliphist list | wofi --dmenu | cliphist delete
+bind = $mainMod Shift, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
+bind = $mainMod Shift, X, exec, cliphist list | rofi -dmenu | cliphist delete
 
 # volume keybinds
 # Example volume button that allows press and hold, volume limited to 150%
-binde=, XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+binde=, XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+
 
 # Example volume button that will activate even while an input inhibitor is active
 bindl=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
@@ -21,6 +21,3 @@ bind = , XF86AudioPrev, exec, playerctl previous
 # Screen brightness
 bind = , XF86MonBrightnessUp, exec, brightnessctl s +5%
 bind = , XF86MonBrightnessDown, exec, brightnessctl s 5%-
-
-# notify center
-bind = $mainMod, N, exec, swaync-client -t
