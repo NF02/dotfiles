@@ -1,2 +1,2 @@
->=media-libs/libvpx-1.12.0-r1 postproc
-www-client/firefox pulseaudio alsa 
+media-libs/libvpx postproc
+www-client/firefox -wifi hwaccel pulseaudio

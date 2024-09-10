@@ -1,0 +1,3 @@
+media-plugins/calf lv2 jack
+sci-libs/fftw openmp threads
+media-sound/easyeffects doc calf mda-lv2 zamaudio

@@ -1,0 +1,5 @@
+ gui-wm/swayfx ~amd64
+gui-libs/scenefx ~amd64
+gui-apps/swaylock-effects ~amd64
+gui-apps/swaync ~amd64
+app-misc/cliphist ~amd64

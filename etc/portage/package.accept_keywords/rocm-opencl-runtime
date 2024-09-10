@@ -1,6 +1,5 @@
->=dev-libs/rocm-opencl-runtime-5.3.3 ~amd64
->=dev-libs/rocr-runtime-5.3.3 ~amd64
->=dev-libs/rocm-comgr-5.3.3 ~amd64
->=dev-libs/rocm-device-libs-5.3.3 ~amd64
->=dev-util/rocm-cmake-5.3.3 ~amd64
->=dev-libs/roct-thunk-interface-5.3.3 ~amd64
+dev-libs/rocm-opencl-runtime ~amd64
+>=dev-libs/rocr-runtime-6.0 ~amd64
+>=dev-libs/rocm-comgr-6.0 ~amd64
+>=dev-libs/rocm-device-libs-6.0 ~amd64
+>=dev-build/rocm-cmake-5.3 ~amd64

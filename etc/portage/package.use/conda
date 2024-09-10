@@ -1,0 +1,3 @@
+>=dev-util/mamba-1.5.8 python
+>=sys-libs/libsolv-0.7.28 conda
+

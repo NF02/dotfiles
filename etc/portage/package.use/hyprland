@@ -1,0 +1,4 @@
+gui-wm/hyprland X
+gui-apps/waybar pulseaudio pipewire tray -experimental network mpd
+dev-libs/libdbusmenu gtk3
+gui-libs/gtk-layer-shell vala introspection

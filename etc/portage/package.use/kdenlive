@@ -1,0 +1,6 @@
+>=media-libs/mlt-7.24.0 ffmpeg frei0r
+>=media-video/ffmpeg-6.1.1-r8 libass
+>=media-libs/opencv-4.8.1-r2 contribdnn contrib
+kde-frameworks/kconfig qml
+dev-qt/qt5compat qml
+kde-frameworks/sonnet qml

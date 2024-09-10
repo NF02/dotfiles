@@ -1,0 +1,3 @@
+dev-libs/boost python numpy lzma mpi tools
+>=virtual/mpi-2.0-r8 cxx threads
+>=sys-cluster/openmpi-4.1.6 cxx

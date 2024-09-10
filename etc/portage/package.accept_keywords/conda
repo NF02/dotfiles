@@ -1,0 +1,7 @@
+dev-python/conda ~amd64
+dev-python/archspec ~amd64
+dev-python/conda-libmamba-solver ~amd64
+dev-util/mamba ~amd64
+dev-cpp/reproc ~amd64
+dev-cpp/tl-expected ~amd64
+sys-libs/libsolv ~amd64

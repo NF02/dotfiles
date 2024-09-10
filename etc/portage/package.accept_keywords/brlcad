@@ -1,0 +1,11 @@
+media-gfx/brlcad ~amd64
+sci-libs/tnt ~amd64
+sci-libs/lemon ~amd64
+sci-libs/coinor-cbc ~amd64
+ sci-libs/coinor-clp ~amd64
+ sci-libs/coinor-osi ~amd64
+ sci-libs/coinor-utils ~amd64
+ sci-libs/coinor-cgl ~amd64
+ sci-libs/coinor-dylp ~amd64
+ sci-libs/coinor-vol ~amd64
+sci-libs/jama ~amd64

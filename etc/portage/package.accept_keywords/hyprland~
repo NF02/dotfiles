@@ -1,0 +1,10 @@
+gui-libs/xdg-desktop-portal-hyprland ~amd64
+media-video/pipewire ~amd64
+dev-cpp/sdbus-c++ ~amd64
+x11-terms/wezterm ~amd64
+gui-apps/hyprpaper ~amd64
+gui-apps/hyprlock ~amd64
+gui-apps/hypridle ~amd64
+app-misc/brightnessctl ~amd64
+media-sound/ncpamixer ~amd64
+www-client/jd ~amd64
