@@ -71,7 +71,8 @@
     "clock": {
         "timezone": "Europe/Rome",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+	"on-click": "foot htop"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -79,8 +80,7 @@
 	"on-click": "foot htop"
     },
     "memory": {
-        "format": "{}% ",
-	"on-click": "foot htop"
+        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
