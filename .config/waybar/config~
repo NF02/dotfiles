@@ -62,7 +62,7 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "custom/power": {
-        "format": "⏻ ",
+        "format": "⏻",
         "tooltip": false,
         "on-click": "wlogout --protocol layer-shell"
     },
