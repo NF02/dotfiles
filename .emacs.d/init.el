@@ -3,8 +3,8 @@
 (menu-bar-mode -1)
 
 ;; trasparent
-(set-frame-parameter nil 'alpha-background 90)
-(add-to-list 'default-frame-alist '(alpha-background . 90))
+(set-frame-parameter nil 'alpha-background 80)
+(add-to-list 'default-frame-alist '(alpha-background . 80))
 
 (setq inhibit-startup-screen t)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
@@ -29,10 +29,16 @@
   "The root Emacs Lisp source folder")
 
 ;; theme
-(load-theme 'grandshell t)
+(load-theme 'leuven t)
 
 ;; ido mode
 (ido-mode t)
+
+
+;; which key
+(require 'which-key)
+(which-key-mode)
+(which-key-setup-minibuffer)
 
 ;; pdf tools
 (require 'pdf-tools)
@@ -74,6 +80,10 @@
 (add-hook 'org-mode-hook #'org-modern-mode)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 
+;;;; org mode convert reveal.js
+(require 'org-re-reveal)
+(setq org-re-reveal-root "file:///home/nick/repos/reveal.js")
+
 ;;;; org mode present
 (require 'org-tree-slide)
 
@@ -103,6 +113,9 @@
   (org-roam-db-autosync-mode)
   ;; If using org-roam-protocol
   (require 'org-roam-protocol))
+
+;; elfeed-org
+(require 'elfeed)
 
 ;; Octave
 (setq auto-mode-alist
@@ -143,6 +156,14 @@
          ("\\.cpy\\'" . cobol-mode))
        auto-mode-alist))
 
+;; slime
+(require 'slime)
+(setq inferior-lisp-program "sbcl")
+
+;; processing
+(setq processing-location "~/.local/processing-4.3/processing-java")
+(setq processing-application-dir "~/.local/processing-4.3/processing")
+(setq processing-sketchbook-dir "~/Documenti/processing")
 					; external repo by straightEL
 
 (defvar bootstrap-version)
@@ -159,3 +180,8 @@
   (load bootstrap-file nil 'nomessage))
 
 
+(straight-use-package
+  '(app-launcher :type git :host github :repo "SebastienWae/app-launcher"))
+
+;; load external elisp script
+(add-to-list 'load-path "~/.emacs.d/lisp")
