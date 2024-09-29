@@ -26,8 +26,7 @@
        org-re-reveal
 
        ;; JAVA
-       eclim
-       company-emacs-eclim
+       lsp-java
        
        ;; (JAVA) processing mode
        processing-mode
