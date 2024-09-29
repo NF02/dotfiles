@@ -3,7 +3,7 @@
   (custom-set-variables 
    '(package-selected-packages
      '(
-       leuven-theme
+       timu-spacegrey
        ;; company mode
        company
        company-spell
@@ -13,8 +13,10 @@
        company-web
        company-statistics
        company-c-headers
+
        ;; latex
        auctex
+
        ;; org mode
        org-modern
        org-contrib
@@ -22,6 +24,11 @@
        org-roam-ui
        org-tree-slide
        org-re-reveal
+
+       ;; JAVA
+       eclim
+       company-emacs-eclim
+       
        ;; (JAVA) processing mode
        processing-mode
        processing-snippets

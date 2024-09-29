@@ -29,7 +29,7 @@
   "The root Emacs Lisp source folder")
 
 ;; theme
-(load-theme 'leuven t)
+(load-theme 'timu-spacegrey t)
 
 ;; ido mode
 (ido-mode t)
@@ -164,6 +164,19 @@
 (setq processing-location "~/.local/processing-4.3/processing-java")
 (setq processing-application-dir "~/.local/processing-4.3/processing")
 (setq processing-sketchbook-dir "~/Documenti/processing")
+
+;; eclim
+(require 'eclim)
+(setq eclimd-autostart t)
+
+(defun my-java-mode-hook ()
+    (eclim-mode t))
+
+(add-hook 'java-mode-hook 'my-java-mode-hook)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+(global-company-mode t)
+
 					; external repo by straightEL
 
 (defvar bootstrap-version)
@@ -184,4 +197,8 @@
   '(app-launcher :type git :host github :repo "SebastienWae/app-launcher"))
 
 ;; load external elisp script
-(add-to-list 'load-path "~/.emacs.d/lisp")
+  (let* ((path (expand-file-name "lisp" user-emacs-directory))
+         (local-pkgs (mapcar 'file-name-directory (directory-files-recursively path "\\.el$"))))
+    (if (file-accessible-directory-p path)
+        (mapc (apply-partially 'add-to-list 'load-path) local-pkgs)
+      (make-directory path :parents)))
