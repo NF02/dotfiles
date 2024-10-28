@@ -26,7 +26,17 @@
        org-re-reveal
 
        ;; JAVA
+       lsp-ui
        lsp-java
+       lsp-treemacs
+       dap-mode
+       dap-java
+       helm-lsp
+       helm
+       yasnippet
+       flycheck
+       hydra
+       projectile
        
        ;; (JAVA) processing mode
        processing-mode

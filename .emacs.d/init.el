@@ -15,7 +15,11 @@
 
 ; il repo esterno melpa
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")
+			  ("org" . "https://orgmode.org/elpa/")
+))
+
 (package-initialize)
 
 (setq custom-file "~/.emacs.d/custom.el")
@@ -29,7 +33,7 @@
   "The root Emacs Lisp source folder")
 
 ;; theme
-(load-theme 'timu-spacegrey t)
+(load-theme 'spacemacs-dark t)
 
 ;; ido mode
 (ido-mode t)
@@ -72,6 +76,15 @@
   (unbind-key "C-S-<up>" org-mode-map)
   (unbind-key "C-S-<down>" org-mode-map)
   )
+;;;; org babel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . nil)
+   (R . t)
+   (python . t)
+   (C . t)
+   (rust . t)))
+
 ;;;; org contrib
 (use-package org-contrib)
 
@@ -165,40 +178,98 @@
 (setq processing-application-dir "~/.local/processing-4.3/processing")
 (setq processing-sketchbook-dir "~/Documenti/processing")
 
-;; eclim
-(require 'eclim)
-(setq eclimd-autostart t)
+;; JAVA
+(use-package projectile 
+  :ensure t
+  :init (projectile-mode +1)
+  :config 
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+(use-package flycheck)
+(use-package yasnippet
+  :config
+  (yas-global-mode))
+(use-package lsp-mode
+  :ensure t
+  :hook (
+	 (lsp-mode . lsp-enable-which-key-integration)
+	 (java-mode . #'lsp-deferred)
+	 )
+  :init (setq 
+	 lsp-keymap-prefix "C-c l"              ; this is for which-key integration documentation, need to use lsp-mode-map
+	 lsp-enable-file-watchers nil
+	 read-process-output-max (* 1024 1024)  ; 1 mb
+	 lsp-completion-provider :capf
+	 lsp-idle-delay 0.500
+	 )
+  :config 
+  (setq lsp-intelephense-multi-root nil) ; don't scan unnecessary projects
+  (with-eval-after-load 'lsp-intelephense
+    (setf (lsp--client-multi-root (gethash 'iph lsp-clients)) nil))
+  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))
+(use-package hydra)
+(use-package lsp-ui
+  :ensure t
+  :after (lsp-mode)
+  :bind (:map lsp-ui-mode-map
+              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+              ([remap xref-find-references] . lsp-ui-peek-find-references))
+  :init (setq lsp-ui-doc-delay 1.5
+	      lsp-ui-doc-position 'bottom
+	      lsp-ui-doc-max-width 100
+	      ))
+(use-package lsp-ui)
+(use-package lsp-java
+  :config
+  (add-hook 'java-mode-hook 'lsp))
+(use-package dap-mode
+  :ensure t
+  :after (lsp-mode)
+  :functions dap-hydra/nil
+  :config
+  (require 'dap-java)
+  :bind (:map lsp-mode-map
+         ("<f5>" . dap-debug)
+         ("M-<f5>" . dap-hydra))
+  :hook ((dap-mode . dap-ui-mode)
+    (dap-session-created . (lambda (&_rest) (dap-hydra)))
+    (dap-terminated . (lambda (&_rest) (dap-hydra/nil)))))
 
-(defun my-java-mode-hook ()
-    (eclim-mode t))
+(use-package dap-java
+  :ensure nil)
+(use-package helm-lsp)
+(use-package helm
+  :ensure t
+  :init 
+  (helm-mode 1)
+  (progn (setq helm-buffers-fuzzy-matching t))
+  :bind
+  (("C-c h" . helm-command-prefix))
+  (("M-x" . helm-M-x))
+  (("C-x C-f" . helm-find-files))
+  (("C-x b" . helm-buffers-list))
+  (("C-c b" . helm-bookmarks))
+  (("C-c f" . helm-recentf))   ;; Add new key to recentf
+  (("C-c g" . helm-grep-do-git-grep)))  ;; Search using grep in a git project
+(use-package helm-swoop 
+  :ensure t
+  :init
+  (bind-key "M-m" 'helm-swoop-from-isearch isearch-mode-map)
 
-(add-hook 'java-mode-hook 'my-java-mode-hook)
-(require 'company-emacs-eclim)
-(company-emacs-eclim-setup)
-(global-company-mode t)
+  ;; If you prefer fuzzy matching
+  (setq helm-swoop-use-fuzzy-match t)
 
-					; external repo by straightEL
+  ;; Save buffer when helm-multi-swoop-edit complete
+  (setq helm-multi-swoop-edit-save t)
 
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-       (bootstrap-version 6))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-        'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+  ;; If this value is t, split window inside the current window
+  (setq helm-swoop-split-with-multiple-windows nil)
 
+  ;; Split direction. 'split-window-vertically or 'split-window-horizontally
+  (setq helm-swoop-split-direction 'split-window-vertically)
 
-(straight-use-package
-  '(app-launcher :type git :host github :repo "SebastienWae/app-launcher"))
+  ;; If nil, you can slightly boost invoke speed in exchange for text color
+  (setq helm-swoop-speed-or-color nil)
 
-;; load external elisp script
-  (let* ((path (expand-file-name "lisp" user-emacs-directory))
-         (local-pkgs (mapcar 'file-name-directory (directory-files-recursively path "\\.el$"))))
-    (if (file-accessible-directory-p path)
-        (mapc (apply-partially 'add-to-list 'load-path) local-pkgs)
-      (make-directory path :parents)))
+  ;; ;; Go to the opposite side of line from the end or beginning of line
+  (setq helm-swoop-move-to-line-cycle t))
+(use-package lsp-treemacs)

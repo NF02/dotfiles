@@ -3,7 +3,7 @@
 chosen=$(cut -d ';' -f1 ~/.local/share/emoji | fuzzel --dmenu -p "Emoji menu:" | sed "s/ .*//")
 
 # Exit if none chosen.
-#[ -z "$chosen"] && exit
+#[ -Z "$chosen"] && exit
 
 # If you ran thi command with an argument, it will automatically insert the
 # character. Otherwise, a message that the emoji has been copied.
