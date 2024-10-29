@@ -38,6 +38,12 @@
 ;; ido mode
 (ido-mode t)
 
+;; lang tool
+(if (file-exists-p "/usr/bin/hunspell")
+    (progn
+      (setq ispell-program-name "hunspell")
+      (eval-after-load "ispell"
+        '(progn (defun ispell-get-coding-system () 'utf-8)))))
 
 ;; which key
 (require 'which-key)
@@ -55,6 +61,18 @@
   :ensure t
   :defer t)
 
+;;; math preview
+(use-package latex-math-preview)
+
+;;; lsp ltex
+(use-package lsp-ltex
+  :ensure t
+  :hook (text-mode . (lambda ()
+                       (require 'lsp-ltex)
+                       (lsp)))  ; or lsp-deferred
+  :init
+  (setq lsp-ltex-version "15.2.0"))  ; make sure you have set this, see below
+
 ;;;; Use pdf-tools to open PDF files
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
       TeX-source-correlate-start-server t)
@@ -63,8 +81,7 @@
 (add-hook 'TeX-after-compilation-finished-functions
           #'TeX-revert-document-buffer)
 
-
-;; org-mode
+;; org-mode 
 (use-package org
   :config
   (unbind-key "S-<left>" org-mode-map)

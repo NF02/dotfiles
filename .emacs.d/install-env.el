@@ -13,10 +13,16 @@
        company-web
        company-statistics
        company-c-headers
-
+       company-math
+       
        ;; latex
        auctex
-
+       auctex-latexmk
+       lsp-latex
+       latex-extra
+       latex-math-preview
+       yatex
+       
        ;; org mode
        org-modern
        org-contrib
@@ -25,6 +31,9 @@
        org-tree-slide
        org-re-reveal
 
+       ;; babel
+       ob-rust
+       
        ;; JAVA
        lsp-ui
        lsp-java
@@ -37,6 +46,7 @@
        flycheck
        hydra
        projectile
+       helm-swoop
        
        ;; (JAVA) processing mode
        processing-mode
