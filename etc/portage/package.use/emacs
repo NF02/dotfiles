@@ -1,2 +1,3 @@
->=app-emacs/emacs-common-1.10 gsettings
-app-editors/emacs gui gtk -X gfile gsettings imagemagick threads dynamic-loading
+app-emacs/emacs-common gsettings
+app-editors/emacs gui gtk -X gfile gsettings imagemagick threads dynamic-loading jit libxml2
+sys-devel/gcc jit
