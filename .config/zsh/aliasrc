@@ -25,10 +25,18 @@ alias gpull="git pull"
 # open (macos-like)
 alias open="xdg-open"
 
-#fastfetch
+# fastfetch
 alias ff="fastfetch"
 
-# clipboard
-alias clip_run="cliphist list | rofi -dmenu -p 'Clipboard' | cliphist decode | wl-copy"
-alias clip_delete="cliphist list | rofi -dmenu -p 'Clipboard delete' | cliphist delete"
+# (r)o(m)ove
+alias rmi="rm -ri"
+alias rmall="rm -rfi"
+
+# ip addr
 alias myIP='curl http://ipecho.net/plain; echo'
+
+# python locale
+alias actpy='source ~/.local/python/bin/activate'
+
+# history
+alias hh=hstr

@@ -3,7 +3,8 @@
   (custom-set-variables 
    '(package-selected-packages
      '(
-       timu-spacegrey
+       spacemacs-theme
+       which-key
        ;; company mode
        company
        company-spell
@@ -18,7 +19,7 @@
        ;; latex
        auctex
        auctex-latexmk
-       lsp-latex
+       cdlatex
        latex-extra
        latex-math-preview
        yatex
@@ -30,23 +31,10 @@
        org-roam-ui
        org-tree-slide
        org-re-reveal
-
+       helm-org
+       
        ;; babel
        ob-rust
-       
-       ;; JAVA
-       lsp-ui
-       lsp-java
-       lsp-treemacs
-       dap-mode
-       dap-java
-       helm-lsp
-       helm
-       yasnippet
-       flycheck
-       hydra
-       projectile
-       helm-swoop
        
        ;; (JAVA) processing mode
        processing-mode
@@ -60,6 +48,7 @@
        octave
        neotree
        vterm
-       vterm-toggle)))
+       vterm-toggle
+       )))
   (package-install-selected-packages nil))
 (install-env)

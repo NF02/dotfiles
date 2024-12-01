@@ -8,6 +8,7 @@ typeset -Ag ZI
 typeset -gx ZI[HOME_DIR]="${HOME}/.zi"
 typeset -gx ZI[BIN_DIR]="${HOME}/.zi/bin"
 command mkdir -p "$ZI[BIN_DIR]"
+
 # enable zi
 typeset -A ZI
 ZI[BIN_DIR]="${HOME}/.zi/bin"
@@ -27,10 +28,15 @@ zi wait lucid for \
 
 # complition
 zstyle ':completion:*' menu select
+
 # history
+autoload -U history-search-end
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -g -A key
@@ -72,9 +78,11 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-# apparance
-PROMPT='%F{cyan}%n%f@%F{green}%m:%F{yellow}%~%f
-$> '
+
 # config
 source $HOME/.config/zsh/aliasrc
 source $HOME/.config/zsh/env
+source $HOME/.config/zsh/apparance
+
+
+if [ -e /home/nick/.nix-profile/etc/profile.d/nix.sh ]; then . /home/nick/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

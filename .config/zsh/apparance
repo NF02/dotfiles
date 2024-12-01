@@ -1,0 +1,5 @@
+#!/bin/env zsh
+
+# apparance
+PROMPT='%F{cyan}%n%f@%F{green}%m:%F{yellow}%~%f
+$> '
