@@ -3,3 +3,8 @@
 # my paths
 export PATH=/home/nick/.zi/plugins/eza-community---eza:/home/nick/.zi/polaris/sbin:/home/nick/.zi/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/nick/.local/bin/:/home/nick/.local/bin/
 
+export EDITOR="emacs"
+export TERMINAL="wezterm"
+export QT_QPA_PLATFORMTHEME=qt6ct
+export XDG_SESSION_TYPE=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
