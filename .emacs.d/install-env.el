@@ -32,7 +32,8 @@
        org-tree-slide
        org-re-reveal
        helm-org
-       
+       org-fragtog
+
        ;; babel
        ob-rust
        
