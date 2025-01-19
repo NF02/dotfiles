@@ -40,6 +40,13 @@
        ;; (JAVA) processing mode
        processing-mode
        processing-snippets
+
+       ;; Docker
+       dockerfile-mode
+       docker-cli
+       docker-compose-mode
+       docker-api
+       
        ;; other
        slime
        powerline
