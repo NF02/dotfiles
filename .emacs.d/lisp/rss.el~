@@ -6,4 +6,5 @@
 	("https://planet.gentoo.org/rss20.xml" planet gentoo)
 	("https://gentoo.org/feeds/news.xml" gentoo news)
 	("https://blog.bitcoin.com/feed" bitcoin)
+	
 	))
