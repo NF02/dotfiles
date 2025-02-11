@@ -1,14 +1,1 @@
-.config/sway/config~
-.config/foot/foot.ini~
-.config/hypr/hyprland.conf~
-.local/share/applications/extractor.desktop~
-.config/fuzzel/fuzzel.ini~
-.config/i3blocks/config~
-.config/qtile/autostart.sh~
-.config/qtile/config.py~
-.config/xdg-desktop-portal/portal.conf~
-.config/zsh/aliasrc~
-.config/zsh/env~
-.config/conky/conky.conf~
-.config/qtile/script/powermenu.sh~
-.config/wezterm/wezterm.lua~
+*~
