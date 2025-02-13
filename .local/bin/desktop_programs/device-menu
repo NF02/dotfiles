@@ -11,7 +11,7 @@
 
 # mount function
 mountmtp() { 
-    chosen="$(echo "$mtpdrives" | rofi -dmenu -p "Which Android device?")" || exit 1
+    chosen="$(echo "$mtpdrives" | fuzzel --dmenu -p "Which Android device?")" || exit 1
     tspace=$(echo $chosen | sed -r 's/( )+//g')     
     mp="/home/$USER/$tspace/"
     chosen="$(echo "$chosen" | cut -d : -f 1)"
@@ -23,13 +23,13 @@ mountmtp() {
 }
 
 mountusb() { 
-    chosen="$(echo "$usbdrives" | rofi -dmenu -p "Mount which drive?")" || exit 1
+    chosen="$(echo "$usbdrives" | fuzzel --dmenu -p "Mount which drive?")" || exit 1
     chosen="$(echo "$chosen" | awk '{print $1}')"
     udisksctl mount -b $chosen && notify-send "💻 USB mounting" "$chosen mounted." && exit 0
 }
 
 asktype() { 
-    case $(printf "USB\\nMTP" | rofi -dmenu -p "Mount a USB drive or Android device?") in
+    case $(printf "USB\\nMTP" | fuzzel --dmenu -p "Mount a USB drive or Android device?") in
 	USB) mountusb ;;
 	MTP) mountmtp ;;
     esac
@@ -38,20 +38,20 @@ asktype() {
 # umount function
 unmountusb() {
     [ -z "$drives" ] && exit
-    chosen=$(echo "$drives" | rofi -dmenu -p "Unmount which drive?" | awk '{print $1}')
+    chosen=$(echo "$drives" | fuzzel --dmenu -p "Unmount which drive?" | awk '{print $1}')
     [ -z "$chosen" ] && exit
     chosen="$(echo "$chosen" | awk '{print $1}')"
     udisksctl unmount -b $chosen && notify-send "💻 USB unmounting" "$chosen unmounted."
 }
 
 unmountmtp() { 
-    chosen=$(awk '/simple-mtpfs/ {print $2}' /etc/mtab | rofi -dmenu -p "Unmount which device?")
+    chosen=$(awk '/simple-mtpfs/ {print $2}' /etc/mtab | fuzzel --dmenu -p "Unmount which device?")
     [ -z "$chosen" ] && exit
     fusermount -u "$chosen" && rmdir "$chosen" && notify-send "🤖 Android unmounting" "$chosen unmounted."
 }
 
 unasktype() { 
-    case "$(printf "USB\\nMTP" | rofi -dmenu -p "Unmount a USB drive or Android device?")" in
+    case "$(printf "USB\\nMTP" | fuzzel --dmenu -p "Unmount a USB drive or Android device?")" in
 	USB) unmountusb ;;
 	MTP) unmountmtp ;;
     esac
@@ -72,7 +72,7 @@ EOF
 	exit 0
 fi
 
-opt=$(echo "mount\numount\n" | rofi -dmenu -p "Device menu:")
+opt=$(echo "mount\numount\n" | fuzzel --dmenu -p "Device menu:")
 
 # Exit if none opt.
 [ -z "$opt" ] && exit
