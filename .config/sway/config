@@ -8,7 +8,7 @@
 #
 # display config
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec lxpolkit
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -17,16 +17,16 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term wezterm
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show drun
+set $menu fuzzel --show drun
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Immagini/progetti\ e\ sfondi/finiti/sfondo9.png fill
+output * bg ~/Immagini/sfondo25.png fill
 #
 #exec waypaper --restore
 # Example configuration:
@@ -249,7 +249,7 @@ bar {
     status_command i3blocks
 
   colors {
-    background #000000
+    background #5D0c5a85
     statusline #FFFFFF
     separator  #666666
 
@@ -262,5 +262,22 @@ bar {
 }
 
 # lock screen
-bindsym Mod1+l exec swaylock -i ~/Immagini/progetti\ e\ sfondi/finiti/sfondo9.png
+bindsym Mod1+l exec swaylock \
+	--screenshots \
+	--clock \
+	--indicator \
+	--indicator-radius 100 \
+	--indicator-thickness 7 \
+	--effect-blur 7x5 \
+	--effect-vignette 0.5:0.5 \
+	--ring-color bb00cc \
+	--key-hl-color 880033 \
+	--line-color 00000000 \
+	--inside-color 00000088 \
+	--separator-color 00000000 \
+	--grace 2 \
+	--fade-in 0.2
+
+bindsym Mod4+F1 exec emacsclient -c
+
 include ~/.config/sway/config.d/*
