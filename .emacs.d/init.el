@@ -15,7 +15,8 @@
 
 ; il repo esterno melpa
 (require 'package)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+(setq package-archives '(("nongnu" . "https://elpa.nongnu.org/nongnu/")
+			 ("melpa" . "https://melpa.org/packages/")
                          ("elpa" . "https://elpa.gnu.org/packages/")
 			  ("org" . "https://orgmode.org/elpa/")
 ))

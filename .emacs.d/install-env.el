@@ -3,7 +3,7 @@
   (custom-set-variables 
    '(package-selected-packages
      '(
-       spacemacs-theme
+       auto-dark
        which-key
        ;; company mode
        company
