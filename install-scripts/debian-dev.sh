@@ -3,6 +3,7 @@
 # Function to execute commands with elevated privileges
 super_user_command() {
     local cmd="$*"
+    if command -v sudo &>/dev/null; then
         sudo bash -c "$cmd"
     elif command -v doas &>/dev/null; then
         doas bash -c "$cmd"
