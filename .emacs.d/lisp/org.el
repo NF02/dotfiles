@@ -24,6 +24,29 @@
 (add-hook 'org-mode-hook #'org-modern-mode)
 (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
 
+;;;; org view
+(require 'org-view-mode)
+(use-package org-view-mode
+  :ensure t)
+
+(defun org-visual-mode-on () 
+  "enable visual mode"
+  (interactive)
+  (org-view-mode 1)
+  (org-modern-mode 1)
+  (org-fragtog-mode 1))
+
+(defun org-visual-mode-off () 
+  "disable visual mode"
+  (interactive)
+  (org-view-mode -1)
+  (org-modern-mode -1)
+  (org-fragtog-mode -1))
+
+(add-hook 'org-mode-hook (lambda ()
+                           (local-set-key (kbd "C-c v") 'my-org-view-mode-on)
+                           (local-set-key (kbd "C-c V") 'my-org-view-mode-off)))
+
 ;;;; org mode fragtog (math mode)
 (add-hook 'org-mode-hook 'org-fragtog-mode)
 

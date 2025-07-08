@@ -26,6 +26,7 @@
        
        ;; org mode
        org-modern
+       org-view-mode
        org-contrib
        org-roam
        org-roam-ui

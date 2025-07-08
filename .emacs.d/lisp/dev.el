@@ -42,6 +42,3 @@
 (require 'dockerfile-mode)
 (require 'docker-cli)
 (setq dockerfile-mode-command "docker")
-
-;; supercollider
-(require 'sclang)
