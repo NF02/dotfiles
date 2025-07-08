@@ -29,13 +29,19 @@
 (use-package org-view-mode
   :ensure t)
 
+(defun org-visual-mode () 
+  "enable visual mode"
+  (interactive))
+  (org-modern-mode 1)
+  (org-fragtog-mode 1))
+
 (defun org-visual-mode-on () 
   "enable visual mode"
   (interactive)
   (org-view-mode 1)
   (org-modern-mode 1)
   (org-fragtog-mode 1))
-
+  
 (defun org-visual-mode-off () 
   "disable visual mode"
   (interactive)
@@ -44,8 +50,9 @@
   (org-fragtog-mode -1))
 
 (add-hook 'org-mode-hook (lambda ()
-                           (local-set-key (kbd "C-c v") 'my-org-view-mode-on)
-                           (local-set-key (kbd "C-c V") 'my-org-view-mode-off)))
+			   (local-set-key (kbd "C-c C-v") 'org-visual-mode)
+                           (local-set-key (kbd "C-c v") 'org-visual-mode-on)
+                           (local-set-key (kbd "C-c V") 'org-visual-mode-off)))
 
 ;;;; org mode fragtog (math mode)
 (add-hook 'org-mode-hook 'org-fragtog-mode)
