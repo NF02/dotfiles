@@ -1,41 +1,17 @@
-#!/bin/env zsh
-
-# apparance
-function git_prompt_info() {
-  local ref
-  local status
-
-  # Check if we are in a Git repository
-  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
-
-  # Get the current branch or commit hash if detached
-  ref=$(git symbolic-ref --short HEAD 2>/dev/null) || \
-  ref=$(git describe --tags --always 2>/dev/null)
-
-  # Check for untracked, modified, staged files
-  status=$(git status --porcelain 2>/dev/null)
-  if [[ -n "$status" ]]; then
-    if echo "$status" | grep -q '??'; then # Untracked files
-      status="%F{red}%f" # FA: fa-plus-circle
-    elif echo "$status" | grep -q '^M\|^A\|^D'; then # Modified, Added, Deleted
-      status="%F{yellow}%f" # FA: fa-exclamation-triangle
-    elif echo "$status" | grep -q '^MM\|^AM\|^DM'; then # Staged and modified
-      status="%F{magenta}%f" # FA: fa-clipboard-check
-    fi
+# appearance
+# Find and set branch name var if in git repository.
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
   else
-    status="" # No changes
-  fi
-
-  if [[ -n "$ref" ]]; then
-    echo "%F{blue}(%f%F{green}${ref}%f${status}%F{blue})%f"
+    echo '- ('$branch')'
   fi
 }
 
-function exit_status_prompt() {
-  if [[ $? -ne 0 ]]; then
-    echo "%F{red} %?%f" # FA: fa-times-circle for error
-  fi
-}
-
-PROMPT='%F{cyan}%n%f@%F{green}%m:%F{yellow}%~%f$(git_prompt_info)$(exit_status_prompt)
-%(!.#.$) '
+# Enable substitution in the prompt.
+setopt prompt_subst
+PROMPT='%F{cyan}%n%f@%F{green}%m:%F{yellow}%~%f%F{blue} $(git_branch_name)%f  
+$> '

@@ -31,7 +31,7 @@
 
 (defun org-visual-mode () 
   "enable visual mode"
-  (interactive))
+  (interactive)
   (org-modern-mode 1)
   (org-fragtog-mode 1))
 
