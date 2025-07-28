@@ -1,6 +1,6 @@
 (defun install-env ()
   "Environment install"
-  (custom-set-variables 
+  (custom-set-variables
    '(package-selected-packages
      '(
        auto-dark
