@@ -1,14 +1,9 @@
 (use-package org
   :config
-  (unbind-key "S-<left>" org-mode-map)
-  (unbind-key "S-<right>" org-mode-map)
-  (unbind-key "S-<up>" org-mode-map)
-  (unbind-key "S-<down>" org-mode-map)
-  (unbind-key "C-S-<left>" org-mode-map)
-  (unbind-key "C-S-<right>" org-mode-map)
-  (unbind-key "C-S-<up>" org-mode-map)
-  (unbind-key "C-S-<down>" org-mode-map)
-  )
+  (dolist (key '("S-<left>" "S-<right>" "S-<up>" "S-<down>"
+                 "C-S-<left>" "C-S-<right>" "C-S-<up>" "C-S-<down>"))
+    (define-key org-mode-map (kbd key) nil)))
+
 ;;;; org babel
 (org-babel-do-load-languages
  'org-babel-load-languages
