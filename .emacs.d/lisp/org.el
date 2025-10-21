@@ -1,8 +1,22 @@
+;(use-package org
+;  :config
+;  (dolist (key '("S-<left>" "S-<right>" "S-<up>" "S-<down>"
+;                 "C-S-<left>" "C-S-<right>" "C-S-<up>" "C-S-<down>"))
+;    (define-key org-mode-map (kbd key) nil)))
+
 (use-package org
   :config
-  (dolist (key '("S-<left>" "S-<right>" "S-<up>" "S-<down>"
-                 "C-S-<left>" "C-S-<right>" "C-S-<up>" "C-S-<down>"))
-    (define-key org-mode-map (kbd key) nil)))
+  ;; Abilita la modalità di indentazione per un aspetto pulito e gerarchico.
+  (org-indent-mode)
+  (setq org-startup-indented t)
+  
+  ;; Imposta i marcatori di enfasi per un aspetto più pulito.
+  ;; "*" per il grassetto, "/" per il corsivo, ecc.
+  (setq org-hide-emphasis-markers t)
+
+  ;; Abilita l'uso di caratteri speciali per un aspetto più gradevole.
+  ;; Ad esempio, "->" diventa una freccia, "alpha" diventa α.
+  (setq org-pretty-entities t))
 
 ;;;; org babel
 (org-babel-do-load-languages
@@ -67,7 +81,7 @@
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory (file-truename "~/Documenti/org-notes"))
+  (org-roam-directory (file-truename "~/Documents/org-notes"))
   (org-roam-complete-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
@@ -85,3 +99,8 @@
   (org-roam-db-autosync-mode)
   ;; If using org-roam-protocol
   (require 'org-roam-protocol))
+  
+(defun org-clock-kill-emacs-query ()
+  "Function to handle clock operations before killing Emacs."
+  (when (org-clocking-p)
+    (org-clock-out)))
