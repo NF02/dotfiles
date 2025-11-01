@@ -1,0 +1,173 @@
+/**
+ * Tema SwayNC con OpenDyslexic Nerd Font e colori viola
+ */
+
+* {
+    font-family: 'OpenDyslexic Nerd Font', monospace;
+    font-size: 11pt;
+    font-weight: normal;
+}
+
+/* Colori principali del tema */
+:root {
+    --main-purple: #5D0c5a;
+    --dark-purple: #2a0a27;
+    --medium-purple: #3d1a3a;
+    --light-purple: #8a2be2;
+    --accent-pink: #ff7ae5;
+    --text-light: #f0e6ef;
+    --text-lighter: #ffffff;
+}
+
+/* Sfondo principale */
+.control-center,
+.notification-content,
+.notification {
+    background-color: var(--main-purple);
+    color: var(--text-light);
+    border: 1px solid var(--medium-purple);
+}
+
+/* Titoli delle notifiche */
+.notification-title {
+    font-family: 'OpenDyslexic Nerd Font', monospace;
+    font-size: 12pt;
+    font-weight: bold;
+    color: var(--text-lighter);
+    background-color: var(--dark-purple);
+    padding: 8px;
+    border-bottom: 1px solid var(--medium-purple);
+}
+
+/* Corpo delle notifiche */
+.notification-body {
+    font-family: 'OpenDyslexic Nerd Font', monospace;
+    font-size: 10pt;
+    line-height: 1.3;
+    color: var(--text-light);
+    padding: 8px;
+    background-color: var(--main-purple);
+}
+
+/* Icone delle notifiche */
+.notification-icon {
+    background-color: var(--light-purple);
+    border-radius: 4px;
+}
+
+/* Pulsanti */
+button {
+    font-family: 'OpenDyslexic Nerd Font', monospace;
+    font-size: 10pt;
+    background-color: var(--medium-purple);
+    color: var(--text-light);
+    border: 1px solid var(--light-purple);
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+button:hover {
+    background-color: var(--light-purple);
+    color: var(--text-lighter);
+}
+
+/* Widget del centro di controllo */
+.control-center {
+    background-color: var(--dark-purple);
+    border: 2px solid var(--medium-purple);
+}
+
+/* Header del centro di controllo */
+.control-center .header {
+    background-color: var(--dark-purple);
+    color: var(--text-lighter);
+    border-bottom: 1px solid var(--medium-purple);
+    padding: 12px;
+}
+
+/* DND (Do Not Disturb) */
+.dnd {
+    background-color: var(--medium-purple);
+    color: var(--text-light);
+    border: 1px solid var(--light-purple);
+}
+
+/* Notifiche nel centro di controllo */
+.control-center .notification {
+    background-color: var(--main-purple);
+    border: 1px solid var(--medium-purple);
+    margin: 4px;
+    border-radius: 6px;
+}
+
+.control-center .notification:hover {
+    background-color: var(--medium-purple);
+    border-color: var(--light-purple);
+}
+
+/* Scrollbar */
+scrollbar slider {
+    background-color: var(--light-purple);
+    border-radius: 4px;
+}
+
+scrollbar trough {
+    background-color: var(--dark-purple);
+}
+
+/* Widget inhibitors */
+.inhibitors {
+    background-color: var(--dark-purple);
+    color: var(--text-light);
+    border-bottom: 1px solid var(--medium-purple);
+    padding: 8px;
+}
+
+/* Timestamp delle notifiche */
+.notification-time {
+    color: var(--accent-pink);
+    font-size: 9pt;
+}
+
+/* Azioni delle notifiche */
+.notification-actions {
+    background-color: var(--dark-purple);
+    border-top: 1px solid var(--medium-purple);
+    padding: 6px;
+}
+
+/* Progress bar (per notifiche di download, etc.) */
+progressbar trough {
+    background-color: var(--dark-purple);
+    border: 1px solid var(--medium-purple);
+}
+
+progressbar progress {
+    background-color: var(--accent-pink);
+}
+
+/* Separatori */
+.separator {
+    background-color: var(--medium-purple);
+}
+
+/* Stati speciali */
+.critical {
+    background-color: #ff6bd6;
+    color: #000000;
+}
+
+.critical .notification-title {
+    background-color: #d600a0;
+    color: #ffffff;
+}
+
+.urgent {
+    background-color: #ffef6b;
+    color: #000000;
+}
+
+.urgent .notification-title {
+    background-color: #d4c600;
+    color: #000000;
+}
