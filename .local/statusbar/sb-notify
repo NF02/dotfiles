@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Questo script recupera il conteggio delle notifiche non lette da swaync
+# e lo formatta per i3blocks.
+
+# Controlla se swaync-client è installato
+if ! command -v swaync-client &> /dev/null
+then
+    echo "Errore: swaync-client non trovato. Assicurati che swaync sia installato e configurato correttamente."
+    exit 1
+fi
+
+
+# Estrae il conteggio delle notifiche non lette
+UNREAD_COUNT=$(swaync-client -c)
+
+# Se il conteggio è 0, non mostrare nulla o un'icona specifica
+if [ "$UNREAD_COUNT" -eq 0 ]; then
+    echo "🏴" # Puoi usare un'icona qui, ad esempio "Bell" o lasciare vuoto
+else
+    echo "🔔 $UNREAD_COUNT" # Mostra l'icona della campana e il conteggio
+fi
+
+# Gestione del click: apri/chiudi il centro notifiche di swaync
+case "$BLOCK_BUTTON" in
+    1) # Click sinistro
+        swaync-client -t # Alterna lo stato del centro notifiche
+        ;;
+    # Puoi aggiungere altre azioni per altri click, ad esempio:
+    # 2) # Click centrale
+    #    swaync-client -C # Chiudi tutte le notifiche
+    #    ;;
+    # 3) # Click destro
+    #    swaync-client -d # Elimina l'ultima notifica
+    #    ;;
+esac
+
+exit 0

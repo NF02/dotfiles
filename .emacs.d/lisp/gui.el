@@ -43,13 +43,5 @@
   ;; (add-hook 'auto-dark-light-mode-hook (lambda () (message "Light mode attivata!")))
   )
 
-;; Dyslexic font
-(defun set-opendyslexic-nerd-font ()
-  "Imposta OpenDyslexic Nerd Font se disponibile"
-  (interactive)
-  (let ((font-name "OpenDyslexic Nerd Font"))
-    (when (find-font (font-spec :name font-name))
-      (set-face-attribute 'default nil :font (format "%s-11" font-name))
-      (message "Font impostato: %s" font-name))))
 
-(add-hook 'after-init-hook 'set-opendyslexic-nerd-font)
+(set-face-attribute 'default nil :font "OpenDyslexic Nerd Font-11")
