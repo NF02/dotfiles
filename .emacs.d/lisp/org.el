@@ -104,3 +104,6 @@
   "Function to handle clock operations before killing Emacs."
   (when (org-clocking-p)
     (org-clock-out)))
+
+;; Attiva l'adattamento delle righe visive per Org Mode
+(add-hook 'org-mode-hook 'visual-line-mode)

@@ -28,7 +28,7 @@
   :custom
   ;; 1. Definisci i tuoi temi scuro e chiaro preferiti
   (auto-dark-themes '( (doom-dracula)  ; Tema scuro
-                        (doom-gruvbox-light) )) ; Tema chiaro
+                       (doom-gruvbox-light) )) ; Tema chiaro
   
   ;; Opzioni avanzate (lasciare `nil` per l'auto-rilevamento)
   ;; (auto-dark-allow-osascript nil) ; Per macOS, usa il metodo nativo se Emacs lo supporta
@@ -44,4 +44,26 @@
   )
 
 
-(set-face-attribute 'default nil :font "OpenDyslexic Nerd Font-11")
+;; Configurazione più semplice per emacsclient
+(add-to-list 'default-frame-alist '(font . "OpenDyslexicM Nerd Font Mono-11"))
+(when (display-graphic-p)
+  ;; Configurazione ottimizzata
+  (set-frame-font "OpenDyslexicM Nerd Font Mono-11" nil t)
+  
+  (custom-set-faces
+   '(default ((t (:family "OpenDyslexicM Nerd Font Mono" :height 110))))
+   '(fixed-pitch ((t (:family "OpenDyslexicM Nerd Font Mono" :height 110))))
+   '(variable-pitch ((t (:family "OpenDyslexic Nerd Font Propo" :height 110)))))
+  
+  ;; Solo fallback essenziali
+  (when (fboundp 'set-fontset-font)
+    ;; Per emoji
+    (set-fontset-font t 'symbol (font-spec :family "Noto Color Emoji") nil 'prepend)
+    ;; Per caratteri asiatici
+    (set-fontset-font t 'chinese-gbk (font-spec :family "Noto Sans CJK SC") nil 'prepend)
+    (set-fontset-font t 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP") nil 'prepend)
+    (set-fontset-font t 'korean-ksc5601 (font-spec :family "Noto Sans CJK KR") nil 'prepend)
+    ;; Fallback globale
+    (set-fontset-font t nil (font-spec :family "DejaVu Sans") nil 'append))
+  
+  (message "✅ Font configurati!"))

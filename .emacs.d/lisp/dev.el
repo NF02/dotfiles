@@ -1,14 +1,16 @@
-;; Octave
-(setq auto-mode-alist
-      (cons '("\\.m$" . octave-mode) auto-mode-alist))
-
-(add-hook 'octave-mode-hook
-          (lambda ()
-            (abbrev-mode 1)
-            (auto-fill-mode 1)
-            (if (eq window-system 'x)
-                (font-lock-mode 1)))
-	 'display-line-numbers-mode)
+(use-package octave-mode
+  :ensure t
+  :mode ("\\.m\\'" . octave-mode)
+  :config
+  (add-hook 'octave-mode-hook
+            (lambda ()
+              ;; Abilita le abbreviazioni per espansione del testo
+              (abbrev-mode 1)
+              (auto-fill-mode 1) 
+              (display-line-numbers-mode 1)               
+              (local-set-key (kbd "RET") 'newline-and-indent)
+              ))
+  )
 
 ;; eat
 (require 'eat)
