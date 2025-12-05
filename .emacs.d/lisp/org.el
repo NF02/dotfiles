@@ -3,6 +3,8 @@
 ;  (dolist (key '("S-<left>" "S-<right>" "S-<up>" "S-<down>"
 ;                 "C-S-<left>" "C-S-<right>" "C-S-<up>" "C-S-<down>"))
 ;    (define-key org-mode-map (kbd key) nil)))
+;; Disable org-element cache for non-Org buffers
+(setq org-element-use-cache nil)
 
 (use-package org
   :config
