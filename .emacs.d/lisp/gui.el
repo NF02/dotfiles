@@ -1,6 +1,14 @@
 ;; powerline
-(require 'powerline)
-(powerline-default-theme)
+;;(require 'powerline)
+;;(powerline-default-theme)
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
+
+(use-package nyan-mode
+  :ensure t
+  :config
+  (nyan-mode))
 
 ;; company
 (require 'company)
