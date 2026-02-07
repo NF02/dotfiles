@@ -1,47 +1,56 @@
-;; pdf tools
-(require 'pdf-tools)
+;; --- PDF Tools ---
 (use-package pdf-tools
-  :init
-  (pdf-tools-install))
+  :ensure t
+  :magic ("%PDF" . pdf-view-mode)
+  :config
+  (pdf-tools-install :no-query) ; Installa/aggiorna senza chiedere ogni volta
+  (setq-default pdf-view-display-size 'fit-width))
 
-;; AUCtex
+;; --- AUCTeX ---
 (use-package auctex
   :ensure t
-  :defer t)
+  :defer t
+  :custom
+  (TeX-auto-save t)
+  (TeX-parse-self t) ; Fondamentale per il parsing dei pacchetti
+  (TeX-master nil)   ; Chiede quale sia il file master se non specificato
+  :config
+  ;; Integrazione con PDF Tools
+  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+        TeX-source-correlate-mode t
+        TeX-source-correlate-start-server t)
+  
+  ;; Aggiornamento PDF dopo compilazione
+  (add-hook 'TeX-after-compilation-finished-functions
+            #'TeX-revert-document-buffer))
 
-;;; math preview
-(use-package latex-math-preview)
+(setq TeX-source-correlate-mode t
+      TeX-source-correlate-method 'synctex)
+(setq TeX-source-correlate-start-server t)  ;; Necessario per il "ritorno" dal PDF a Emacs
 
-;; cdlatex
-(require 'cdlatex)
-(add-hook 'LaTeX-mode-hook #'turn-on-cdlatex)   ; with AUCTeX LaTeX mode
-(add-hook 'latex-mode-hook #'turn-on-cdlatex)   ; with Emacs latex mode
+;; --- CDLatex & Math Preview ---
+(use-package cdlatex
+  :ensure t
+  :hook ((LaTeX-mode . turn-on-cdlatex)
+         (latex-mode . turn-on-cdlatex)))
 
-;;;; Use pdf-tools to open PDF files
-(setq TeX-view-program-selection '((output-pdf "PDF Tools"))
-      TeX-source-correlate-start-server t)
+(use-package latex-math-preview :ensure t)
 
-;;;; Update PDF buffers after successful LaTeX runs
-(add-hook 'TeX-after-compilation-finished-functions
-          #'TeX-revert-document-buffer)
-
-
-;; pt convertor
-;;; CM -> pt
+;; --- Convertitori migliorati (Punti TeX standard) ---
 (defun cm-to-pt (cm)
-  "Convert CM to points (1cm=26.595744680851062pt)."
-  (interactive "nEnter measurement in cm: ")
-  (let ((result (/ cm 0.0376)))
+  "Convert CM to TeX points (1pt = 1/72.27 inch)."
+  (interactive "nEnter CM: ")
+  (let ((result (/ cm 0.035146)))
     (if (called-interactively-p 'interactive)
-        (message "%.4f cm = %.8f points" cm result)
+        (message "%.2f cm = %.4f pt (TeX)" cm result)
       result)))
 
-;;; pt -> CM
 (defun pt-to-cm (pt)
-  "Convert points to CM (26.595744680851062pt=1cm)."
-  (interactive "nEnter measurement in pt: ")
-  (let ((result (* pt 0.0376)))
+  "Convert TeX points to CM."
+  (interactive "nEnter PT: ")
+  (let ((result (* pt 0.035146)))
     (if (called-interactively-p 'interactive)
-        (message "%.8f points = %.4f cm" pt result)
+        (message "%.2f pt = %.4f cm" pt result)
       result)))
 
+(provide 'latex)

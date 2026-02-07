@@ -1,74 +1,142 @@
-;; Octave
-(setq auto-mode-alist
-      (cons '("\\.m$" . octave-mode) auto-mode-alist))
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(setq display-line-numbers-type 'relative)
 
-(add-hook 'octave-mode-hook
-          (lambda ()
-            (abbrev-mode 1)
-            (auto-fill-mode 1)
-            (if (eq window-system 'x)
-                (font-lock-mode 1)))
-	 'display-line-numbers-mode)
+;; -----------------------------------------------------------------
+;;  Octave (Built-in)
+;; -----------------------------------------------------------------
+(use-package octave
+  :mode ("\\.m\\'" . octave-mode)
+  :config
+  (add-hook 'octave-mode-hook
+            (lambda ()
+              (abbrev-mode 1)
+              (auto-fill-mode 1)
+              (display-line-numbers-mode 1)
+              (when (display-graphic-p)
+                (font-lock-mode 1)))))
 
-;; eat
-(require 'eat)
+;; -----------------------------------------------------------------
+;;  Eat (Terminal Emulator)
+;; ----------------------------------------------------------------
 (use-package eat
   :ensure t
   :hook (eshell-load . eat-eshell-mode)
+  :custom
+  (eat-shell-prompt-annotation t)
+  (eat-enable-kill-from-terminal nil)
+  (eat-sixel-enabled t)
   :config
-  ;; Abilita l'annotazione del prompt (utile in Eshell + Eat)
-  (setq eat-shell-prompt-annotation t)
-  
-  ;; Disabilita (o abilita se preferisci) la possibilità che le app del terminale
-  ;; uccidano il testo senza interazione utente.
-  (setq eat-enable-kill-from-terminal nil) 
-  
-  ;; Abilita il supporto Sixel per le immagini
   (when (fboundp 'sixel-display-mode)
-    (sixel-display-mode 1)
-    (setq eat-sixel-enabled t)))
+    (sixel-display-mode 1)))
 
-;; neotree
-(require 'neotree)
-(global-set-key [f5] 'neotree-toggle)
-(global-set-key (kbd "C-c r") 'neotree-refresh)
+;; -----------------------------------------------------------------
+;;  Neotree
+;; -----------------------------------------------------------------
+(use-package neotree
+  :ensure t
+  :bind (([f5] . neotree-toggle)
+         ("C-c r" . neotree-refresh)))
 
-;; gnu cobol
-(require 'cobol-mode)
-(setq auto-mode-alist
-      (append
-       '(("\\.cob\\'" . cobol-mode)
-         ("\\.cbl\\'" . cobol-mode)
-         ("\\.cpy\\'" . cobol-mode))
-       auto-mode-alist))
+;; -----------------------------------------------------------------
+;;  GNU COBOL
+;; -----------------------------------------------------------------
+(use-package cobol-mode
+  :ensure t
+  :mode ("\\.\\(cob\\|cbl\\|cpy\\)\\'" . cobol-mode))
 
-;; SLIME (Superior Lisp Interaction Mode for Emacs) configuration for Arch Linux.
+;; -----------------------------------------------------------------
+;;  SLIME (Superior Lisp Interaction Mode)
+;; -----------------------------------------------------------------
 (use-package slime
-  :ensure nil ; SLIME is installed via the Arch Linux system package (pacman -S slime), not MELPA.
+  :ensure nil ; Installato via pacman (Arch Linux)
   :init
-  ;; 1. Set the path to the Common Lisp executable (SBCL is standard on Arch)
-  (setq inferior-lisp-program "/usr/bin/sbcl")
-  
-  ;; 2. Add the Arch Linux system path to find the SLIME Lisp files
   (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
-  
-  ;; 3. Define the keyboard shortcut (bind C-c s to the main SLIME function)
-  :bind
-  ("C-c s" . slime) ; Use the 'slime' function to start and connect to the Lisp process
-  
+  (setq inferior-lisp-program "/usr/bin/sbcl")
+  :bind ("C-c s" . slime)
   :config
-  ;; Run the standard SLIME setup to initialize features and keybindings
-  (slime-setup))
+  (slime-setup '(slime-fancy slime-quicklisp slime-asdf))
+  
+  ;; Integrazione ambiente Wayland/Sway
+  (setq slime-lisp-implementations
+        `((sbcl ("sbcl") :env (,(concat "WAYLAND_DISPLAY=" (getenv "WAYLAND_DISPLAY"))
+                               ,(concat "XDG_RUNTIME_DIR=" (getenv "XDG_RUNTIME_DIR"))
+                               "GDK_BACKEND=wayland")))))
 
-;; --- To start SLIME and connect to SBCL ---
-;; Press C-c s (Control-c followed by s)
+(use-package slime-company
+  :ensure t
+  :after (slime company))
 
-;; processing
-(setq processing-location "~/.local/processing-4.3/processing-java")
-(setq processing-application-dir "~/.local/processing-4.3/processing")
-(setq processing-sketchbook-dir "~/Documenti/processing")
+;; -----------------------------------------------------------------
+;;  Processing
+;; -----------------------------------------------------------------
+(use-package processing-mode
+  :ensure t
+  :custom
+  (processing-location "~/.local/processing-4.3/processing-java")
+  (processing-application-dir "~/.local/processing-4.3/processing")
+  (processing-sketchbook-dir "~/Documenti/processing"))
 
-;; docker
-(require 'dockerfile-mode)
-(require 'docker-cli)
-(setq dockerfile-mode-command "docker")
+;; -----------------------------------------------------------------
+;;  Docker
+;; -----------------------------------------------------------------
+(use-package dockerfile-mode
+  :ensure t
+  :mode "Dockerfile\\'")
+
+(use-package docker-cli
+  :ensure t
+  :custom
+  (dockerfile-mode-command "docker"))
+
+;; -----------------------------------------------------------------
+;;  C mode
+;; -----------------------------------------------------------------
+(use-package cc-mode
+  :ensure nil
+  :config
+  ;; 1. Stile GNU Puro
+  (setq c-default-style "gnu")
+  
+  ;; 2. Numeri di riga (fondamentali per il debugging)
+  (add-hook 'c-mode-hook #'display-line-numbers-mode)
+
+  ;; 3. Cleanup automatico: rimuove spazi bianchi a fine riga al salvataggio
+  (add-hook 'c-mode-hook (lambda () (add-hook 'before-save-hook #'delete-trailing-whitespace nil t)))
+
+  :bind (:map c-mode-map
+              ("C-c C-c" . compile)          ; Lancia 'make' o il comando di compilazione
+              ("C-c C-k" . kill-compilation) ; Ferma la compilazione
+              ("<f1>" . manual-entry)))      ; Apre la pagina MAN del cursore
+
+;; --- Integrazione GDB (Il Debugger Unix) ---
+(setq
+ ;; gdb-many-windows: apre il layout IDE con stack, variabili e sorgente
+ gdb-many-windows t
+ ;; gdb-show-main: mostra subito il codice sorgente all'avvio
+ gdb-show-main t)
+
+;; -----------------------------------------------------------------
+;;  eglot (minimal lsp)
+;; -----------------------------------------------------------------
+(use-package eglot
+  :ensure nil 
+  :hook ((python-mode . eglot-ensure)
+         (c-mode . eglot-ensure)
+         (rust-mode . eglot-ensure)
+         (js-mode . eglot-ensure))
+  :bind (:map eglot-mode-map
+              ("C-c r" . eglot-rename)
+              ("C-c f" . eglot-format-buffer)
+              ("M-." . xref-find-definitions))
+  :config
+  (add-to-list 'eglot-server-programs
+               '(octave-mode . ("octave-lsp"))
+	       '(c-mode . ("clangd" "--fallback-style=gnu"))))
+
+;; Integrazione Simboli e Documentazione
+(use-package eldoc
+  :ensure nil
+  :custom
+  (eldoc-documentation-strategy #'eldoc-documentation-compose-at-point))
+
+(provide 'dev)
