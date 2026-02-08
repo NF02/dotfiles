@@ -133,10 +133,5 @@
                '(octave-mode . ("octave-lsp"))
 	       '(c-mode . ("clangd" "--fallback-style=gnu"))))
 
-;; Integrazione Simboli e Documentazione
-(use-package eldoc
-  :ensure nil
-  :custom
-  (eldoc-documentation-strategy #'eldoc-documentation-compose-at-point))
 
 (provide 'dev)

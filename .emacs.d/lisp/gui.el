@@ -6,6 +6,8 @@
 
 ;; 2. Temi e Auto-Dark
 (setq custom-safe-themes t)
+(use-package doom-themes
+  :ensure t)
 
 (use-package auto-dark
   :ensure t
