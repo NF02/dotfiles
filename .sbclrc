@@ -1,0 +1,27 @@
+;;;; ~/.sbclrc
+
+;;; 1. QUICKLISP INTEGRATION
+;;; Automatically loads Quicklisp if present
+#-quicklisp
+(let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp" (user-homedir-pathname))))
+  (when (probe-file quicklisp-init)
+    (load quicklisp-init)))
+
+;;; 2. FIX FOR GTK4 / WAYLAND / GRAPHICS DRIVERS
+;;; Disables floating-point traps to avoid issues with GTK4 on certain systems
+#+sbcl
+(sb-int:set-floating-point-modes :traps nil)
+
+;;; 3. COMPILER OPTIMIZATION
+;;; Prioritizes debug info and safety during development over speed
+(declaim (optimize (debug 3) (speed 1) (safety 3)))
+
+;;; 4. UTILITY PACKAGE FOR REPL CONVENIENCE
+(defpackage :sbcl-user-utils
+	    (:use :cl))
+
+(in-package :cl-user) ;; Optional: use this if you're working with Emacs solutions like SLY or SLIME
+
+;;; 5. CUSTOM WELCOME MESSAGE
+(format t "~%--- SBCL (the most despotic Lisp machine ever created) ---~%")
+(format t "Display: ~A~%" (uiop:getenv "WAYLAND_DISPLAY"))

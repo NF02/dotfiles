@@ -47,24 +47,21 @@
 ;; -----------------------------------------------------------------
 ;;  SLIME (Superior Lisp Interaction Mode)
 ;; -----------------------------------------------------------------
-(use-package slime
-  :ensure nil ; Installato via pacman (Arch Linux)
-  :init
-  (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
-  (setq inferior-lisp-program "/usr/bin/sbcl")
-  :bind ("C-c s" . slime)
-  :config
-  (slime-setup '(slime-fancy slime-quicklisp slime-asdf))
-  
-  ;; Integrazione ambiente Wayland/Sway
-  (setq slime-lisp-implementations
-        `((sbcl ("sbcl") :env (,(concat "WAYLAND_DISPLAY=" (getenv "WAYLAND_DISPLAY"))
-                               ,(concat "XDG_RUNTIME_DIR=" (getenv "XDG_RUNTIME_DIR"))
-                               "GDK_BACKEND=wayland")))))
-
-(use-package slime-company
+(use-package marginalia
   :ensure t
-  :after (slime company))
+  :init
+  (marginalia-mode))
+(use-package sly
+  :ensure t
+  :init
+  (setq inferior-lisp-program "/usr/bin/sbcl")
+  :bind ("C-c s" . sly)
+  :config
+  ;; Integrazione Wayland/Sway con 5GB di RAM
+  (setq sly-lisp-implementations
+        `((sbcl ("sbcl" "--dynamic-space-size" "5048")
+                :env (,(concat "WAYLAND_DISPLAY=" (getenv "WAYLAND_DISPLAY"))
+      "GDK_BACKEND=wayland")))))
 
 ;; -----------------------------------------------------------------
 ;;  Processing
@@ -132,6 +129,5 @@
   (add-to-list 'eglot-server-programs
                '(octave-mode . ("octave-lsp"))
 	       '(c-mode . ("clangd" "--fallback-style=gnu"))))
-
 
 (provide 'dev)
