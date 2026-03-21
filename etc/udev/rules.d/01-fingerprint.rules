@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="0a5c", ATTRS{idProduct}=="5843", ATTR{power/persist}="1", RUN="/usr/bin/chmod 444 %S%p/../power/persist"
