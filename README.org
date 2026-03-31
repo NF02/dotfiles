@@ -6,24 +6,24 @@ the file [[https://github.com/NF02/dotfiles/blob/master/LICENSE][LICENSE]].
 #+NAME:   fig:screenshot
 [[https://raw.githubusercontent.com/NF02/dotfiles/master/img.png]]
 ** Default program
- * [[https://github.com/WillPower3309/swayfx][swayfx]] - tiling compositor manager;
- * [[https://wezfurlong.org/wezterm/][wezterm]] - terminal emulator;
+ * [[https://github.com/swaywm/sway][sway]] - tiling compositor manager;
+ * [[https://codeberg.org/dnkl/foot][foot]] - terminal emulator;
  * [[https://github.com/vivien/i3blocks][i3blocks]] - Status bar;
  * [[https://www.mozilla.org/en-US/firefox/new/][Firefox]] - browser web;
  * [[https://filezilla-project.org/download.php?type=client][Filezilla]] - FTP client;
  * [[https://alacritty.org/][alacritty]] - system terminale;
  * [[https://github.com/ErikReider/SwayNotificationCenter][SwayNotificationCenter]] - notification center & notify deamon;
- * [[https://flameshot.org/#/"][flameshot]] - screenshot app;
+ * [[https://github.com/NF02/wlsyshot][wlsyshot]] - screenshot app;
  * [[https://www.thunderbird.net/][thunderbird]] - mail client;
  * [[https://git.kernel.org/pub/scm/network/wireless/iwd.git/][iwd]] - connection manager;
  * [[https://www.gnu.org/software/grub/][Grub]] - bootloader;
  * [[https://www.gnu.org/software/emacs/][emacs]] - text editor, markdown editor & LaTeX editor;
- * [[https://github.com/gokcehan/lf][lf]] - file manager;
+ * [[https://github.com/lxde/pcmanfm][pcmanfm]] - file manager;
  * [[https://github.com/fulhax/ncpamixer][ncpamixer]] - mixer audio;
  * [[https://github.com/swaywm/swaylock][swaylock]] - lockscreen;
  * [[https://github.com/sentriz/cliphist][cliphist]] - clipboard;
  * [[https://www.zsh.org/"][zsh]] - system shell;
- * [[https://github.com/remyhonig/elfeed-org][elfeed-org]] - RSS reader;
+ * [[https://github.com/skeeto/elfeed][elfeed]] - RSS reader;
 ** Installation
 These are the steps to be able to install my configuration, the comments indicate what you are applying, obviously if you need only a specific part you can copy the
 single file as the UNIX shell allows you to do.
