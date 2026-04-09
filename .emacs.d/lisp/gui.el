@@ -63,7 +63,9 @@
 ;; --------------------------------------------------
 ;; 5. Completamento (Company)
 ;; --------------------------------------------------
-
+(use-package all-the-icons
+  :ensure t
+  :if (display-graphic-p))
 (use-package company
   :ensure t
   :hook (after-init . global-company-mode)
@@ -84,12 +86,17 @@
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
+(use-package all-the-icons
+  :ensure t
+  :if (display-graphic-p))
+
 (use-package company-box
   :ensure t
+  :after (company all-the-icons)
   :hook (company-mode . company-box-mode)
-  :custom
-  ;; Rendi le icone compatibili con il tuo font OpenDyslexic
-  (company-box-icons-alist 'company-box-icons-all-the-icons))
+  :config
+  ;; Il valore corretto per usare le icone di all-the-icons è questo:
+  (setq company-box-icons-alist 'company-box-icons-all-the-icons))
 
 ;; --------------------------------------------------
 ;; 6. Which-key
