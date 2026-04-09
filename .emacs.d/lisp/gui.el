@@ -26,20 +26,24 @@
 (use-package auto-dark
   :ensure t
   :custom
+  ;; Definizione dei temi
   (auto-dark-themes '((doom-dracula) (doom-gruvbox-light)))
+  ;; Su PGTK/Wayland 'dbus è il metodo più veloce, su macOS userà i framework Apple
+  (auto-dark-detection-method 'dbus) 
   :init
   (auto-dark-mode 1)
   :config
-  (add-hook 'after-make-frame-functions
-            (lambda (frame)
-              (select-frame frame)
-              (auto-dark--check))))
+  ;; SOLUZIONE PER EMACS SERVER & PGTK:
+  ;; Forza il check del tema e il refresh dei font GTK ogni volta che 
+  ;; viene creato un nuovo frame (emacsclient).
+  (defun my/auto-dark-sync-pgtk (frame)
+    (with-selected-frame frame
+      (when (fboundp 'auto-dark--check)
+        (auto-dark--check)
+        ;; Refresh opzionale del font se noti glitch nel rendering PGTK
+        (set-face-attribute 'default nil :font "OpenDyslexicM Nerd Font-10"))))
 
-(setq auto-dark-allow-multi-theme t) 
-(add-hook 'auto-dark-dark-mode-hook (lambda () (message "Passaggio a modalità scura...")))
-(add-hook 'auto-dark-light-mode-hook (lambda () (message "Passaggio a modalità chiara...")))
-
-
+  (add-hook 'after-make-frame-functions #'my/auto-dark-sync-pgtk))
 ;; --------------------------------------------------
 ;; 4. Modeline
 ;; --------------------------------------------------
@@ -68,14 +72,24 @@
   (company-idle-delay 0.1)
   (company-tooltip-align-annotations t)
   (company-selection-wrap-around t)
+  ;; Evita che il completamento parta in contesti dove non serve (es. stringhe/commenti)
+  (company-dabbrev-downcase nil)
+  (company-show-numbers t) ; Utile per selezionare rapidamente con M-1, M-2...
   :config
-  ;; TAB resta indent, usa solo in popup
+  ;; Mappatura TAB: resta indentazione se non c'è il menu, conferma se c'è.
   (define-key company-active-map (kbd "<tab>") #'company-complete-selection)
-  (define-key company-active-map (kbd "TAB") #'company-complete-selection))
+  (define-key company-active-map (kbd "TAB") #'company-complete-selection)
+  
+  ;; Opzionale: usa C-n/C-p per navigare meglio nel popup invece delle frecce
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
 (use-package company-box
   :ensure t
-  :hook (company-mode . company-box-mode))
+  :hook (company-mode . company-box-mode)
+  :custom
+  ;; Rendi le icone compatibili con il tuo font OpenDyslexic
+  (company-box-icons-alist 'company-box-icons-all-the-icons))
 
 ;; --------------------------------------------------
 ;; 6. Which-key

@@ -90,4 +90,4 @@
   :config
   (elfeed-goodies/setup))
 
-(provide 'elfeed-conf)
+(provide 'rss)
