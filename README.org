@@ -16,7 +16,7 @@ the file [[https://github.com/NF02/dotfiles/blob/master/LICENSE][LICENSE]].
  * [[https://github.com/NF02/wlsyshot][wlsyshot]] - screenshot app;
  * [[https://www.thunderbird.net/][thunderbird]] - mail client;
  * [[https://git.kernel.org/pub/scm/network/wireless/iwd.git/][iwd]] - connection manager;
- * [[https://www.gnu.org/software/grub/][Grub]] - bootloader;
+ * [[https://wiki.archlinux.org/title/Systemd-boot][systemd-boot]] - bootloader;
  * [[https://www.gnu.org/software/emacs/][emacs]] - text editor, markdown editor & LaTeX editor;
  * [[https://github.com/lxde/pcmanfm][pcmanfm]] - file manager;
  * [[https://github.com/fulhax/ncpamixer][ncpamixer]] - mixer audio;
@@ -33,9 +33,6 @@ git clone https://github.com/nf02/dotfiles
 cp -r dotfiles/.config/* .config/
 # emacs config
 cp -r dotfiles/.emacs.d/ ~
-# X session file
-cp dotfiles/.xinitrc ~
-cp dotfiles/.xprofile ~
 
 # install zi package manager
 sh -c "$(curl -fsSL get.zshell.dev)" -- -i skip -b main
