@@ -1,0 +1,14 @@
+background = fbf1c7
+foreground = 202020
+cursor-color = 202020
+selection-background = 3070a0
+selection-foreground = ffffff
+
+palette = 0=#202020
+palette = 1=#b01050
+palette = 2=#408020
+palette = 3=#a07010
+palette = 4=#3070a0
+palette = 5=#704080
+palette = 6=#309080
+palette = 7=#d8d8d8

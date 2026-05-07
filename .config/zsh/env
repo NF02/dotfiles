@@ -1,10 +1,43 @@
-#!/bin/env zsh
+#!/bin/zsh
+# --- Path Management (Ottimizzato) ---
+# Usiamo l'array 'path' (minuscolo) di Zsh che è legato alla variabile PATH (maiuscolo)
+# Questo evita stringhe chilometriche e previene duplicati.
 
-# my paths
-export PATH=/home/nick/.zi/plugins/eza-community---eza:/home/nick/.zi/polaris/sbin:/home/nick/.zi/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/nick/.local/bin/:/home/nick/.local/bin/
+path=(
+    "${HOME}/.zi/plugins/eza-community---eza"
+    "${HOME}/.zi/polaris/sbin"
+    "${HOME}/.zi/polaris/bin"
+    "${HOME}/.local/bin"
+    "${HOME}/.dotnet/tools"
+    /usr/local/sbin
+    /usr/local/bin
+    /usr/bin
+    /usr/lib/jvm/default/bin
+    /opt/brlcad/bin
+    $path
+)
 
+# Rimuove i duplicati dal PATH automaticamente
+typeset -U path
+
+# --- Variabili di Sistema ---
 export EDITOR="emacs"
-export TERMINAL="wezterm"
+export TERMINAL="ghostty"
+export BROWSER="firefox" # Opzionale, ma consigliato
+
+# --- Wayland & Toolkit (Sway Specific) ---
 export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORM="wayland;xcb"
 export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
+export XDG_MENU_PREFIX=arch- # Utile se usi menu basati su XDG
+
+# Backend Toolkit
+export GDK_BACKEND="wayland,x11"
+export SDL_VIDEODRIVER=wayland
+export CLUTTER_BACKEND=wayland
+export GLFW_IMPL=wayland
+
+# --- Java & Fix Specifici ---
+# Risolve il problema delle finestre grigie in Java (comune su Sway/WM)
 export _JAVA_AWT_WM_NONREPARENTING=1

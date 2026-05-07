@@ -1,0 +1,6 @@
+theme = light:light,dark:dark
+font-family = OpenDyslexicM Nerd Font Mono
+font-size = 10
+
+# Disabilita il supporto alle legature se non ti servono (risparmia CPU)
+font-feature = -liga

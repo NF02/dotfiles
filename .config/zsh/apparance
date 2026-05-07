@@ -1,17 +1,26 @@
-# appearance
-# Find and set branch name var if in git repository.
-function git_branch_name()
-{
-  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-  if [[ $branch == "" ]];
-  then
-    :
-  else
-    echo '- ('$branch')'
+# --- Configurazione Prompt ---
+
+# Abilita la sostituzione delle variabili nel prompt
+setopt prompt_subst
+
+# Funzione ottimizzata per il ramo Git
+# Utilizza le funzionalità integrate di Zsh invece di awk
+function git_branch_name() {
+  local branch
+  # Estrae il nome del branch senza chiamare processi esterni pesanti
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+  
+  if [[ -n "$branch" ]]; then
+    echo "%F{blue}- ($branch)%f"
   fi
 }
 
-# Enable substitution in the prompt.
-setopt prompt_subst
-PROMPT='%F{cyan}%n%f@%F{green}%m:%F{yellow}%~%f%F{blue} $(git_branch_name)%f  
-$> '
+# Definizione del Prompt (Multilinea)
+# %n = utente, %m = hostname, %~ = directory corrente (con ~ per la home)
+PROMPT='%F{cyan}%n%f@%F{green}%m%f:%F{yellow}%~%f $(git_branch_name) %F{red}λ%f
+%B$>%b '
+
+# Reset dei colori prima dell'esecuzione di ogni comando
+preexec() { 
+  printf "\e[0m" 
+}

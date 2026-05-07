@@ -1,42 +1,49 @@
-#!/bin/env zsh
+#!/bin/zsh
+# --- Eza (Modern ls) ---
+# Definiamo i parametri comuni una volta sola per evitare ripetizioni
+local eza_common="--icons=auto --group-directories-first"
 
-# eza -> ls
-alias ls='eza --icons=auto $eza_params'
-alias l='eza --icons=auto --git-ignore $eza_params'
-alias ll='eza --icons=auto --all --header --long $eza_params'
-alias llm='eza --icons=auto --all --header --long --sort=modified $eza_params'
-alias la='eza --icons=auto -lbhHigUmuSa'
-alias lx='eza --icons=auto -lbhHigUmuSa@'
-alias lt='eza --icons=auto --tree $eza_params'
-alias tree='eza --icons=auto --tree $eza_params'
+alias ls="eza ${eza_common}"
+alias l="eza ${eza_common} --git-ignore"
+alias ll="eza ${eza_common} --all --header --long --git"
+alias llm="eza ${eza_common} --all --header --long --sort=modified"
+alias la="eza ${eza_common} -lbhHigUmuSa"
+alias lx="eza ${eza_common} -lbhHigUmuSa@"
+alias lt="eza ${eza_common} --tree"
+alias tree="eza ${eza_common} --tree"
 
-# mkdir
+# --- Navigazione & File System ---
+alias ..="cd .."
+alias ...="cd ../.."
 alias mkd="mkdir -p"
-
-# emacs
-alias edit="emacs -nw"
-
-# git
-alias gc="git clone"
-alias gcm="git commit -m"
-alias gpush="git push"
-alias gpull="git pull"
-
-# open (macos-like)
 alias open="xdg-open"
 
-# fastfetch
+# --- Editing & Strumenti ---
+alias edit="emacs -nw"
 alias ff="fastfetch"
+alias hh="hstr"
+alias myip="curl -s https://ifconfig.me; echo" # Più veloce e pulito
 
-# (r)o(m)ove
-alias rmi="rm -ri"
-alias rmall="rm -rfi"
+# --- Git ---
+alias gc="git clone"
+alias gcm="git commit -m"
+alias gp="git push"     # Abbreviato
+alias gl="git pull"     # Abbreviato (l sta per pull/list)
+alias gs="git status"   # Fondamentale
 
-# ip addr
-alias myIP='curl http://ipecho.net/plain; echo'
+# --- Sicurezza & Rimozione ---
+# -i (interactive) è utile, ma può essere frustrante. 
+# Meglio usare una versione che non chieda conferma per ogni singolo file se sono troppi.
+alias rm="rm -v"
+alias rmi="rm -iv"
+alias rmall="rm -rfv"
 
-# python locale
-alias actpy='source ~/.local/python/bin/activate'
+# --- Python ---
+alias actpy='source "${HOME}/.local/python/bin/activate"'
 
-# history
-alias hh=hstr
+# --- Pacman (Arch Linux) ---
+alias pS='sudo pacman -S'
+alias pSy='sudo pacman -Syu'
+alias pR='sudo pacman -Rs'
+# Pulizia orfani migliorata: evita l'errore se non ci sono pacchetti da rimuovere
+alias pclean='sudo pacman -Qtdq | sudo pacman -Rns -'
