@@ -1,7 +1,8 @@
+;;; web.el --- Web development configuration  -*- lexical-binding: t; -*-
+
 (use-package web-mode
   :ensure t
   :mode (("\\.phtml\\'"      . web-mode)
-         ("\\.php\\'"        . web-mode)
          ("\\.tpl\\.php\\'"  . web-mode)
          ("\\.[agj]sp\\'"    . web-mode)
          ("\\.as[cp]x\\'"    . web-mode)
@@ -21,11 +22,17 @@
         web-mode-enable-auto-quoting t
         web-mode-enable-auto-indentation t)
 
-  (setq web-mode-engines-alist '(("php" . "\\.phtml\\'")))
-  :hook ((web-mode . eglot-ensure)))
+  (setq web-mode-engines-alist '(("php" . "\\.phtml\\'"))))
+
+(use-package emmet-mode
+  :ensure t
+  :hook (web-mode . emmet-mode)
+  :config
+  (setq emmet-move-cursor-between-quotes t))
 
 (use-package php-mode
   :ensure t
+  :mode ("\\.php\\'" . php-mode)
   :config
   (defun my/php-shell ()
     (interactive)

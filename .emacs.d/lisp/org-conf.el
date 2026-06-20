@@ -1,3 +1,5 @@
+;;; org-conf.el --- Org-mode configuration  -*- lexical-binding: t; -*-
+
 ;; --------------------------------------------------
 ;; 1. Percorsi
 ;; --------------------------------------------------
@@ -24,8 +26,8 @@
                            ("▷" . "▽")))
   (org-modern-hide-stars 'leading)
   (org-modern-table nil)
-  (org-modern-keyword nil)
-  (org-modern-todo nil)
+  (org-modern-keyword 1)
+  (org-modern-todo 1)
   :config
   ;; Face livello 9 (necessaria)
   (defface org-level-9

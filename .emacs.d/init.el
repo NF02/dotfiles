@@ -1,4 +1,4 @@
-;;; init.el --- Nicola's Clean Configuration
+;;; init.el --- Nicola's Clean Configuration  -*- lexical-binding: t; -*-
 
 ;; 1. Ottimizzazioni GC
 (setq gc-cons-threshold (* 50 1024 1024))
@@ -40,7 +40,6 @@
 (my/safe-load 'dev)
 (my/safe-load 'web)
 (my/safe-load 'latex-conf)
-(my/safe-load 'typst)
 (my/safe-load 'org-conf)
 (my/safe-load 'rss)
 (my/safe-load 'git)

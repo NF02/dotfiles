@@ -1,3 +1,5 @@
+;;; lilypond.el --- LilyPond configuration  -*- lexical-binding: t; -*-
+
 ;; --------------------------------------------------
 ;; 2. Funzioni LilyPond (Ricalibrate sui tuoi simboli)
 ;; --------------------------------------------------

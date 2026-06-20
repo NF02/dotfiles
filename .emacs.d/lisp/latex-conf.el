@@ -1,3 +1,5 @@
+;;; latex-conf.el --- LaTeX/AUCTeX configuration  -*- lexical-binding: t; -*-
+
 ;; --------------------------------------------------
 ;; 1. CDLaTeX (prima di AUCTeX)
 ;; --------------------------------------------------

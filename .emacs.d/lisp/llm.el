@@ -1,4 +1,4 @@
-;;; llm.el --- Configurazione GPTel + Ollama
+;;; llm.el --- Configurazione GPTel + Ollama  -*- lexical-binding: t; -*-
 
 (use-package gptel
   :ensure t

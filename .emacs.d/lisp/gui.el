@@ -1,3 +1,5 @@
+;;; gui.el --- Graphical UI configuration  -*- lexical-binding: t; -*-
+
 ;; --------------------------------------------------
 ;; 1. Font
 ;; --------------------------------------------------
@@ -26,24 +28,27 @@
 (use-package auto-dark
   :ensure t
   :custom
-  ;; Definizione dei temi
   (auto-dark-themes '((doom-dracula) (doom-gruvbox-light)))
-  ;; Su PGTK/Wayland 'dbus è il metodo più veloce, su macOS userà i framework Apple
-  (auto-dark-detection-method 'dbus) 
-  :init
-  (auto-dark-mode 1)
   :config
-  ;; SOLUZIONE PER EMACS SERVER & PGTK:
-  ;; Forza il check del tema e il refresh dei font GTK ogni volta che 
-  ;; viene creato un nuovo frame (emacsclient).
   (defun my/auto-dark-sync-pgtk (frame)
     (with-selected-frame frame
-      (when (fboundp 'auto-dark--check)
-        (auto-dark--check)
-        ;; Refresh opzionale del font se noti glitch nel rendering PGTK
+      (when (fboundp 'auto-dark--check-and-set-dark-mode)
+        (auto-dark--check-and-set-dark-mode)
         (set-face-attribute 'default nil :font "OpenDyslexicM Nerd Font-10"))))
-
   (add-hook 'after-make-frame-functions #'my/auto-dark-sync-pgtk))
+
+;; Detection via gsettings (Emacs senza DBUS). Chiama direttamente
+;; auto-dark--set-theme per evitare il pcase che non supporta funzioni.
+;; NOTA: auto-dark--register-change-listener non parte perché auto-dark-mode
+;; non viene attivato (la detection la gestiamo noi).
+(defvar my/dark-mode-timer nil)
+(defun my/dark-mode-check ()
+  (let* ((out (string-trim (shell-command-to-string
+                            "gsettings get org.gnome.desktop.interface color-scheme")))
+         (dark (string-match-p "dark" out)))
+    (auto-dark--set-theme (if dark 'dark 'light))))
+(setq my/dark-mode-timer
+      (run-with-timer 0 5 #'my/dark-mode-check))
 ;; --------------------------------------------------
 ;; 4. Modeline
 ;; --------------------------------------------------
@@ -85,10 +90,6 @@
   ;; Opzionale: usa C-n/C-p per navigare meglio nel popup invece delle frecce
   (define-key company-active-map (kbd "C-n") #'company-select-next)
   (define-key company-active-map (kbd "C-p") #'company-select-previous))
-
-(use-package all-the-icons
-  :ensure t
-  :if (display-graphic-p))
 
 (use-package company-box
   :ensure t

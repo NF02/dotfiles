@@ -1,18 +1,18 @@
+;;; dev.el --- Development configuration  -*- lexical-binding: t; -*-
+
 ;; --------------------------------------------------
 ;; Global settings
 ;; --------------------------------------------------
 
-(setq-default indent-tabs-mode nil)
+;; Usa il carattere TAB reale, non gli spazi
+(setq-default indent-tabs-mode t)
+
+;; Definisce l'ampiezza del carattere TAB (es. 2 colonne)
 (setq-default tab-width 2)
+
+;; Numeri di riga relativi (ottimo per i movimenti in Evil mode)
 (setq display-line-numbers-type 'relative)
 
-(add-hook 'prog-mode-hook
-          (lambda ()
-            (unless (derived-mode-p 'term-mode 'eshell-mode)
-              (display-line-numbers-mode 1))))
-
-;; TAB = indent the Emacs way
-(setq-default tab-always-indent 'complete)
 
 ;; --------------------------------------------------
 ;; Octave
@@ -68,10 +68,6 @@
 ;; Lisp (SLY)
 ;; --------------------------------------------------
 
-(use-package marginalia
-  :ensure t
-  :init (marginalia-mode))
-
 (use-package sly
   :ensure t
   :init
@@ -94,17 +90,6 @@
   (processing-location (expand-file-name "~/.local/processing-4.3/processing-java"))
   (processing-application-dir (expand-file-name "~/.local/processing-4.3/processing"))
   (processing-sketchbook-dir (expand-file-name "~/Documenti/processing")))
-
-;; --------------------------------------------------
-;; Docker
-;; --------------------------------------------------
-
-(use-package dockerfile-mode
-  :ensure t
-  :mode "Dockerfile\\'")
-
-(use-package docker
-  :ensure t)
 
 ;; --------------------------------------------------
 ;; C / C++
@@ -136,14 +121,15 @@
          (c-mode . eglot-ensure)
          (rust-mode . eglot-ensure)
          (csharp-mode . eglot-ensure)
-         (LaTeX-mode . eglot-ensure))
+         (LaTeX-mode . eglot-ensure)
+         (php-mode . eglot-ensure))
   :bind (:map eglot-mode-map
               ("C-c r" . eglot-rename)
               ("C-c f" . eglot-format-buffer)
               ("M-." . xref-find-definitions))
   :config
   (setq eglot-autoshutdown t
-        eglot-events-buffer-size 0)
+        eglot-events-buffer-config '(:size 0))
   (setq eglot-server-programs
         (append eglot-server-programs
                 '((c-mode . ("clangd"
@@ -151,6 +137,7 @@
                              "--query-driver=/usr/bin/clang"
                              "--extra-arg=-std=c23"
                              "--header-insertion=never"))
-                  (LaTeX-mode . ("texlab"))))))
+                  (LaTeX-mode . ("texlab"))
+                  (php-mode . ("phpactor" "language-server"))))))
 
 (provide 'dev)

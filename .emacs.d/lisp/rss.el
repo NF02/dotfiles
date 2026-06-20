@@ -1,3 +1,5 @@
+;;; rss.el --- Elfeed RSS configuration  -*- lexical-binding: t; -*-
+
 (use-package elfeed
   :ensure t
   :bind (("C-c e" . my/elfeed-open))
@@ -17,6 +19,9 @@
           ("https://elpa.gnu.org/packages/org.xml" emacs extension)
           ("https://rss.arxiv.org/rss/astro-ph" arxiv astrophysics)
           ("https://rss.arxiv.org/rss/cs.AI" arxiv ai)
+					("https://www.staffettaonline.com/rss/RSS_Home.xml" staffetta home)
+					("https://www.staffettaonline.com/rss/RSS_Mercati.xml" staffetta mercato)
+					("https://www.staffettaonline.com/rss/RSS_Cons_Altre_Fonti.xml" staffetta altre)
           ("https://archlinux.org/feeds/news/" arch news)))
 
   ;; --------------------------------------------------
