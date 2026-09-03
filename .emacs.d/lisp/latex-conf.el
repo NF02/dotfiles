@@ -28,9 +28,10 @@
   (setq TeX-auto-save t
         TeX-parse-self t
         TeX-master nil
-        TeX-engine 'default
+        TeX-engine 'luatex
         TeX-command-default "LatexMk"
-        TeX-save-query nil)
+        TeX-save-query nil
+        TeX-command-extra-options "--lualatex")
 
   ;; SyncTeX
   (setq TeX-source-correlate-mode t

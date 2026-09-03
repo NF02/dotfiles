@@ -19,7 +19,7 @@
          (org-agenda-finalize . org-modern-agenda))
   :custom
   (org-modern-star 'replace)
-  (org-modern-replace-stars '("●" "○" "■" "□" "▲" "△" "◆" "◇" "○"))
+  (org-modern-replace-stars '("◉" "○" "◈" "◇" "∙" "◦"))
   (org-modern-fold-stars '(("⮞" . "⮟")
                            ("⮚" . "⮛")
                            ("▶" . "▼")
@@ -27,6 +27,7 @@
   (org-modern-hide-stars 'leading)
   (org-modern-table nil)
   (org-modern-keyword 1)
+	(org-hide-emphasis-markers t)
   (org-modern-todo 1)
   :config
   ;; Face livello 9 (necessaria)
@@ -139,16 +140,59 @@
                    (setq-local my-slide-remap
                                (face-remap-add-relative 'default :height 1.5))
 
+									 (menu-bar-mode -1)
+									 
                    (force-mode-line-update))
                (progn
                  (visual-fill-column-mode 0)
                  (set-frame-parameter nil 'internal-border-width 0)
                  (kill-local-variable 'mode-line-format)
                  (face-remap-remove-relative my-slide-remap)
-                 (force-mode-line-update)))))
+								 (menu-bar-mode 1)
+								 (force-mode-line-update)))))
   :config
   (setq org-tree-slide-header t
         org-tree-slide-slide-in t
         org-tree-slide-breadcrumbs " > "))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((shell . t)
+	 (emacs-lisp . t)
+	 (R . t)
+	 (C . t)
+	 (python . t)))
+
+;; export epub
+(use-package ox-pandoc
+  :ensure t
+  :after org)
+
+
+(use-package nov
+  :ensure t
+  :mode ("\\.epub\\'" . nov-mode)
+  :config
+  ;; Imposta una larghezza fissa del testo in colonne (opzionale, es. 80 caratteri)
+  ;; Oppure imposta su t per occupare l'intera finestra gestendo i margini fluidamente
+  (setq nov-text-width 80)
+	
+	(setq nov-unzip-program (executable-find "bsdtar")
+				nov-unzip-args '("-xC" directory "-f" filename))
+
+  ;; Personalizzazione del font di lettura per separarlo dai font a spaziatura fissa
+  (add-hook 'nov-mode-hook
+            (lambda ()
+              (face-remap-add-relative 'shr-text :family "OpenDyslexicAlt Nerd Font" :height 1.1)))
+
+  ;; Utilizzo facoltativo di visual-line-mode per una gestione pulita dell'andata a capo
+  (add-hook 'nov-mode-hook #'visual-line-mode))
+
+(use-package ox-epub3
+  :load-path "~/repos/ox-epub3/"
+  :config
+  (setq org-epub3-default-language "it"))
+
+
 
 (provide 'org-conf)
