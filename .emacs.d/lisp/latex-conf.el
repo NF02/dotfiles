@@ -8,9 +8,6 @@
   :ensure t
   :hook (LaTeX-mode . turn-on-cdlatex))
 
-;; Virgolette italiane
-(setq-default TeX-quote-language-alist
-              '(("italian" "``" "''" nil)))
 
 ;; --------------------------------------------------
 ;; 2. AUCTeX
@@ -23,15 +20,22 @@
          ("\\.cls\\'" . LaTeX-mode))
   :hook ((LaTeX-mode . eglot-ensure)
          (LaTeX-mode . turn-on-reftex)
-         (LaTeX-mode . TeX-fold-mode))
-  :config
+         (LaTeX-mode . TeX-fold-mode)
+         (LaTeX-mode . flymake-mode))
+  :config	
+	;; Virgolette italiane
+	(setq-default TeX-quote-language-alist
+								'(("italian" "``" "''" nil)))
   (setq TeX-auto-save t
         TeX-parse-self t
         TeX-master nil
-        TeX-engine 'luatex
-        TeX-command-default "LatexMk"
-        TeX-save-query nil
-        TeX-command-extra-options "--lualatex")
+        TeX-save-query nil)
+  ;; TeX-engine è buffer-local: setq-default per far ereditare ai buffer .tex
+  (setq-default TeX-engine 'luatex)
+  ;; Il comando AUCTeX si chiama "LaTeXMk" (non "LatexMk"); anche lui è
+  ;; buffer-local, quindi setq-default. Con engine 'luatex, latexmk-out
+  ;; espande già in -pdflua: NON serve TeX-command-extra-options "--lualatex".
+  (setq-default TeX-command-default "LaTeXMk")
 
   ;; SyncTeX
   (setq TeX-source-correlate-mode t

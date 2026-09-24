@@ -71,7 +71,7 @@
 (use-package sly
   :ensure t
   :init
-  (setq inferior-lisp-program "/usr/bin/sbcl")
+  (setq inferior-lisp-program "sbcl")
   :bind ("C-c s" . sly)
   :config
   (setq sly-lisp-implementations
@@ -111,6 +111,8 @@
 (setq gdb-many-windows t
       gdb-show-main t)
 
+(use-package nix-mode
+	:ensure t)
 ;; --------------------------------------------------
 ;; Eglot (LSP)
 ;; --------------------------------------------------

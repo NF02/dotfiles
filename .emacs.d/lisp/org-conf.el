@@ -188,11 +188,6 @@
   ;; Utilizzo facoltativo di visual-line-mode per una gestione pulita dell'andata a capo
   (add-hook 'nov-mode-hook #'visual-line-mode))
 
-(use-package ox-epub3
-  :load-path "~/repos/ox-epub3/"
-  :config
-  (setq org-epub3-default-language "it"))
-
 
 
 (provide 'org-conf)
