@@ -1,4 +1,5 @@
 ;;; -*- lexical-binding: t -*-
+
 ;; --------------------------------------------------
 ;; 1. Layout compilazioni
 ;; --------------------------------------------------
@@ -10,7 +11,7 @@
               display-buffer-alist))
 
 ;; --------------------------------------------------
-;; 2. Funzioni Typst
+;; 2. Funzioni di supporto Typst
 ;; --------------------------------------------------
 (defun my/typst--pdf-file ()
   "Restituisce il percorso del PDF corrispondente al file .typ nel buffer corrente, oppure nil."
@@ -23,21 +24,25 @@
     (find-buffer-visiting pdf)))
 
 (defun my/typst-compile-once ()
-  "Compila il file .typ una volta sola."
+  "Compila il file .typ corrente specificando esplicitamente il file di output PDF."
   (interactive)
   (unless (buffer-file-name)
     (user-error "Nessun file associato a questo buffer"))
-  (let ((cmd (format "typst compile %s"
-                     (shell-quote-argument (buffer-file-name)))))
+  (let* ((file (buffer-file-name))
+         (pdf (my/typst--pdf-file))
+         ;; Usiamo le virgolette doppie esplicite per proteggere i percorsi con spazi
+         (cmd (format "typst compile \"%s\" \"%s\"" file pdf)))
     (compile cmd)))
 
 (defun my/typst-watch ()
-  "Avvia compilazione continua (watch)."
+  "Avvia la compilazione continua (watch) specificando esplicitamente il file di output."
   (interactive)
   (unless (buffer-file-name)
     (user-error "Nessun file associato a questo buffer"))
-  (let ((cmd (format "typst watch %s"
-                     (shell-quote-argument (buffer-file-name)))))
+  (let* ((file (buffer-file-name))
+         (pdf (my/typst--pdf-file))
+         ;; Usiamo le virgolette doppie esplicite per proteggere i percorsi con spazi
+         (cmd (format "typst watch \"%s\" \"%s\"" file pdf)))
     (compile cmd)
     (message "Typst watch avviato")))
 
@@ -58,7 +63,6 @@
       (with-current-buffer pdf-buf
         (when (derived-mode-p 'pdf-view-mode)
           (pdf-view-revert-buffer nil t))))))
-
 ;; --------------------------------------------------
 ;; 3. typst-ts-mode setup
 ;; --------------------------------------------------
@@ -75,18 +79,17 @@
                            (setq-local auto-revert-verbose nil)
                            (auto-revert-mode 1)))
   :config
-  (setq auto-revert-verbose nil)
-  (global-auto-revert-mode 1))
+  (setq auto-revert-verbose nil))
 
 ;; --------------------------------------------------
-;; 4. Eglot LSP (opzionale)
+;; 4. Eglot LSP con Tinymist
 ;; --------------------------------------------------
 (use-package eglot
   :ensure nil
   :config
-  (when (executable-find "typst-lsp")
+  (when (executable-find "tinymist")
     (add-to-list 'eglot-server-programs
-                 '(typst-ts-mode . ("typst-lsp" :stdio))))
+                 '(typst-ts-mode . ("tinymist"))))
   :hook ((typst-ts-mode . eglot-ensure)))
 
 ;; --------------------------------------------------
