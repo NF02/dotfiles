@@ -1,3 +1,5 @@
+;;; scribble.el --- Configuration for scribble mode  -*- lexical-binding: t; -*-
+
 ;; --- 1. CONFIGURAZIONE GLOBALE DI SILENZIOSITÀ E AGGIORNAMENTO ---
 ;; Nasconde il buffer di compilazione su successo e abilita l'aggiornamento automatico
 (setq compilation-window-height 0)
@@ -7,7 +9,7 @@
 
 
 ;; --- 2. FUNZIONE DI CALLBACK PER L'AGGIORNAMENTO AUTOMATICO ---
-(defun scribble-pdf-update-callback (buffer msg)
+(defun scribble-pdf-update-callback (_buffer msg)
   "Ricarica il PDF se è aperto dopo la compilazione Scribble."
   (when (string-match-p "finished" msg)
     (let* ((scrbl-file (buffer-file-name))
@@ -20,7 +22,8 @@
             ;; 1. Aggiungi un piccolo ritardo (0.1 secondi) per dare tempo al file di essere riscritto.
             (sleep-for 0.1) 
             ;; 2. Forzare la ricarica del buffer PDF
-            (pdf-view-revert-buffer)))))))
+            (when (fboundp 'pdf-view-revert-buffer)
+              (pdf-view-revert-buffer))))))))
 
 ;; --- 3. FUNZIONI DI BASE SCRIBBL E RACKET ---
 (defun scribble-compile-pdf ()

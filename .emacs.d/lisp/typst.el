@@ -14,13 +14,15 @@
 ;; 2. Funzioni di supporto Typst
 ;; --------------------------------------------------
 (defun my/typst--pdf-file ()
-  "Restituisce il percorso del PDF corrispondente al file .typ nel buffer corrente, oppure nil."
-  (when-let ((file (buffer-file-name)))
+  "Restituisce il percorso del PDF corrispondente al file .typ nel buffer corrente.
+Oppure nil."
+  (when-let* ((file (buffer-file-name)))
     (concat (file-name-sans-extension file) ".pdf")))
 
 (defun my/typst--pdf-buffer ()
-  "Restituisce il buffer pdf-view associato al file .typ corrente, oppure nil."
-  (when-let ((pdf (my/typst--pdf-file)))
+  "Restituisce il buffer pdf-view associato al file .typ corrente.
+Oppure nil."
+  (when-let* ((pdf (my/typst--pdf-file)))
     (find-buffer-visiting pdf)))
 
 (defun my/typst-compile-once ()
@@ -35,7 +37,8 @@
     (compile cmd)))
 
 (defun my/typst-watch ()
-  "Avvia la compilazione continua (watch) specificando esplicitamente il file di output."
+  "Avvia la compilazione continua (watch) specificando esplicitamente il
+file di output PDF."
   (interactive)
   (unless (buffer-file-name)
     (user-error "Nessun file associato a questo buffer"))
@@ -53,15 +56,17 @@
     (if (and pdf (file-exists-p pdf))
         (progn
           (find-file-other-window pdf)
-          (pdf-view-fit-page-to-window))
+          (when (fboundp 'pdf-view-fit-page-to-window)
+            (pdf-view-fit-page-to-window)))
       (message "PDF non trovato — compila prima con C-c C-x"))))
 
 (defun my/typst-revert-pdf ()
   "Ricarica il buffer PDF se aperto in pdf-view-mode."
-  (when-let ((pdf-buf (my/typst--pdf-buffer)))
+  (when-let* ((pdf-buf (my/typst--pdf-buffer)))
     (when (buffer-live-p pdf-buf)
       (with-current-buffer pdf-buf
-        (when (derived-mode-p 'pdf-view-mode)
+        (when (and (derived-mode-p 'pdf-view-mode)
+                   (fboundp 'pdf-view-revert-buffer))
           (pdf-view-revert-buffer nil t))))))
 ;; --------------------------------------------------
 ;; 3. typst-ts-mode setup
@@ -76,10 +81,11 @@
   :hook (typst-ts-mode . (lambda ()
                            (add-hook 'after-save-hook
                                      #'my/typst-revert-pdf nil t)
+                           (require 'autorevert)
                            (setq-local auto-revert-verbose nil)
                            (auto-revert-mode 1)))
   :config
-  (setq auto-revert-verbose nil))
+  (require 'autorevert))
 
 ;; --------------------------------------------------
 ;; 4. Eglot LSP con Tinymist
@@ -98,7 +104,8 @@
 (use-package pdf-tools
   :ensure t
   :config
-  (pdf-tools-install)
+  (when (fboundp 'pdf-tools-install)
+    (pdf-tools-install))
   (setq pdf-view-use-scaling t
         pdf-view-use-imagemagick nil))
 

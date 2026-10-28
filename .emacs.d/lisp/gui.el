@@ -12,9 +12,10 @@
 ;; --------------------------------------------------
 
 (setq inhibit-startup-screen t)
-(menu-bar-mode 1)
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(add-to-list 'default-frame-alist '(alpha-background . 95))
 
 ;; --------------------------------------------------
 ;; 3. Temi + Auto dark
@@ -30,25 +31,7 @@
   :custom
   (auto-dark-themes '((doom-dracula) (doom-gruvbox-light)))
   :config
-  (defun my/auto-dark-sync-pgtk (frame)
-    (with-selected-frame frame
-      (when (fboundp 'auto-dark--check-and-set-dark-mode)
-        (auto-dark--check-and-set-dark-mode)
-        (set-face-attribute 'default nil :font "OpenDyslexicM Nerd Font-10"))))
-  (add-hook 'after-make-frame-functions #'my/auto-dark-sync-pgtk))
-
-;; Detection via gsettings (Emacs senza DBUS). Chiama direttamente
-;; auto-dark--set-theme per evitare il pcase che non supporta funzioni.
-;; NOTA: auto-dark--register-change-listener non parte perché auto-dark-mode
-;; non viene attivato (la detection la gestiamo noi).
-(defvar my/dark-mode-timer nil)
-(defun my/dark-mode-check ()
-  (let* ((out (string-trim (shell-command-to-string
-                            "gsettings get org.gnome.desktop.interface color-scheme")))
-         (dark (string-match-p "dark" out)))
-    (auto-dark--set-theme (if dark 'dark 'light))))
-(setq my/dark-mode-timer
-      (run-with-timer 0 5 #'my/dark-mode-check))
+  (auto-dark-mode 1))
 ;; --------------------------------------------------
 ;; 4. Modeline
 ;; --------------------------------------------------
@@ -117,5 +100,6 @@
 
 (add-hook 'prog-mode-hook #'hl-line-mode)
 (add-hook 'text-mode-hook #'hl-line-mode)
+
 
 (provide 'gui)

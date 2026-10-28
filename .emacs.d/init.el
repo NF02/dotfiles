@@ -40,12 +40,11 @@
 (my/safe-load 'dev)
 (my/safe-load 'web)
 (my/safe-load 'latex-conf)
+(my/safe-load 'typst)
 (my/safe-load 'org-conf)
 (my/safe-load 'rss)
 (my/safe-load 'git)
-(my/safe-load 'llm)
 (my/safe-load 'lilypond)
-
 ;; 5. Modernizzazione Minibuffer (Vertico)
 (use-package vertico
   :init (vertico-mode))

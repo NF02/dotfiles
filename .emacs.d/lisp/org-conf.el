@@ -38,7 +38,7 @@
 
   ;; Rendi i titoli più leggibili
   (dolist (face '(org-level-1 org-level-2 org-level-3 org-level-4
-                  org-level-5 org-level-6 org-level-7 org-level-8))
+															org-level-5 org-level-6 org-level-7 org-level-8))
     (set-face-attribute face nil :weight 'bold)))
 
 (use-package org-fragtog
@@ -162,6 +162,31 @@
 	 (R . t)
 	 (C . t)
 	 (python . t)))
+;; reavel.js
+(use-package org-re-reveal
+  :ensure t
+  :after org
+  :config
+  ;; Imposta la sorgente di reveal.js (da CDN o percorso locale)
+  (setq org-re-reveal-root "/home/nick/repos/reveal.js/")
+  
+  ;; Livello degli header per la navigazione orizzontale vs verticale
+  (setq org-re-reveal-hlevel 2)
+  
+  ;; Tema grafico di default (es. black, white, league, beige, night, serif, simple, solarized)
+  (setq org-re-reveal-theme "black")
+  
+  ;; Attiva i numeri di diapositiva
+  (setq org-re-reveal-slide-number "c/t"))
+
+;; pdf
+(with-eval-after-load 'ox-latex
+  ;; Imposta latexmk con lualatex come comando di compilazione PDF
+  (setq org-latex-pdf-process
+        '("latexmk -f -pdf -pdflatex='lualatex %%O %%S' -interaction=nonstopmode -output-directory=%o %f"))
+
+  ;; Imposta LuaLaTeX come compilatore predefinito per i documenti Org
+  (setq org-latex-compiler "lualatex"))
 
 ;; export epub
 (use-package ox-pandoc
