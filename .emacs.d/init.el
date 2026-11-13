@@ -1,65 +1,105 @@
-;;; init.el --- Nicola's Clean Configuration  -*- lexical-binding: t; -*-
+;;; init.el --- Nicola's configuration  -*- lexical-binding: t; -*-
 
-;; 1. Ottimizzazioni GC
-(setq gc-cons-threshold (* 50 1024 1024))
-(add-hook 'emacs-startup-hook
-          (lambda () (setq gc-cons-threshold (* 2 1024 1024))))
+;; --------------------------------------------------
+;; 1. Identità e percorsi
+;; --------------------------------------------------
 
-;; 2. Definizioni Percorsi (Fondamentale farlo PRIMA dei caricamenti)
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq user-full-name "Nicola Ferru"
+      user-mail-address "ask.nfvblog@outlook.it")
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-;; 3. Gestione Pacchetti
-(require 'package)
-(setq package-archives '(("melpa"  . "https://melpa.org/packages/")
-                         ("elpa"   . "https://elpa.gnu.org/packages/")
-                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")))
-(package-initialize)
+;; --------------------------------------------------
+;; 2. Pacchetti forniti da Nix
+;; --------------------------------------------------
+;; I pacchetti sono dichiarati in
+;; ~/.config/home-manager/moduli/emacs-config.nix.
+;; Non scaricare né installare nulla a runtime.
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+(setq use-package-always-ensure nil
+      use-package-always-defer t
+      use-package-enable-imenu-support t)
+
 (require 'use-package)
-(setq use-package-always-ensure t)
 
-;; 4. Caricamento Moduli (Con protezione contro i crash)
+;; --------------------------------------------------
+;; 3. Prestazioni e comportamento globale
+;; --------------------------------------------------
+
+(setq read-process-output-max (* 1024 1024) ; LSP/processi più reattivi
+      process-connection-type nil
+      auto-revert-verbose nil
+      use-short-answers t)
+
+(setq-default indent-tabs-mode t
+              tab-width 2)
+
+(global-auto-revert-mode 1)
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; --------------------------------------------------
+;; 4. Caricamento moduli (senza bloccare l'avvio)
+;; --------------------------------------------------
+
 (defun my/safe-load (module)
-  "Carica un modulo solo se esiste, senza bloccare l'avvio."
+  "Carica MODULE solo se esiste, senza bloccare l'avvio."
   (condition-case err
       (require module)
-    (error (message "Errore nel caricamento del modulo %s: %s" module (error-message-string err)))))
+    (error (message "Errore nel caricamento del modulo %s: %s"
+                    module (error-message-string err)))))
 
-;; Carica le credenziali (percorso corretto relativo a .emacs.d/lisp/)
-(let ((secrets (expand-file-name "lisp/credential.el" user-emacs-directory)))
-  (if (file-exists-p secrets)
-      (load secrets)
-    (message "Credential file non trovato")))
+(dolist (module '(gui dev web latex-conf typst presentazione org-conf rss git))
+  (my/safe-load module))
 
-;; Carica i tuoi file in lisp/
-(my/safe-load 'gui)
-(my/safe-load 'dev)
-(my/safe-load 'web)
-(my/safe-load 'latex-conf)
-(my/safe-load 'typst)
-(my/safe-load 'org-conf)
-(my/safe-load 'rss)
-(my/safe-load 'git)
-(my/safe-load 'lilypond)
-;; 5. Modernizzazione Minibuffer (Vertico)
+;; --------------------------------------------------
+;; 5. Minibuffer
+;; --------------------------------------------------
+
 (use-package vertico
-  :init (vertico-mode))
+  :demand t
+  :config (vertico-mode))
 
 (use-package marginalia
-  :ensure t
-  :init (marginalia-mode)) ; Aggiunge descrizioni ai comandi M-x
+  :demand t
+  :config (marginalia-mode))
 
-;; 6. Fine: Carica le personalizzazioni salvate dalla UI
-(when (file-exists-p custom-file)
-  (load custom-file))
+;; --------------------------------------------------
+;; 6. Ispell / flyspell
+;; --------------------------------------------------
 
-;; 7. Ispell
-(use-package ispell
-  :if (executable-find "hunspell")
-  :config
-  (setq ispell-program-name "hunspell")
-  :bind ([f6] . flyspell-mode))
+(when (executable-find "hunspell")
+  (setq ispell-program-name "hunspell"
+        ispell-dictionary "it_IT")
+  (global-set-key (kbd "<f6>") #'flyspell-mode))
+
+;; --------------------------------------------------
+;; 7. Helper condivisi
+;; --------------------------------------------------
+
+(defun my/revert-associated-pdf ()
+  "Ricarica il PDF associato al file corrente, se è già aperto."
+  (when-let* ((file (buffer-file-name))
+              (pdf (concat (file-name-sans-extension file) ".pdf"))
+              (buffer (find-buffer-visiting pdf)))
+    (with-current-buffer buffer
+      (when (derived-mode-p 'pdf-view-mode)
+        (revert-buffer t t t)))))
+
+;; --------------------------------------------------
+;; 8. Personalizzazioni salvate dalla UI
+;; --------------------------------------------------
+
+(load custom-file :no-error-if-not-found :no-message)
+
+;; --------------------------------------------------
+;; 9. Fine avvio
+;; --------------------------------------------------
+
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq gc-cons-threshold (* 32 1024 1024)
+                  gc-cons-percentage 0.1)
+            (garbage-collect)))
+
+(provide 'init)

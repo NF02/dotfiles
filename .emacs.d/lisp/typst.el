@@ -1,56 +1,39 @@
-;;; -*- lexical-binding: t -*-
+;;; typst.el --- Typst configuration  -*- lexical-binding: t; -*-
 
 ;; --------------------------------------------------
-;; 1. Layout compilazioni
+;; 1. Funzioni di supporto
 ;; --------------------------------------------------
-(setq display-buffer-alist
-      (append '(("\\*compilation\\*"
-                 (display-buffer-below-selected)
-                 (window-parameters . ((no-other-window . nil)))
-                 (window-height . 0.3)))
-              display-buffer-alist))
 
-;; --------------------------------------------------
-;; 2. Funzioni di supporto Typst
-;; --------------------------------------------------
 (defun my/typst--pdf-file ()
-  "Restituisce il percorso del PDF corrispondente al file .typ nel buffer corrente.
-Oppure nil."
+  "Percorso del PDF corrispondente al file .typ corrente, oppure nil."
   (when-let* ((file (buffer-file-name)))
     (concat (file-name-sans-extension file) ".pdf")))
 
-(defun my/typst--pdf-buffer ()
-  "Restituisce il buffer pdf-view associato al file .typ corrente.
-Oppure nil."
-  (when-let* ((pdf (my/typst--pdf-file)))
-    (find-buffer-visiting pdf)))
-
 (defun my/typst-compile-once ()
-  "Compila il file .typ corrente specificando esplicitamente il file di output PDF."
+  "Compila il file .typ corrente in PDF."
   (interactive)
   (unless (buffer-file-name)
     (user-error "Nessun file associato a questo buffer"))
-  (let* ((file (buffer-file-name))
-         (pdf (my/typst--pdf-file))
-         ;; Usiamo le virgolette doppie esplicite per proteggere i percorsi con spazi
-         (cmd (format "typst compile \"%s\" \"%s\"" file pdf)))
-    (compile cmd)))
+  (let ((file (buffer-file-name))
+        (pdf (my/typst--pdf-file)))
+    (compile (format "typst compile %s %s"
+                     (shell-quote-argument file)
+                     (shell-quote-argument pdf)))))
 
 (defun my/typst-watch ()
-  "Avvia la compilazione continua (watch) specificando esplicitamente il
-file di output PDF."
+  "Avvia la compilazione continua del file .typ corrente."
   (interactive)
   (unless (buffer-file-name)
     (user-error "Nessun file associato a questo buffer"))
-  (let* ((file (buffer-file-name))
-         (pdf (my/typst--pdf-file))
-         ;; Usiamo le virgolette doppie esplicite per proteggere i percorsi con spazi
-         (cmd (format "typst watch \"%s\" \"%s\"" file pdf)))
-    (compile cmd)
+  (let ((file (buffer-file-name))
+        (pdf (my/typst--pdf-file)))
+    (compile (format "typst watch %s %s"
+                     (shell-quote-argument file)
+                     (shell-quote-argument pdf)))
     (message "Typst watch avviato")))
 
 (defun my/typst-view-pdf ()
-  "Apre il PDF corrispondente in pdf-tools nell'altro window."
+  "Apre il PDF corrispondente in un'altra finestra."
   (interactive)
   (let ((pdf (my/typst--pdf-file)))
     (if (and pdf (file-exists-p pdf))
@@ -58,55 +41,21 @@ file di output PDF."
           (find-file-other-window pdf)
           (when (fboundp 'pdf-view-fit-page-to-window)
             (pdf-view-fit-page-to-window)))
-      (message "PDF non trovato — compila prima con C-c C-x"))))
+      (message "PDF non trovato: compila prima con C-c C-x"))))
 
-(defun my/typst-revert-pdf ()
-  "Ricarica il buffer PDF se aperto in pdf-view-mode."
-  (when-let* ((pdf-buf (my/typst--pdf-buffer)))
-    (when (buffer-live-p pdf-buf)
-      (with-current-buffer pdf-buf
-        (when (and (derived-mode-p 'pdf-view-mode)
-                   (fboundp 'pdf-view-revert-buffer))
-          (pdf-view-revert-buffer nil t))))))
 ;; --------------------------------------------------
-;; 3. typst-ts-mode setup
+;; 2. typst-ts-mode
 ;; --------------------------------------------------
+
 (use-package typst-ts-mode
-  :ensure t
-  :mode "\\.typ\\'"
+  :mode ("\\.typ\\'" . typst-ts-mode)
   :bind (:map typst-ts-mode-map
               ("C-c C-c" . my/typst-watch)
               ("C-c C-x" . my/typst-compile-once)
               ("C-c C-v" . my/typst-view-pdf))
-  :hook (typst-ts-mode . (lambda ()
-                           (add-hook 'after-save-hook
-                                     #'my/typst-revert-pdf nil t)
-                           (require 'autorevert)
-                           (setq-local auto-revert-verbose nil)
-                           (auto-revert-mode 1)))
-  :config
-  (require 'autorevert))
-
-;; --------------------------------------------------
-;; 4. Eglot LSP con Tinymist
-;; --------------------------------------------------
-(use-package eglot
-  :ensure nil
-  :config
-  (when (executable-find "tinymist")
-    (add-to-list 'eglot-server-programs
-                 '(typst-ts-mode . ("tinymist"))))
-  :hook ((typst-ts-mode . eglot-ensure)))
-
-;; --------------------------------------------------
-;; 5. pdf-tools (visualizzatore PDF)
-;; --------------------------------------------------
-(use-package pdf-tools
-  :ensure t
-  :config
-  (when (fboundp 'pdf-tools-install)
-    (pdf-tools-install))
-  (setq pdf-view-use-scaling t
-        pdf-view-use-imagemagick nil))
+  :hook (typst-ts-mode
+         . (lambda ()
+             (add-hook 'after-save-hook
+                       #'my/revert-associated-pdf nil t))))
 
 (provide 'typst)

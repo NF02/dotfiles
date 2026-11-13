@@ -1,13 +1,13 @@
 ;;; latex-conf.el --- LaTeX/AUCTeX configuration  -*- lexical-binding: t; -*-
 
+(declare-function TeX-revert-document-buffer "tex")
+
 ;; --------------------------------------------------
 ;; 1. CDLaTeX (prima di AUCTeX)
 ;; --------------------------------------------------
 
 (use-package cdlatex
-  :ensure t
   :hook (LaTeX-mode . turn-on-cdlatex))
-
 
 ;; --------------------------------------------------
 ;; 2. AUCTeX
@@ -18,68 +18,42 @@
   :mode (("\\.tex\\'" . LaTeX-mode)
          ("\\.sty\\'" . LaTeX-mode)
          ("\\.cls\\'" . LaTeX-mode))
-  :hook ((LaTeX-mode . eglot-ensure)
-         (LaTeX-mode . turn-on-reftex)
+  :hook ((LaTeX-mode . turn-on-reftex)
          (LaTeX-mode . TeX-fold-mode)
          (LaTeX-mode . flymake-mode))
-  :config	
-	;; Virgolette italiane
-	(setq-default TeX-quote-language-alist
-								'(("italian" "``" "''" nil)))
+  :config
+  ;; Virgolette italiane
+  (setq-default TeX-quote-language-alist
+                '(("italian" "``" "''" nil)))
   (setq TeX-auto-save t
         TeX-parse-self t
         TeX-master nil
         TeX-save-query nil)
-  ;; TeX-engine è buffer-local: setq-default per far ereditare ai buffer .tex
+  ;; TeX-engine e TeX-command-default sono buffer-local: setq-default
+  ;; per farli ereditare ai buffer .tex.
   (setq-default TeX-engine 'luatex)
-  ;; Il comando AUCTeX si chiama "LaTeXMk" (non "LatexMk"); anche lui è
-  ;; buffer-local, quindi setq-default. Con engine 'luatex, latexmk-out
-  ;; espande già in -pdflua: NON serve TeX-command-extra-options "--lualatex".
   (setq-default TeX-command-default "LaTeXMk")
-
   ;; SyncTeX
   (setq TeX-source-correlate-mode t
         TeX-source-correlate-start-server t
         TeX-source-correlate-method 'synctex)
-
-  ;; Viewer PDF Tools
-  (with-eval-after-load 'tex
-    (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
-          TeX-view-program-list '(("PDF Tools" "TeX-pdf-tools-sync-view")))))
+  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+        TeX-view-program-list '(("PDF Tools" "TeX-pdf-tools-sync-view"))))
 
 ;; --------------------------------------------------
 ;; 3. PDF Tools
 ;; --------------------------------------------------
+;; Il server epdfinfo è già compilato da Nix: niente pdf-tools-install.
 
 (use-package pdf-tools
-  :ensure t
   :magic ("%PDF" . pdf-view-mode)
+  :commands pdf-view-mode
+  :custom
+  (pdf-view-display-size 'fit-width)
+  (pdf-view-use-scaling t)
   :config
-  (pdf-tools-install)
-  (setq pdf-view-display-size 'fit-width)
-  (add-hook 'pdf-view-mode-hook #'auto-revert-mode)
-  (add-hook 'TeX-after-compilation-finished-functions
-            #'TeX-revert-document-buffer))
-
-;; --------------------------------------------------
-;; 4. Finestre PDF
-;; --------------------------------------------------
-
-(setq display-buffer-alist
-      '(("\\.pdf\\'"
-         (display-buffer-in-side-window)
-         (side . right)
-         (window-width . 0.35)
-         (dedicated . t)
-         (slot . 0))))
-
-;; --------------------------------------------------
-;; 5. Navigazione finestre
-;; --------------------------------------------------
-
-(global-set-key (kbd "C-x <up>")    #'windmove-up)
-(global-set-key (kbd "C-x <down>")  #'windmove-down)
-(global-set-key (kbd "C-x <left>")  #'windmove-left)
-(global-set-key (kbd "C-x <right>") #'windmove-right)
+  (when (boundp 'TeX-after-compilation-finished-functions)
+    (add-hook 'TeX-after-compilation-finished-functions
+              #'TeX-revert-document-buffer)))
 
 (provide 'latex-conf)

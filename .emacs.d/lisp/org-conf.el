@@ -5,15 +5,23 @@
 ;; --------------------------------------------------
 
 (defvar my/org-directory (expand-file-name "~/Documenti/org-notes"))
-(defvar my/org-agenda-files (list my/org-directory))
+
+;; Backend EPUB locale (se presente).
+(add-to-list 'load-path (expand-file-name "~/repos/ox-epub3"))
 
 ;; --------------------------------------------------
-;; 2. Core Org
+;; 2. Impostazioni Org di base
+;; --------------------------------------------------
+
+(setq org-hide-emphasis-markers t
+      org-startup-folded 'content
+      org-return-follows-link t)
+
+;; --------------------------------------------------
+;; 3. Aspetto
 ;; --------------------------------------------------
 
 (use-package org-modern
-  :ensure t
-  :after org
   :hook ((org-mode . org-modern-mode)
          (org-mode . org-indent-mode)
          (org-agenda-finalize . org-modern-agenda))
@@ -27,32 +35,80 @@
   (org-modern-hide-stars 'leading)
   (org-modern-table nil)
   (org-modern-keyword 1)
-	(org-hide-emphasis-markers t)
   (org-modern-todo 1)
   :config
-  ;; Face livello 9 (necessaria)
   (defface org-level-9
     '((t :inherit org-level-1 :weight bold))
-    "Face per livello 9"
+    "Face per livello 9."
     :group 'org-faces)
-
-  ;; Rendi i titoli più leggibili
   (dolist (face '(org-level-1 org-level-2 org-level-3 org-level-4
-															org-level-5 org-level-6 org-level-7 org-level-8))
+                  org-level-5 org-level-6 org-level-7 org-level-8))
     (set-face-attribute face nil :weight 'bold)))
 
 (use-package org-fragtog
-  :ensure t
-  :after org
   :hook (org-mode . org-fragtog-mode))
 
 ;; --------------------------------------------------
-;; 3. Org-roam
+;; 3b. Anteprime LaTeX
+;; --------------------------------------------------
+
+;; L'export usa lualatex, quindi Org include `fontspec' nel preambolo delle
+;; anteprime.  I processi dvipng/dvisvgm compilano pero' con `latex' (pdfTeX),
+;; che non supporta fontspec: le nuove anteprime fallivano.  `xelatex'
+;; supporta fontspec e produce SVG, scalabili senza perdita di qualita'.
+(setq org-preview-latex-default-process 'xelatex)
+
+(defun my/org-latex-preview--base-scale ()
+  "Rapporto tra il font di default e i 10pt usati da LaTeX."
+  (let ((height (face-attribute 'default :height)))
+    (if (and (numberp height) (> height 3))
+        (/ height 100.0)
+      1.0)))
+
+(defun my/org-latex-preview--text-scale ()
+  "Fattore di scala corrente delle anteprime LaTeX."
+  (* (my/org-latex-preview--base-scale)
+     (if (bound-and-true-p text-scale-mode)
+         (expt text-scale-mode-step text-scale-mode-amount)
+       1.0)
+     (or (bound-and-true-p my/org-presentation-current-scale) 1.0)))
+
+(defun my/org-latex-preview--scale-overlay (overlay scale)
+  "Imposta SCALE sull'immagine dell'overlay OVERLAY."
+  (let ((display (overlay-get overlay 'display)))
+    (when (and (consp display) (eq (car display) 'image))
+      (setcdr display
+              (plist-put (copy-sequence (cdr display)) :scale scale)))))
+
+(defun my/org-latex-preview-refresh-scaling ()
+  "Allinea le anteprime LaTeX alla dimensione corrente del testo."
+  (when (and (derived-mode-p 'org-mode)
+             (display-graphic-p))
+    (let ((scale (my/org-latex-preview--text-scale)))
+      (dolist (overlay (overlays-in (point-min) (point-max)))
+        (when (eq (overlay-get overlay 'org-overlay-type) 'org-latex-overlay)
+          (my/org-latex-preview--scale-overlay overlay scale))))))
+
+(dolist (command '(org-latex-preview text-scale-mode
+                   text-scale-increase text-scale-decrease
+                   text-scale-set text-scale-adjust))
+  (unless (advice-member-p #'my/org-latex-preview-refresh-scaling command)
+    (advice-add command :after #'my/org-latex-preview-refresh-scaling)))
+
+(defun my/org-mode-setup ()
+  "Setup minimale dei buffer Org."
+  (visual-line-mode 1)
+  ;; Ricalcola l'adattamento della slide a ogni cambio di slide.
+  (add-hook 'org-tree-slide-after-narrow-hook
+            #'my/org-presentation-fit-slide nil t))
+
+(add-hook 'org-mode-hook #'my/org-mode-setup)
+
+;; --------------------------------------------------
+;; 4. Org-roam
 ;; --------------------------------------------------
 
 (use-package org-roam
-  :ensure t
-  :after org
   :custom
   (org-roam-directory my/org-directory)
   (org-roam-database-connector 'sqlite-builtin)
@@ -65,154 +121,93 @@
 
 (use-package org-roam-ui
   :after org-roam
-  :config
-  (setq org-roam-ui-sync-theme t
-        org-roam-ui-follow t
-        org-roam-ui-update-on-save t
-        org-roam-ui-open-on-start t))
+  :commands org-roam-ui-mode
+  :bind ("C-c n u" . org-roam-ui-mode)
+  :custom
+  (org-roam-ui-sync-theme t)
+  (org-roam-ui-follow t)
+  (org-roam-ui-update-on-save t)
+  (org-roam-ui-open-on-start t))
 
 ;; --------------------------------------------------
-;; 4. Agenda
+;; 5. Agenda
 ;; --------------------------------------------------
 
 (use-package org-super-agenda
-  :ensure t
-  :after org-agenda
-  :config
-  (org-super-agenda-mode)
-  (setq org-super-agenda-groups
-        '((:name "Oggi" :time-grid t :date today :order 1)
-          (:name "Importante" :priority "A" :order 2)
-          (:name "Progetti" :tag "project" :order 3))))
+  :hook (org-agenda-mode . org-super-agenda-mode)
+  :custom
+  (org-super-agenda-groups
+   '((:name "Oggi" :time-grid t :date today :order 1)
+     (:name "Importante" :priority "A" :order 2)
+     (:name "Progetti" :tag "project" :order 3))))
 
 ;; --------------------------------------------------
-;; 5. Org base setup
-;; --------------------------------------------------
-
-(defun my/org-mode-setup ()
-  "Setup minimale senza toccare font."
-  (visual-line-mode 1))
-
-(add-hook 'org-mode-hook #'my/org-mode-setup)
-
-;; --------------------------------------------------
-;; 6. Init cartelle
+;; 6. Init cartelle (solo quando Org viene caricato)
 ;; --------------------------------------------------
 
 (defun my/org-init-folders ()
+  "Crea le cartelle di base di Org, se mancano."
   (dolist (dir (list my/org-directory
                      (expand-file-name "daily" my/org-directory)
                      (expand-file-name "projects" my/org-directory)))
     (unless (file-directory-p dir)
       (make-directory dir t))))
 
-(my/org-init-folders)
+(with-eval-after-load 'org
+  (my/org-init-folders))
 
 ;; --------------------------------------------------
-;; 7. Presentazione
+;; 7. Babel
 ;; --------------------------------------------------
 
-(use-package visual-fill-column
-  :ensure t
-  :custom
-  (visual-fill-column-width 100)
-  (visual-fill-column-center-text t))
+(with-eval-after-load 'org
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((shell . t)
+     (emacs-lisp . t)
+     (R . t)
+     (C . t)
+     (python . t))))
 
-(use-package org-tree-slide
-  :ensure t
-  :after (org visual-fill-column)
-  :bind (:map org-tree-slide-mode-map
-              ("<right>" . org-tree-slide-move-next-tree)
-              ("<left>" . org-tree-slide-move-previous-tree)
-              ("C-q" . org-tree-slide-mode))
-  :hook (org-tree-slide-mode
-         . (lambda ()
-             (if org-tree-slide-mode
-                 (progn
-                   (setq visual-fill-column-width 110)
-                   (setq visual-fill-column-center-text t)
-                   (visual-fill-column-mode 1)
+;; --------------------------------------------------
+;; 8. Export
+;; --------------------------------------------------
 
-                   (set-frame-parameter nil 'internal-border-width 40)
-
-                   (setq-local mode-line-format nil)
-
-                   (setq-local my-slide-remap
-                               (face-remap-add-relative 'default :height 1.5))
-
-									 (menu-bar-mode -1)
-									 
-                   (force-mode-line-update))
-               (progn
-                 (visual-fill-column-mode 0)
-                 (set-frame-parameter nil 'internal-border-width 0)
-                 (kill-local-variable 'mode-line-format)
-                 (face-remap-remove-relative my-slide-remap)
-								 (menu-bar-mode 1)
-								 (force-mode-line-update)))))
-  :config
-  (setq org-tree-slide-header t
-        org-tree-slide-slide-in t
-        org-tree-slide-breadcrumbs " > "))
-
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((shell . t)
-	 (emacs-lisp . t)
-	 (R . t)
-	 (C . t)
-	 (python . t)))
-;; reavel.js
 (use-package org-re-reveal
-  :ensure t
-  :after org
+  :commands (org-re-reveal)
   :config
-  ;; Imposta la sorgente di reveal.js (da CDN o percorso locale)
-  (setq org-re-reveal-root "/home/nick/repos/reveal.js/")
-  
-  ;; Livello degli header per la navigazione orizzontale vs verticale
-  (setq org-re-reveal-hlevel 2)
-  
-  ;; Tema grafico di default (es. black, white, league, beige, night, serif, simple, solarized)
-  (setq org-re-reveal-theme "black")
-  
-  ;; Attiva i numeri di diapositiva
-  (setq org-re-reveal-slide-number "c/t"))
+  (setq org-re-reveal-root (expand-file-name "~/repos/reveal.js/")
+        org-re-reveal-hlevel 2
+        org-re-reveal-theme "black"
+        org-re-reveal-slide-number "c/t"))
 
-;; pdf
 (with-eval-after-load 'ox-latex
-  ;; Imposta latexmk con lualatex come comando di compilazione PDF
   (setq org-latex-pdf-process
         '("latexmk -f -pdf -pdflatex='lualatex %%O %%S' -interaction=nonstopmode -output-directory=%o %f"))
-
-  ;; Imposta LuaLaTeX come compilatore predefinito per i documenti Org
   (setq org-latex-compiler "lualatex"))
 
-;; export epub
-(use-package ox-pandoc
-  :ensure t
-  :after org)
+;; I backend di export vengono caricati solo quando serve esportare.
+(with-eval-after-load 'ox
+  (require 'ox-pandoc)
+  (setq org-epub3-default-language "it")
+  (require 'ox-epub3 nil t))
 
+;; --------------------------------------------------
+;; 9. Lettura EPUB
+;; --------------------------------------------------
 
 (use-package nov
-  :ensure t
   :mode ("\\.epub\\'" . nov-mode)
+  :custom
+  (nov-text-width 80)
   :config
-  ;; Imposta una larghezza fissa del testo in colonne (opzionale, es. 80 caratteri)
-  ;; Oppure imposta su t per occupare l'intera finestra gestendo i margini fluidamente
-  (setq nov-text-width 80)
-	
-	(setq nov-unzip-program (executable-find "bsdtar")
-				nov-unzip-args '("-xC" directory "-f" filename))
-
-  ;; Personalizzazione del font di lettura per separarlo dai font a spaziatura fissa
+  (setq nov-unzip-program (executable-find "bsdtar")
+        nov-unzip-args '("-xC" directory "-f" filename))
   (add-hook 'nov-mode-hook
             (lambda ()
-              (face-remap-add-relative 'shr-text :family "OpenDyslexicAlt Nerd Font" :height 1.1)))
-
-  ;; Utilizzo facoltativo di visual-line-mode per una gestione pulita dell'andata a capo
+              (face-remap-add-relative 'shr-text
+                                       :family "OpenDyslexicAlt Nerd Font"
+                                       :height 1.1)))
   (add-hook 'nov-mode-hook #'visual-line-mode))
-
-
 
 (provide 'org-conf)
